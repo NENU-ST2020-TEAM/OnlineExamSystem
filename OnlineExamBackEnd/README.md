@@ -1,5 +1,5 @@
-# OnlineExamSystem
-OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020, NENU 
+# OnlineExamBackEnd
+Back End of OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020, NENU
 
 ## 1 开发环境介绍
 >远程服务器版本：Aliyun云服务器ECS、CentOS 7.3 64位
@@ -40,3 +40,4 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - HTTP 请求头记录Session，判断用户属性
 - Junit 单元测试
 - 后台接口API: Swagger
+
