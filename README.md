@@ -50,20 +50,18 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - MySQL 数据库
 - Maven 版本控制
 - FastJson 解析Json数据
-- HTTP 请求头记录Session，判断用户属性
 - Junit 单元测试
 - 后台接口API: Swagger
 
 ## Git 提交日志
+>2020.06.15-2020.06.29：项目组处于开发阶段。由于项目采用前后端分离模式，为了便于代码管理，前后端小组在各自仓库进行协同开发。
+
 ### 前端仓库
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamFrontEnd
-- 日志截图：
-
-    ![](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/1.jpg)
+- 日志截图：[前端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/1.jpg)
 
 ### 后端仓库
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamBackEnd
+- 日志截图：[后端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
 
-- 日志截图：
-
-    ![](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
+>2020.06.30-2020.07.05：项目组处于测试阶段。因此将前后端仓库合并，进行统一分阶段测试。
