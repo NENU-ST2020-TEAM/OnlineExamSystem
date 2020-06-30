@@ -11,7 +11,7 @@
 ///**
 // * @Author:Liangll
 // * @Description: 测试PaperService的各类方法
-// * @Date: 11:44 2019/5/3
+// * @Date: 12:21 2020/6/21
 // */
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
@@ -69,7 +69,7 @@
 //
 //    @Test
 //    public void testQueryPaperIdByName() throws Exception{
-//        String paperName = "2018年秋季学期17级JavaEE期末考试题";
+//        String paperName = "2020年春季学期17级软件质量保证与测试期末考试题";
 //        System.out.println(paperService.queryPaperIdByName(paperName).getPaperId());
 //    }
 //

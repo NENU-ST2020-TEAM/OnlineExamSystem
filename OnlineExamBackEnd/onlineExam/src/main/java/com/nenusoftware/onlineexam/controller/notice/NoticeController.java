@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @Author:Kongyy
  * @Description: NoticeController层（与前端页面进行交互）
- * @Date: 15:54 2020/6/1
+ * @Date: 15:54 2020/6/11
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller

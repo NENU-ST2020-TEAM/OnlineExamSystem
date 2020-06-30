@@ -9,8 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.DigestUtils;
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 22:11
+ * @Author:Kongyy
+ * @Description: 测试SuperUserService的各类方法
+ * @Date: 16:34 2020/6/23
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

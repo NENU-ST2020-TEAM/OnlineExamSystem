@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 /**
  * @Author:Liangll
  * @Description: UserController层（与前端页面进行交互）
- * @Date: 10:54 2019/5/6
+ * @Date: 10:54 2020/6/15
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller
@@ -36,34 +36,13 @@ public class UserController {
 
     boolean flag = false;
 
-//    @RequestMapping("/login")
-//    public String login(@RequestParam("username")String username, @RequestParam("password")String password, ModelMap map) throws Exception {
-//        if(userService.queryByName(username) != null){
-//            if(userService.checkPassword(username,password).size() != 0){
-//                System.out.println("登录成功！");
-//                map.addAttribute("msg", "登录成功！");
-//                return "index";
-////                return "登录成功！";
-//            }else {
-//                System.out.println("您的密码有误！");
-//                map.addAttribute("msg", "您的密码有误！请重新输入密码");
-//                return "index";
-////                return "您的密码有误！";
-//            }
-//        }else{
-//            System.out.println("用户名不存在，请去注册！");
-//            map.addAttribute("msg", "用户名不存在，请去注册！");
-//            return "index";
-////            return "用户名不存在，请去注册！";
-//        }
-//    }
-
     /**
      * 用户登录
      * @param username 用户名
      * @param password 用户密码
      * @param request Http请求（需登录）
-     * @throws Exception
+     * @return 用户名
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/login")
@@ -90,30 +69,12 @@ public class UserController {
         return "/register";
     }
 
-//    @RequestMapping("/register")
-//    public String register (@RequestParam("username")String username, @RequestParam("password")String password, ModelMap map) throws Exception{
-//        if(userService.queryByName(username) == null){
-//            User user = new User();
-//            user.setUsername(username);
-//            user.setPassword(password);
-//            if(userService.addUser(user)){
-//                System.out.println("注册成功！");
-//                map.addAttribute("msg", "注册成功！");
-//                return "index";
-//            }
-//        }else{
-//            System.out.println("用户名不存在，请去注册！");
-//            map.addAttribute("msg", "用户名已存在，请重新输入！");
-//        }
-//        return "register";
-//    }
-
     /**
      * 用户注册
      * @param username 用户名
      * @param password 用户密码
-     * @return
-     * @throws Exception
+     * @return 用户名
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/register")
@@ -135,6 +96,7 @@ public class UserController {
 
     /**
      * 列出所有用户信息
+     * @param request Http请求
      * @return 返回List形式的用户信息
      */
     @ResponseBody
@@ -143,26 +105,24 @@ public class UserController {
         ArrayList<User> userList = new ArrayList<>();
         User user = new User();
         try {
-            int result = JudgePower(request);
+            int result = judgePower(request);
             if(result == 2){
                 userList = userService.listAllUser();
-                for(int i=0;i<userList.size();i++){
+                for (User value : userList) {
                     User user1 = new User();
-                    user1 = userList.get(i);
-                    if(user1.getPower() == 0){
+                    user1 = value;
+                    if (user1.getPower() == 0) {
                         user1.setPowerS("学生");
-                    }
-                    else if(user1.getPower() == 1){
+                    } else if (user1.getPower() == 1) {
                         user1.setPowerS("教师");
-                    }
-                    else if(user1.getPower() == 2){
+                    } else if (user1.getPower() == 2) {
                         user1.setPowerS("管理员");
                     }
                 }
             }
             else{
                 user.setUsername("您未登录或没有权限");
-                userList.add(0,user);
+                userList.add(0, user);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -173,8 +133,8 @@ public class UserController {
     /**
      * 根据用户编号列出用户所有信息
      * @param request Http请求（需登录）
-     * @return
-     * @throws Exception
+     * @return 用户列表
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/listUserById")
@@ -197,15 +157,13 @@ public class UserController {
     /**
      * 用户注销
      * @param request Http请求（需登录）
-     * @throws Exception
      */
     @RequestMapping("/exit")
     @ResponseBody
-    public void exit(HttpServletRequest request) throws Exception{
+    public void exit(HttpServletRequest request){
         HttpSession session = request.getSession(flag);
         session.removeAttribute("usernameSession");
         System.out.println("退出成功");
-
     }
 
 //    /**
@@ -232,7 +190,7 @@ public class UserController {
      * @param sex 性别
      * @param request Http请求（需登录）
      * @param file 头像
-     * @throws Exception
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/updateUser")
@@ -245,10 +203,10 @@ public class UserController {
             System.out.println(fileName + "-->" + size);
 
             //上传之后文件置于的路径
-            String URL = this.getClass().getClassLoader().getResource("").toString();
-            URL = URL.replace("file:/","");
-            System.out.println(URL);
-            String path = URL;
+            String url = Objects.requireNonNull(this.getClass().getClassLoader().getResource("")).toString();
+            url = url.replace("file:/","");
+            System.out.println(url);
+            String path = url;
 
             File dest = new File(path + "/" + fileName);
             //判断文件父目录是否存在
@@ -258,17 +216,14 @@ public class UserController {
             try{
                 //保存文件
                 file.transferTo(dest);
-
                 HttpSession session = request.getSession();
                 String username = String.valueOf(session.getAttribute("usernameSession"));
                 int userId = userService.queryIdByUsername(username).getUserId();
-//                int userId = 2;
-
                 User user = new User();
                 user.setUserId(userId);
                 user.setBirthday(birthday);
                 user.setSex(sex);
-                user.setImage("http://47.103.10.220:8002/" + fileName);
+                user.setImage("http://120.26.186.88:8080/" + fileName);
                 userService.updateUser(user);
                 System.out.println("Success");
             } catch (IllegalStateException e) {
@@ -280,12 +235,12 @@ public class UserController {
 
     /**
      * 判断用户是否有权限
-     * @param request
-     * @return
+     * @param request Http请求
+     * @return 结果
      */
     @ResponseBody
     @RequestMapping("/JudgePower")
-    public int JudgePower(HttpServletRequest request){
+    public int judgePower(HttpServletRequest request){
         int result = 0;
         try{
             HttpSession session = request.getSession(flag);

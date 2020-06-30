@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @Author:Liangll
  * @Description: PaperDetailController层（与前端页面进行交互）
- * @Date: 10:54 2019/5/3
+ * @Date: 10:54 2020/6/16
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller
@@ -68,11 +68,9 @@ public class PaperDetailController {
         PaperDetail paperDetail = new PaperDetail();
 
         int exerciseType = Integer.parseInt(exerciseTypeStr);
-        //int exerciseId = Integer.parseInt(exerciseIdStr);
         int score = Integer.parseInt(scoreStr);
 
         paperDetail.setContent(contentStr);
-        //paperDetail.setExerciseId(exerciseId);
         if(exerciseType == 0){
             paperDetail.setTypeA(typeAStr);
             paperDetail.setTypeB(typeBStr);
@@ -91,10 +89,10 @@ public class PaperDetailController {
             paperDetail.setExerciseType("简答题");
         }
         paperDetail.setAnswer(answerStr);
-        if(answer2.equals( "这个字段为空")){
+        if("这个字段为空".equals(answer2)){
             answer2 = "";
         }
-        if(answer3.equals( "这个字段为空")){
+        if("这个字段为空".equals(answer3)){
             answer3 = "";
         }
         paperDetail.setAnswer2(answer2);

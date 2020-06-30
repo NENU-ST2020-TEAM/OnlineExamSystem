@@ -64,4 +64,4 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamBackEnd
 - 日志截图：[后端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
 
->2020.06.30-2020.07.05：项目组处于测试阶段。因此将前后端仓库合并，进行统一分阶段测试。
+>2020.06.30-2020.07.05：项目组处于测试阶段。将前后端仓库合并，进行项目分阶段测试。

@@ -11,8 +11,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author : kongyy
- * @time : 2020/6/18 15:52
+ * @Author:Kongyy
+ * @Description: SuperUserController层（与前端页面进行交互）
+ * @Date: 15:14 2020/6/19
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller
@@ -28,7 +29,9 @@ public class SuperUserController {
 
     /**
      * 根据用户id删除用户
-     * @param userIdStr
+     * @param userIdStr 用户编号
+     * @param request Http请求
+     * @return 报错信息
      */
     @ResponseBody
     @RequestMapping("/deleteUser")
@@ -48,8 +51,10 @@ public class SuperUserController {
     }
 
     /**
-     * 根据用户id更改用户权限，如果为教师，则更改为管理员，如果是管理员，则改为教师，学生权限不能改变
-     * @param userIdStr
+     * 据用户id更改用户权限，如果为教师，则更改为管理员，如果是管理员，则改为教师，学生权限不能改变
+     * @param userIdStr 用户编号
+     * @param request Http请求
+     * @return 报错信息
      */
     @ResponseBody
     @RequestMapping("/updateUserPower")

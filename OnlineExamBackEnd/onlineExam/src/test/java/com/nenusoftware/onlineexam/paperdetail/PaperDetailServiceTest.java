@@ -1,7 +1,6 @@
 //package com.nenusoftware.onlineexam.paperdetail;
 //
 //import com.alibaba.fastjson.JSONArray;
-//import com.nenusoftware.onlineexam.entity.connect.Connect;
 //import com.nenusoftware.onlineexam.entity.paper.Paper;
 //import com.nenusoftware.onlineexam.entity.paperdetail.PaperDetail;
 //import com.nenusoftware.onlineexam.service.paper.PaperService;
@@ -18,7 +17,7 @@
 ///**
 // * @Author:Liangll
 // * @Description: 测试PaperDetailService的各类方法
-// * @Date: 11:44 2019/5/23
+// * @Date: 13:13 2020/6/21
 // */
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
@@ -30,22 +29,14 @@
 //    @Autowired
 //    PaperDetailService paperDetailService;
 //
-//    /**
-//     * 列出试题库所有试题详细信息
-//     * @throws Exception
-//     */
 //    @Test
 //    public void testListAllPaperDetail() throws Exception{
 //        System.out.println(paperDetailService.listAllPaperDetail());
 //    }
 //
-//    /**
-//     * 根据试卷编号列出试题详细信息
-//     * @throws Exception
-//     */
 //    @Test
 //    public void testListPaperDetailByPaperId() throws Exception{
-//        String paperName = "增加试卷名称测试";
+//        String paperName = "新增一张试卷2";
 //        Paper paper = new Paper();
 //        paper.setPaperName(paperName);
 //        paperService.addPaper(paper);
@@ -54,17 +45,13 @@
 //        System.out.println(paperDetailService.listPaperDetailByPaperId(paperId));
 //    }
 //
-//    /**
-//     * 增加试卷试题详细信息
-//     * @throws Exception
-//     */
 //    @Test
 //    public void testAddPaperDetail() throws Exception {
 //        PaperDetail paperDetail = new PaperDetail();
 ////        paperDetail.setPaperDetailId(2);
 ////        paperDetail.setPaperId(2);
 //        paperDetail.setExerciseId(1);
-//        paperDetail.setContent("增加题目内容");
+//        paperDetail.setContent("增加题目内容test");
 //        paperDetail.setTypeA("");
 //        paperDetail.setTypeB("");
 //        paperDetail.setTypeC("");
@@ -73,7 +60,7 @@
 //        paperDetail.setAnswer2("这个字段为空");
 //        paperDetail.setAnswer3("这个字段为空");
 //        paperDetail.setExerciseType("简答题");
-//        paperDetail.setScore(12);
+//        paperDetail.setScore(120);
 //        paperDetailService.addPaperDetail(paperDetail);
 //    }
 //
@@ -86,7 +73,7 @@
 //    public void testUpdatePaper() throws Exception{
 //        PaperDetail paperDetail = new PaperDetail();
 //        paperDetail.setPaperDetailId(36);
-//        paperDetail.setContent("测试修改题目内容");
+//        paperDetail.setContent("测试修改题目内容test");
 //        paperDetail.setTypeA("测试A");
 //        paperDetail.setTypeB("测试B");
 //        paperDetail.setTypeC("测试C");
@@ -106,7 +93,7 @@
 //    }
 //
 //    @Test
-//    public void testQueryExerciseByTypes() throws Exception{
+//    public void testQueryExerciseByTypes(){
 //        String choiceType = "选择题";
 //        String judgeType = "判断题";
 //        String completionType = "填空题";

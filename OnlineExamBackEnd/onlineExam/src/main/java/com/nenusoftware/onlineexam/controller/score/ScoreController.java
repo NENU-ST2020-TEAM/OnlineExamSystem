@@ -16,9 +16,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @Author:Liangll
+ * @Author:Kongyy
  * @Description: ScoreController层（与前端页面进行交互）
- * @Date: 10:54 2019/5/8
+ * @Date: 10:54 2020/6/18
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller
@@ -39,7 +39,7 @@ public class ScoreController {
      * @param paperIdStr 试卷编号
      * @param markStr 分数
      * @param request Http请求
-     * @throws Exception
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/addScore")
@@ -66,11 +66,10 @@ public class ScoreController {
      * 根据试卷编号列出所有学生做该试卷的成绩
      * @param paperIdStr 试卷编号
      * @return 返回List形式的成绩信息
-     * @throws Exception
      */
     @ResponseBody
     @RequestMapping("/queryScoreByPaper")
-    public List<Score> queryScoreByPaper(String paperIdStr) throws Exception {
+    public List<Score> queryScoreByPaper(String paperIdStr) {
         int paperId = Integer.parseInt(paperIdStr);
         List<Score> scoreList = null;
         try {
@@ -85,7 +84,7 @@ public class ScoreController {
      * 根据用户编号列出该用户对应的成绩
      * @param request Http请求，用户需登录
      * @return 返回List形式的成绩信息
-     * @throws Exception
+     * @throws Exception 报错信息
      */
     @ResponseBody
     @RequestMapping("/queryScoreByUser")
@@ -104,13 +103,12 @@ public class ScoreController {
 
     /**
      * 列出该试卷60分及以上的分数
-     * @param paperIdStr
-     * @return
-     * @throws Exception
+     * @param paperIdStr 试卷编号
+     * @return 成绩信息
      */
     @ResponseBody
     @RequestMapping("/listScoreByMark1")
-    public List<Score> listScoreByMark1(String paperIdStr) throws Exception{
+    public List<Score> listScoreByMark1(String paperIdStr){
         List<Score> scoreList = Collections.emptyList();
         int paperId = Integer.parseInt(paperIdStr);
         try {
@@ -122,14 +120,13 @@ public class ScoreController {
     }
 
     /**
-     * 列出该试卷60分及以下的分数
-     * @param paperIdStr
-     * @return
-     * @throws Exception
+     * 列出该试卷 60分及以下的分数
+     * @param paperIdStr 试卷编号
+     * @return 成绩信息
      */
     @ResponseBody
     @RequestMapping("/listScoreByMark2")
-    public List<Score> listScoreByMark2(String paperIdStr) throws Exception{
+    public List<Score> listScoreByMark2(String paperIdStr){
         List<Score> scoreList = Collections.emptyList();
         int paperId = Integer.parseInt(paperIdStr);
         try {

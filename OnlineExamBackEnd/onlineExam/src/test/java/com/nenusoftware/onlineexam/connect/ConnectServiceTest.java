@@ -11,9 +11,9 @@
 //import java.util.List;
 //
 ///**
-// * @Author: Liangll
+// * @Author:Liangll
 // * @Description: 测试 ConnectService的各类方法
-// * @Date: 11:44 2019/5/3
+// * @Date: 11:53 2020/6/20
 // */
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
@@ -24,7 +24,7 @@
 //
 //    @Test
 //    public void testListAllConnect() throws Exception{
-//        int paperId = 2;
+//        int paperId = 1;
 //        String choiceType = "选择题";
 //        String judgeType = "判断题";
 //        List<Connect> choiceList = null;

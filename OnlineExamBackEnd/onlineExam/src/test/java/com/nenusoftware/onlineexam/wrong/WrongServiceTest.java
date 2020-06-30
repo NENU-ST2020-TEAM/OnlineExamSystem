@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author : kongyy
- * @time : 2020/6/17 18:22
+ * @Author:Liangll
+ * @Description: 测试WrongService的各类方法
+ * @Date: 16:25 2020/6/22
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -36,28 +36,18 @@ public class WrongServiceTest {
     }
 
     @Test
-    public void testFunc() throws Exception{
+    public void testFunc(){
         Calendar calendar=Calendar.getInstance();
         System.out.println(calendar.get(Calendar.YEAR));
-        System.out.println(calendar.get(Calendar.MONTH)+1);
+        System.out.println(calendar.get(Calendar.MONTH) + 1);
         System.out.println(calendar.get(Calendar.DATE));
         System.out.println(calendar.get(Calendar.HOUR_OF_DAY));
         System.out.println(calendar.get(Calendar.MINUTE));
         System.out.println(calendar.get(Calendar.SECOND));
-//        LocalDateTime localDateTime=LocalDateTime.now();
-//        System.out.println(localDateTime.getYear());
-//
-////        System.out.println(localDateTime.getDayOfYear());
-//
-//        System.out.println(localDateTime.getDayOfMonth());
-//        System.out.println(localDateTime.getHour());
-//        System.out.println(localDateTime.getMinute());
-//        System.out.println(localDateTime.getSecond());
-        String str="1999年10月21日";
     }
 
     @Test
-    public void testSplitData() throws Exception{
+    public void testSplitData(){
 //        String str = "开始:1999年10月21日7时32分20秒";
 //        String year = str.substring(str.indexOf(":")+1, str.lastIndexOf("年"));
 //        System.out.println(year);
@@ -76,7 +66,7 @@ public class WrongServiceTest {
     }
 
     @Test
-    public void testList() throws Exception{
+    public void testList(){
         List<Wrong> wrongList = new LinkedList<>();
         Wrong wrong = new Wrong();
         wrong.setRight("a");

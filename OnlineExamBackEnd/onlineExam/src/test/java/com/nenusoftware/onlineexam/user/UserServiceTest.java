@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * @Author:Liangll
  * @Description: 测试UserService的各类方法
- * @Date: 11:44 2019/5/3
+ * @Date: 16:49 2020/6/23
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,10 +38,10 @@ public class UserServiceTest {
         User user = new User();
         user.setUsername("测试注册");
         user.setPassword("123");
-        user.setBirthday("19990316");
+        user.setBirthday("19991021");
         user.setSex("女");
         user.setPower(1);
-        user.setImage("aaaaaaa");
+        user.setImage("img.jpg");
         userService.addUser(user);
     }
 
@@ -56,10 +56,10 @@ public class UserServiceTest {
         user.setUserId(2);
         user.setUsername("hello");
         user.setPassword("123");
-        user.setBirthday("19990316");
+        user.setBirthday("19990901");
         user.setSex("女");
         user.setPower(1);
-        user.setImage("aaaaaaa");
+        user.setImage("img.jpg");
         System.out.println(userService.updateUser(user));
     }
 

@@ -21,7 +21,7 @@ public interface ConnectMapper {
      * @param paperId 试卷编号
      * @param exerciseType 试题类型
      * @return 返回 List形式的试卷详细信息
-     * @throws Exception
+     * @throws Exception 报错信息
      */
     public List<Connect> listAllConnect(@Param("paperId") int paperId, @Param("exerciseType") String exerciseType) throws Exception;
 
@@ -29,7 +29,7 @@ public interface ConnectMapper {
      * 增加试卷详细信息
      * @param connect 试卷详细信息实体
      * @return 增加成功返回true，增加失败返回false
-     * @throws Exception
+     * @throws Exception 报错信息
      */
     public boolean addConnect(@Param("connect") Connect connect) throws Exception;
 

@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * @Author:Liangll
  * @Description: 测试NoticeService的各类方法
- * @Date: 11:44 2019/5/7
+ * @Date: 09:34 2020/6/23
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,12 +23,10 @@ public class ScoreServiceTest {
     @Test
     public void testAddScore() throws Exception {
         Score score = new Score();
-
         score.setUserId(2);
         score.setPaperId(1);
         score.setMark(99);
-        score.setPaperName("测试增加试卷名称");
-
+        score.setPaperName("测试增加试卷名称addScore");
         System.out.println(scoreService.addScore(score));
     }
 
@@ -50,13 +48,13 @@ public class ScoreServiceTest {
     }
 
     @Test
-    public void testlistScoreByMark1() throws Exception{
+    public void testListScoreByMark1() throws Exception{
         int paperId = 1;
         System.out.println(scoreService.listScoreByMark1(paperId));
     }
 
     @Test
-    public void testlistScoreByMark2() throws Exception{
+    public void testListScoreByMark2() throws Exception{
         int paperId = 1;
         System.out.println(scoreService.listScoreByMark2(paperId));
     }

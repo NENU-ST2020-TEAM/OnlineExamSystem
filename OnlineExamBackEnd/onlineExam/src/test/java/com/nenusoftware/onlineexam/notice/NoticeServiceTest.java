@@ -1,9 +1,7 @@
 package com.nenusoftware.onlineexam.notice;
 
 import com.nenusoftware.onlineexam.entity.notice.Notice;
-import com.nenusoftware.onlineexam.entity.paper.Paper;
 import com.nenusoftware.onlineexam.service.notice.NoticeService;
-import com.nenusoftware.onlineexam.service.paper.PaperService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,7 @@ import java.util.Date;
 /**
  * @Author:Liangll
  * @Description: 测试NoticeService的各类方法
- * @Date: 11:44 2019/5/3
+ * @Date: 13:44 2020/6/20
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

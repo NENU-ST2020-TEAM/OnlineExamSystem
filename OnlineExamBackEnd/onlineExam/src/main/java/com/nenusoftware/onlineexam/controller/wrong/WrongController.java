@@ -15,8 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author : kongyy
- * @time : 2020/6/17 18:29
+ * @Author:Kongyy
+ * @Description: WrongController层（与前端页面进行交互）
+ * @Date: 10:38 2020/6/16
  */
 @CrossOrigin(allowCredentials = "true")
 @Controller
@@ -29,6 +30,11 @@ public class WrongController {
     @Resource
     UserService userService;
 
+    /**
+     * 根据Id列出错题本
+     * @param request Http请求
+     * @return 错题信息
+     */
     @ResponseBody
     @RequestMapping("/listWrongById")
     public List<Wrong> listWrongById(HttpServletRequest request){
@@ -44,6 +50,10 @@ public class WrongController {
         return wrongList;
     }
 
+    /**
+     * 删除错题
+     * @param wrongIdStr 错题编号
+     */
     @ResponseBody
     @RequestMapping("/deleteWrong")
     public void deleteWrong(String wrongIdStr){
