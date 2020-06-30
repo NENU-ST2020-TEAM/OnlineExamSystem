@@ -30,6 +30,8 @@ public class User {
 
     private String image;
 
+    private String powerS;
+
     public Integer getUserId() {
         return userId;
     }
@@ -86,6 +88,14 @@ public class User {
         this.image = image;
     }
 
+    public String getPowerS() {
+        return powerS;
+    }
+
+    public void setPowerS(String powerS) {
+        this.powerS = powerS;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -96,6 +106,7 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", power=" + power +
                 ", image='" + image + '\'' +
+                ", powerS='" + powerS + '\'' +
                 '}';
     }
 }

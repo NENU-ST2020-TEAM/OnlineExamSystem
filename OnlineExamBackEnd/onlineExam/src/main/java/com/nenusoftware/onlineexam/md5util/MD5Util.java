@@ -49,10 +49,9 @@ public class MD5Util {
         return s;
     }
 
-
     // 测试主函数
     public static void main(String args[]) {
-        String s = "123456";
+        String s = "123";
         String ss = string2MD5(s);
         System.out.println("原始：" + s);
         System.out.println("MD5后：" + string2MD5(s));

@@ -146,6 +146,19 @@ public class UserController {
             int result = JudgePower(request);
             if(result == 2){
                 userList = userService.listAllUser();
+                for(int i=0;i<userList.size();i++){
+                    User user1 = new User();
+                    user1 = userList.get(i);
+                    if(user1.getPower() == 0){
+                        user1.setPowerS("学生");
+                    }
+                    else if(user1.getPower() == 1){
+                        user1.setPowerS("教师");
+                    }
+                    else if(user1.getPower() == 2){
+                        user1.setPowerS("管理员");
+                    }
+                }
             }
             else{
                 user.setUsername("您未登录或没有权限");
