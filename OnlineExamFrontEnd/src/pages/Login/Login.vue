@@ -1,3 +1,11 @@
+<!--
+ * @Author: 屈英杰、吴婷婷
+ * @Date: 2020-06-01 13:02:54
+ * @LastEditTime: 2020-06-30 18:20:58
+ * @LastEditors: Please set LastEditors
+ * @Description: 登录页面
+ * @FilePath: \onlineexamLLL\src\pages\Login\Login.vue
+--> 
 <template>
   <section class="login-container">
     <div id="TITLE">
@@ -130,6 +138,11 @@
     },
     methods: {
       // 异步学生登录
+      /**
+       * 登录函数
+       * @date 2020-06-30
+       * @returns 根据返回的权限对应跳转页面
+       */
       async checkLogin(){
         // 去个人中心界面
         console.log(this.sno);
@@ -168,7 +181,7 @@
                   this.$router.replace('/admin');
                 else if(this.userInfor.power=="0")
                   this.$router.replace('/Profile');
-                else
+                else if(this.userInfor.power=="1")
                   this.$router.replace('/Teacher');
               }, reject => {
             // this.peoLoading = true;

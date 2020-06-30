@@ -1,3 +1,11 @@
+<!--
+ * @Author: 吴婷婷、屈英杰
+ * @Date: 2020-06-01 13:02:54
+ * @LastEditTime: 2020-06-30 20:45:17
+ * @LastEditors: Please set LastEditors
+ * @Description: 学生端页面
+ * @FilePath: \onlineexamLLL\src\pages\Profile\Profile.vue
+--> 
 <template>
   <div class="profile">
     <section class="profile-number">
@@ -77,14 +85,14 @@
                 title="开始考试" 
                 circle 
                 plain
-                @click="beginTest(scope.$index, scope.row); start()"></el-button>
+                @click="beginTest(scope.$index, scope.row)"></el-button>
           </template>
                         <!-- <el-button type="danger" icon="el-icon-delete" title="删除" @click="dele" plain>删除</el-button> -->
                     </el-table-column>
-          <div class="pagination">
-            <el-pagination background layout="prev, pager, next" :total="total2" @current-change="current_change2" class="paginate"></el-pagination>
-          </div>
       </el-table>
+      <div class="pagination">
+        <el-pagination background layout="prev, pager, next" :total="total2" @current-change="current_change2" class="paginate"></el-pagination>
+      </div>
     </el-card>
 
     <!-- 考试页面 -->
@@ -95,7 +103,7 @@
         <p>用时：{{str}}</p>
         <el-button type="success" 
                   icon="el-icon-check" 
-                  style="float: right; padding: 3px 0" 
+                  style="text-align: right"
                   size="small"
                   plain 
                   @click="submiteAnwser()">确认提交</el-button>
@@ -104,10 +112,10 @@
       <div v-for="(item, index) in questionDanxuan" :key="item.index" v-show="danxuanShow">
         <template v-if="index<questionDanxuan.length-1">
           <p style="margin-top: 10px; margin-down: 5px;">
-            <span>{{item.index}}. </span>
+            <!-- <span>{{item.index}}. </span> -->
             <span>{{item.content}}</span>
           </p>
-          <el-radio-group v-model="item.solution" @change="handleRadioChange(item.index,item.paperDetailId)">
+          <el-radio-group v-model="item.solution" >
             <el-radio label="A">A.{{item.typeA}}</el-radio>
             <el-radio label="B">B.{{item.typeB}}</el-radio>
             <el-radio label="C">C.{{item.typeC}}</el-radio>
@@ -119,10 +127,10 @@
       <div v-for="(item, index) in questionPanduan" :key="item.index" v-show="panduanShow">
         <template v-if="index<questionPanduan.length-1">
           <p style="margin-top: 10px; margin-down: 5px;">
-            <span>{{item.index}}. </span>
+            <!-- <span>{{item.index}}. </span> -->
             <span>{{item.content}}</span>
           </p>
-          <el-radio-group v-model="item.solution" @change="handleRadioChange(item.index,item.paperDetailId)">
+          <el-radio-group v-model="item.solution" >
             <el-radio label="A">A.{{item.typeA}}</el-radio>
             <el-radio label="B">B.{{item.typeB}}</el-radio>
           </el-radio-group>
@@ -132,7 +140,7 @@
       <div v-for="(item, index) in questionTiankong" v-bind:key="item.index" v-show="tiankongShow">
         <template v-if="index<questionTiankong.length-1">
           <p style="margin-top: 10px; margin-down: 5px;">
-            <span>{{item.index}}. </span>
+            <!-- <span>{{item.index}}. </span> -->
             <span>{{item.content}}</span>
           </p>
           <el-input type="text" placeholder="请输入答案" v-model="item.solution"></el-input>
@@ -142,7 +150,7 @@
         <div v-for="(item, index) in questionWenda" v-bind:key="item.index" v-show="wendaShow">
           <template v-if="index<questionWenda.length-1">
             <p style="margin-top: 10px; margin-down: 5px;">
-              <span>{{item.index}}. </span>
+              <!-- <span>{{item.index}}. </span> -->
               <span>{{item.content}}</span>
             </p>
             <el-input type="textarea" placeholder="请输入答案" v-model="item.solution"></el-input>
@@ -175,7 +183,7 @@
           <el-table-column align="center" prop="nowScore" label="得分"></el-table-column>
           <el-table-column align="center" prop="operation" label="操作">
             <template slot-scope="scope">
-              <el-button type="success" 
+              <el-button type="danger" 
                 icon="el-icon-delete" 
                 title="删除错题" 
                 circle 
@@ -266,7 +274,7 @@
         isTest: true,
         sureTest: false,
         tableData2: [],
-        radioAnswer: [],
+        // radioAnswer: [],
         question: [],
         currentPage2: 1,
         total2: 0,
@@ -320,6 +328,7 @@
       ...mapState(['userInfo']),
       ...mapGetters(['unreadMsgCount'])
     },
+    
     created(){
       //请求用户信息
       this.$ajax({
@@ -353,11 +362,10 @@
           this.tableData2 = resolve.data;
           //获取数组长度赋值给total
           this.total2 = resolve.data.length;
-          this.duration = resolve.data[0].duration;
           // this.peoLoading = false;
           console.log(this.total2);
           console.log(resolve.data);
-          console.log(this.duration);
+          
       }, reject => {
           // this.peoLoading = true;
           console.log(reject);
@@ -425,6 +433,13 @@
     },
     methods: {
       //删除错题
+      /**
+       * 删除错题集中的错题
+       * @date 2020-06-30
+       * @param {number} index
+       * @param {number} row
+       * @returns 返回删除后的剩余错题列表
+       */
       deleteWrongQuestion(index,row){
         this.$ajax({
                 method: "post",
@@ -471,9 +486,16 @@
                 console.log(reject);
             });
       },
+
       //开始考试
+      /**
+       * 在线考试列出试卷题目
+       * @date 2020-06-30
+       * @param {number} index
+       * @param {number} row
+       * @returns 返回对应的试题到页面
+       */
       beginTest(index, row) {
-        this.testing = true;
         this. sureTest = false;
         this.paperID = row.paperId;
         console.log(row.paperId);
@@ -499,110 +521,162 @@
           },
         }).then(resolve => {
           //题目渲染至页面之中
-          // this.question = resolve.data;
-          this.questionDanxuan = resolve.data;
-          if(this.questionDanxuan != null)
-            this.danxuanShow = true;
-          console.log(resolve);
-          // this.showPaper(pid);
-        }, reject => {
-          console.log("题目获取失败！");
-        });
-        //判断
-        this.$ajax({
-          method: "post",
-          // method: "get",
-          // url: "../../../static/testJSONdanxuan.json",
-          url: "http://120.26.186.88:8080/connect/listAllConnect",
-          dataType: "json",
-          data: {
-            paperIdStr: row.paperId,
-            exerciseTypeStr: 1,
-          },
-          crossDomain: true,
-          cache: false,
-          transformRequest(obj){
-            var str = [];
-            for(var p in obj){
-              str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-            return str.join("&");
-          },
-        }).then(resolve => {
-          //题目渲染至页面之中
-          // this.question = resolve.data;
-          this.questionPanduan = resolve.data;
-          if(this.questionPanduan != null)
-            this.panduanShow = true;
-          console.log(resolve);
-          // this.showPaper(pid);
-        }, reject => {
-          console.log("题目获取失败！");
-        });
-        //填空
-        this.$ajax({
-          method: "post",
-          // method: "get",
-          // url: "../../../static/testJSONdanxuan.json",
-          url: "http://120.26.186.88:8080/connect/listAllConnect",
-          dataType: "json",
-          data: {
-            paperIdStr: row.paperId,
-            exerciseTypeStr: 2,
-          },
-          crossDomain: true,
-          cache: false,
-          transformRequest(obj){
-            var str = [];
-            for(var p in obj){
-              str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-            return str.join("&");
-          },
-        }).then(resolve => {
-          //题目渲染至页面之中
-          // this.question = resolve.data;
-          this.questionTiankong = resolve.data;
-          if(this.questionTiankong != null)
-            this.tiankongShow = true;
-          console.log(resolve);
-          // this.showPaper(pid);
-        }, reject => {
-          console.log("题目获取失败！");
-        });
-        //问答
-        this.$ajax({
-          method: "post",
-          // method: "get",
-          // url: "../../../static/testJSONdanxuan.json",
-          url: "http://120.26.186.88:8080/connect/listAllConnect",
-          dataType: "json",
-          data: {
-            paperIdStr: row.paperId,
-            exerciseTypeStr: 3,            
-          },
-          crossDomain: true,
-          cache: false,
-          transformRequest(obj){
-            var str = [];
-            for(var p in obj){
-              str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-            return str.join("&");
-          },
-        }).then(resolve => {
-          //题目渲染至页面之中
-          // this.question = resolve.data;
-          this.questionWenda = resolve.data;
-          if(this.questionWenda != null)
-            this.wendaShow = true;
-          console.log(resolve);
+          // console.log("单选");
+          // console.log(resolve);
+          var dataLength = resolve.data.length;
+          //考试时间没有到
+          if(resolve.data[dataLength-1].log != null) {
+            console.log(resolve.data[dataLength-1].log);
+            this.$alert('考试时间未到或您已过了考试时间！', '注意', {
+              confirmButtonText: '确定',
+              callback: action => {
+                this. sureTest = true;
+              }
+            });
+          }
+          else {
+            this.testing = true;
+            this.duration = resolve.data[dataLength-1].leftover
+            console.log(this.duration);
+            this.start();
+            this.$ajax({
+              method: "post",
+              // method: "get",
+              // url: "../../../static/testJSONdanxuan.json",
+              url: "http://120.26.186.88:8080/connect/listAllConnect",
+              dataType: "json",
+              data: {
+                paperIdStr: row.paperId,
+                exerciseTypeStr: 0,
+              },
+              crossDomain: true,
+              cache: false,
+              transformRequest(obj){
+                var str = [];
+                for(var p in obj){
+                  str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+                return str.join("&");
+              },
+            }).then(resolve => {
+              //题目渲染至页面之中
+              // this.question = resolve.data;
+              this.questionDanxuan = resolve.data;
+              if(this.questionDanxuan != null)
+                this.danxuanShow = true;
+              console.log(resolve);
+              // this.showPaper(pid);
+            }, reject => {
+              console.log("题目获取失败！");
+            });
+            
+            //判断
+              this.$ajax({
+              method: "post",
+              // method: "get",
+              // url: "../../../static/testJSONdanxuan.json",
+              url: "http://120.26.186.88:8080/connect/listAllConnect",
+              dataType: "json",
+              data: {
+                paperIdStr: row.paperId,
+                exerciseTypeStr: 1,
+              },
+              crossDomain: true,
+              cache: false,
+              transformRequest(obj){
+                var str = [];
+                for(var p in obj){
+                  str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+                return str.join("&");
+              },
+            }).then(resolve => {
+              //题目渲染至页面之中
+              // this.question = resolve.data;
+              this.questionPanduan = resolve.data;
+              if(this.questionPanduan != null)
+                this.panduanShow = true;
+              console.log(resolve);
+              // this.showPaper(pid);
+            }, reject => {
+              console.log("题目获取失败！");
+            });
+            //填空
+            this.$ajax({
+              method: "post",
+              // method: "get",
+              // url: "../../../static/testJSONdanxuan.json",
+              url: "http://120.26.186.88:8080/connect/listAllConnect",
+              dataType: "json",
+              data: {
+                paperIdStr: row.paperId,
+                exerciseTypeStr: 2,
+              },
+              crossDomain: true,
+              cache: false,
+              transformRequest(obj){
+                var str = [];
+                for(var p in obj){
+                  str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+                return str.join("&");
+              },
+            }).then(resolve => {
+              //题目渲染至页面之中
+              // this.question = resolve.data;
+              this.questionTiankong = resolve.data;
+              if(this.questionTiankong != null)
+                this.tiankongShow = true;
+              console.log(resolve);
+              // this.showPaper(pid);
+            }, reject => {
+              console.log("题目获取失败！");
+            });
+            //问答
+            this.$ajax({
+              method: "post",
+              // method: "get",
+              // url: "../../../static/testJSONdanxuan.json",
+              url: "http://120.26.186.88:8080/connect/listAllConnect",
+              dataType: "json",
+              data: {
+                paperIdStr: row.paperId,
+                exerciseTypeStr: 3,            
+              },
+              crossDomain: true,
+              cache: false,
+              transformRequest(obj){
+                var str = [];
+                for(var p in obj){
+                  str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+                return str.join("&");
+              },
+            }).then(resolve => {
+              //题目渲染至页面之中
+              // this.question = resolve.data;
+              this.questionWenda = resolve.data;
+              if(this.questionWenda != null)
+                this.wendaShow = true;
+              console.log(resolve);
+              // this.showPaper(pid);
+            }, reject => {
+              console.log("题目获取失败！");
+            });
+
+          }
           // this.showPaper(pid);
         }, reject => {
           console.log("题目获取失败！");
         });
       },
 
+      /**
+       * 分页
+       * @date 2020-06-30
+       * @param {number} currentPage
+       * @returns no return
+       */
       //查看成绩
       current_change1(currentPage) {
         this.currentPage1 = currentPage;
@@ -620,12 +694,12 @@
         this.currentPage4 = currentPage;
       },
 
-      //选择
-      handleRadioChange(chose, id){
-        this.radioAnswer[id] = {index:id, value:chose};
-        console.log(this.radioAnswer);
-      },
       //交卷
+      /**
+       * 点击提交试卷调用的函数
+       * @date 2020-06-30
+       * @returns 返回该生该卷的最终成绩[改卷由后端完成]，并显示成绩页面供学生查询其考试成绩
+       */
       submiteAnwser() {
         clearInterval(this.time);
         this.$alert('请前往“我的成绩”中查询你的成绩', '提交成功！', {
@@ -695,6 +769,7 @@
                 }).then(resolve => {
                   console.log("成绩为:");
                   console.log(resolve);
+
                   //请求成绩数据
                   this.$ajax({
                     method: "post",
@@ -712,6 +787,32 @@
                     // this.peoLoading = true;
                     console.log(reject);
                 });
+
+                //请求错题
+                this.$ajax({
+                  method: "post",
+                  url: "http://120.26.186.88:8080/wrong/listWrongById",
+                  dataType: "json",
+                  crossDomain: true,
+                  cache: false,
+                  transformRequest(obj){
+                    var str = [];
+                    for(var p in obj){
+                      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                    }
+                    return str.join("&");
+                  },
+                }).then(resolve => {
+                    this.tableData3 = resolve.data;
+                    //获取数组长度赋值给total
+                    this.total3 = resolve.data.length;
+                    // this.peoLoading = false;
+                    console.log(resolve.data);
+                }, reject => {
+                    // this.peoLoading = true;
+                    console.log(reject);
+                });
+                
                 }, reject => {
                   //上传失败
                   console.log("上传失败");
@@ -724,9 +825,15 @@
             }
         });
       },
+
       //计时
+      /**
+       * 计时功能，根据后端提供的考试时长来计时
+       * @date 2020-06-30
+       * @returns 返回“答题卡”顶部的时间
+       */
       timer() {
-      //秒针走动
+        //秒针走动
         this.s=this.s+1;
         //秒进位分，秒归零
         if(this.s>=60){
@@ -741,45 +848,87 @@
         this.str=this.addZero(this.h)+":"+this.addZero(this.m)+":"+this.addZero(this.s);
         // console.log(this.str);
 
-        var dur = this.duration;
+        var dur = this.duration / 60;
         // var dur = 10;
         var hour = "0";
-        var min = "00";
+        var min = "0";
         // console.log(dur / 60);
 
         if(dur % 60 == 0) {
-          hour = (dur/60).toString();
+          hour = this.addZero((dur/60));
         }
         else {
-          //十分
           if((dur / 60) >= 1 && (dur / 60) < 2) {
-            hour = "1";
-            min = (dur-60).toString();
+            hour = this.addZero(1);
+            var mid = dur - 60;
+            console.log(mid);
+            min = this.addZero(mid);
           }
           else if(dur / 60 >= 2) {
-            hour = "2";
-            min = (dur-120).toString();
+            hour = this.addZero(2);
+            var mid = dur - 120;
+            min = this.addZero(mid);
           }
-          else 
-            min = dur.toString();
+          else {
+            hour = this.addZero(0);
+            min = this.addZero(dur);
+          }
         }
-        // console.log("0"+hour+":"+min+":"+"00");
+        console.log(hour+":"+min+":"+"00");
       
-        if(this.str == "0"+hour+":"+min+":"+"00"){
-          this.$alert('请停止答题，前往“我的成绩”中查询你的成绩', '考试时间到！', {
+        if(this.str == hour+":"+min+":"+"00"){
+          this.$confirm('请停止答题，前往“我的成绩”中查询你的成绩', '考试时间到！', {
             confirmButtonText: '确定',
-            callback: action => {
+            // cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            // this.$message({
+            //   type: 'success',
+            //   message: '删除成功!'
+            // });
+            //强制交卷
+              this.submiteAnwser();
               this.testing = false;
               this.myScore = true;
               this.s = 0;
               this.m = 0;
               this.h = 0;
-            }
+          }).catch(() => {
+            // this.$message({
+            //   type: 'info',
+            //   message: '已取消删除'
+            // });       
+            //强制交卷
+              this.submiteAnwser();
+              this.testing = false;
+              this.myScore = true;
+              this.s = 0;
+              this.m = 0;
+              this.h = 0;   
           });
+          // this.$alert('请停止答题，前往“我的成绩”中查询你的成绩', '考试时间到！', {
+          //   confirmButtonText: '确定',
+          //   callback: action => {
+          //     //强制交卷
+          //     this.submiteAnwser();
+          //     this.testing = false;
+          //     this.myScore = true;
+          //     this.s = 0;
+          //     this.m = 0;
+          //     this.h = 0;
+          //   }
+          // });
           clearInterval(this.time);
         }
       },
+      
       //补零
+      /**
+       * 用于显示的时间动画的补零效果
+       * @date 2020-06-30
+       * @param {number} t
+       * @returns 返回补零之后的数值
+       */
       addZero(t){
         if(t<10){
           return ("0"+t);
@@ -788,7 +937,13 @@
           return t;
         }
       },
+
       //开始计时
+      /**
+       * 动画，使得时间能够在视觉上“动”
+       * @date 2020-06-30
+       * @returns no return
+       */
       start(){
         //1秒=1000毫秒
         this.time=setInterval(this.timer,1000);

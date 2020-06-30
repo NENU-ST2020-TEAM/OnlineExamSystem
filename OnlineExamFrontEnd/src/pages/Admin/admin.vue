@@ -1,3 +1,11 @@
+<!--
+ * @Author: 吴婷婷、屈英杰
+ * @Date: 2020-06-01 13:02:54
+ * @LastEditTime: 2020-06-30 19:21:18
+ * @LastEditors: Please set LastEditors
+ * @Description: 管理员端页面
+ * @FilePath: \onlineexamLLL\src\pages\Admin\admin.vue
+--> 
 <template>
     <div class="profile">
         <!-- header -->
@@ -13,14 +21,14 @@
                 <p class="user-info-top" >{{userInfor.username}}</p>
                 </div>
                 <div class="profile_image">
-                <img :src="require('../../assets/Teacher.jpg')" alt="学生头像">
+                <img :src="require('../../assets/admin.jpg')" alt="学生头像">
                 <!--<img src="../../common/imgs/profile.jpg" alt="头像" v-else>-->
                 </div>
             </a>
         </section>
 
         <el-dialog title="个人信息" v-model="userInfor" :visible.sync="personInfor" :close-on-click-modal="false">
-            <img id="userHead" src="../../assets/Teacher.jpg" width="100px" height="100px" style="border-radius: 50px" />
+            <img id="userHead" src="../../assets/admin.jpg" width="100px" height="100px" style="border-radius: 50px" />
             <el-form  ref="userInfor" label-width="150px">
                 <el-form-item label="用户ID：">
                 <el-col :span="8">
@@ -276,7 +284,7 @@
                     </el-col>
                 </el-form-item>
                 <el-form-item id="slotBtn">
-                    <el-button type="success" icon="el-icon-check" @click="addNoticeShow=false; submiaddNotice()">确认修改</el-button>
+                    <el-button type="success" icon="el-icon-check" @click="addNoticeShow=false; submiaddNotice()">确认发布</el-button>
                     <el-button type="primary" icon="el-icon-refresh-right" @click="reset('addNoticeInfor')">重置</el-button>
                     <el-button type="danger" icon="el-icon-close" @click="addNoticeShow=false; reset('addNoticeInfor')">取消</el-button>
                 </el-form-item>
@@ -360,11 +368,22 @@ export default {
       ...mapGetters(['unreadMsgCount'])
     },
     methods: {
-        //重置
+        /**
+         * 重置
+         * @date 2020-06-30
+         * @param {object} refname
+         * @returns no reuturns
+         */
         reset(refname) {
             this.$refs[refname].resetFields()
         },
-        //分页
+
+        /**
+         * 页面分页
+         * @date 2020-06-30
+         * @param {number} currentPage
+         * @returns {any} no return
+         */
         current_change1(currentPage) {
             this.currentPage1 = currentPage;
         },
@@ -383,7 +402,13 @@ export default {
         current_change6(currentPage) {
             this.currentPage6 = currentPage;
         },
+
         //搜索试卷
+        /**
+         * 对列出的所有试卷进行搜索，利用axios
+         * @date 2020-06-30
+         * @returns 后端返回的搜索结果[list]
+         */
         searchPapers() {
             this.$ajax({
                 method: "post",
@@ -411,7 +436,13 @@ export default {
                     console.log(reject);
             });
         },
+
         //提交新增公告
+        /**
+         * 管理员添加公告
+         * @date 2020-06-30
+         * @returns 返回新增后的所以公告列表[list]
+         */
         submiaddNotice() {
             this.$ajax({
                 method: "post",
@@ -450,7 +481,15 @@ export default {
                 console.log("failed request!");
             });
         },
+
         //查看试卷对应的所有考生成绩
+        /**
+         * 查看试卷对应的所有考生成绩
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回对应的所有成绩列表
+         */
         showAllScore(index, row) {
             this.allStudentScore = true;
             this.allScore = false;
@@ -481,7 +520,15 @@ export default {
                     console.log(reject);
             });
         },
+
         //查看不及格成绩信息
+        /**
+         * 查看不及格成绩信息
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回对应的成绩列表
+         */
         searchfailScores(index,row){
             this.allStudentScore = true;
             this.allScore = false;
@@ -514,6 +561,13 @@ export default {
         },
 
         //查看及格成绩信息
+        /**
+         * 查看及格成绩信息
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回对应的成绩列表
+         */
         searchScores(index,row){
             this.allStudentScore = true;
             this.allScore = false;
@@ -546,6 +600,13 @@ export default {
         },
 
         //删除用户
+        /**
+         * 删除对应用户
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 删除后所有用户列表
+         */
         deleteUser(index, row) {
             this.$ajax({
                 method: "post",
@@ -585,7 +646,15 @@ export default {
                 console.log(reject);
             });
         },
-        //修改用户限权
+
+        //修改用户权限
+        /**
+         * 修改对应用户权限
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 修改权限后的用户列表
+         */
         updateUserPower(index, row) {
             this.$ajax({
                 method: "post",
@@ -626,6 +695,7 @@ export default {
             });
         }
     },
+
     created() {
         //获取用户信息
         this.$ajax({

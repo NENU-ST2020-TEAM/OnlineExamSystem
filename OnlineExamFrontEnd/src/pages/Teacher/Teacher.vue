@@ -1,3 +1,11 @@
+<!--
+ * @Author: 吴婷婷、屈英杰
+ * @Date: 2020-06-01 13:02:54
+ * @LastEditTime: 2020-06-30 18:09:02
+ * @LastEditors: Please set LastEditors
+ * @Description: 教师端页面
+ * @FilePath: \onlineexamLLL\src\pages\Teacher\Teacher.vue
+--> 
 <template>
     <div class="profile">
         <!-- header -->
@@ -420,7 +428,7 @@
             <!-- 单选 -->
             <div v-for="item in questionDanxuan" :key="item.id">
                  <p style="margin-top: 10px; margin-down: 5px;">
-                     <span>{{item.index}}. </span>
+                     <!-- <span>{{item.index}}. </span> -->
                      <span>{{item.content}}</span>
                 </p>
                 <el-radio-group 
@@ -435,7 +443,7 @@
             <!-- 判断 -->
             <div v-for="item in questionPanduan" :key="item.id">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                     <span>{{item.index}}. </span>
+                     <!-- <span>{{item.index}}. </span> -->
                      <span>{{item.content}}</span>
                 </p>
                 <el-radio-group 
@@ -448,7 +456,7 @@
             <!-- 填空 -->
             <div v-for="item in questionTiankong" v-bind:key="item.id">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                     <span>{{item.index}}. </span>
+                     <!-- <span>{{item.index}}. </span> -->
                      <span>{{item.content}}</span>
                 </p>
                 <el-input type="text" placeholder="请输入答案" v-model="answerTiankong"></el-input>
@@ -456,7 +464,7 @@
             <!-- 问答 -->
             <div v-for="item in questionWenda" v-bind:key="item.id">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                     <span>{{item.index}}. </span>
+                     <!-- <span>{{item.index}}. </span> -->
                      <span>{{item.content}}</span>
                 </p>
                 <el-input type="textarea" placeholder="请输入答案" v-model="answerWenda"></el-input>
@@ -791,9 +799,22 @@ export default {
     },
     methods: {
         //重置
+        /**
+         * 表单重置
+         * @date 2020-06-30
+         * @param {object} refname
+         * @returns no return
+         */
         reset(refname) {
             this.$refs[refname].resetFields()
         },
+
+        /**
+         * 页面分页
+         * @date 2020-06-30
+         * @param {number} currentPage
+         * @returns {any} no return
+         */
         //分页
         current_change1(currentPage) {
             this.currentPage1 = currentPage;
@@ -816,6 +837,12 @@ export default {
         current_change7(currentPage) {
             this.currentPage7 = currentPage;
         },
+
+        /**
+         * 对列出的所有试卷进行搜索，利用axios
+         * @date 2020-06-30
+         * @returns 后端返回的搜索结果[list]
+         */
         //搜索试卷
         searchPapers() {
             // console.log(this.searchPaper);
@@ -845,7 +872,15 @@ export default {
                     console.log(reject);
             });
         },
+
         //删除试卷
+        /**
+         * 删除对应的试卷
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回剩余试卷列表
+         */
         deletePaperName(index, row) {
             this.$ajax({
                 method: "post",
@@ -885,7 +920,15 @@ export default {
                 console.log(reject);
             });
         },
+
         //修改试卷名
+        /**
+         * 修改对应试卷名称
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回修改后的试卷[以所有试卷的形式]
+         */
         changePaperName(index, row) {
             this.$prompt('请输入新的试卷名称', '修改试卷名称', {
                 confirmButtonText: '确定',
@@ -936,7 +979,13 @@ export default {
                 });       
             });
         },
+
         //提交试卷名 手动录入
+        /**
+         * 手动录题创建试卷
+         * @date 2020-06-30
+         * @returns 返回试卷的ID[paperID]
+         */
         subPaperName1() {
             console.log(this.handPaperName);
             console.log(this.handPaperName.paperNameHand);
@@ -967,6 +1016,12 @@ export default {
         },
 
         //将当前已有题目显示在试卷之中
+        /**
+         * 显示当前试卷中所包含的题目[录题阶段]，以实现录一个题显示一个题的效果
+         * @date 2020-06-30
+         * @param {number} PID
+         * @returns 返回题目
+         */
         showPaper(PID) {
             const pid = PID;
             //单选
@@ -1088,6 +1143,11 @@ export default {
         },
 
         //录入题目上传 
+        /**
+         * 上传手动输入的题目到数据库[利用axios，通过后端]
+         * @date 2020-06-30
+         * @returns 返回试题ID
+         */
         submihandQuestion() {
             console.log(this.handQuestionInput);
             if((this.handQuestionInput.questionType)=="3") {
@@ -1300,6 +1360,8 @@ export default {
                         typeCStr: this.handQuestionInput.choiceC,
                         typeDStr: this.handQuestionInput.choiceD,
                         answerStr: this.handQuestionInput.questionAnswerKeguan,
+                        answer2: "这个字段为空",
+                        answer3: "这个字段为空",
                         scoreStr: this.handQuestionInput.questionCount,
                     },
                     dataType: "json",
@@ -1350,6 +1412,11 @@ export default {
         },
 
         //发布考试时间
+        /**
+         * 创建完试卷之后，发布考试的时间[即试卷显示给学生的时间段]以及做题时长
+         * @date 2020-06-30
+         * @returns no return
+         */
         sureSubmit() {
             console.log(this.outputTime);
             let testBegin = "开始:"+this.outputTime.beginDate+this.outputTime.beginTime;
@@ -1422,6 +1489,11 @@ export default {
         },
 
         //提交试卷名 题库选题
+        /**
+         * 题库选题题创建试卷
+         * @date 2020-06-30
+         * @returns 返回试卷的ID[paperID]
+         */
         subPaperName2() {
             this.$ajax({
                 method: "post",
@@ -1447,6 +1519,11 @@ export default {
         },
 
         //获得所有题目 列在题库表中
+        /**
+         * 获取数据库中所有的题目供用户参考，选择其心仪的题目并添加
+         * @date 2020-06-30
+         * @returns no return
+         */
         getAllQuestion() {
             this.$ajax({
                 method: "post",
@@ -1469,6 +1546,13 @@ export default {
         },
 
         //点击题目添加
+        /**
+         * 创建一个绑定——试卷与题目的绑定
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns no return
+         */
         sureAddQuestion(index, row) {
             console.log("当前试卷编号为：");
             console.log(this.paperIDback);
@@ -1500,9 +1584,15 @@ export default {
                 console.log("题目创建失败！");
             });
         },
-
-        
+       
         //查看试卷对应的所有考生成绩
+        /**
+         * 查看试卷对应的所有考生成绩
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回对应的所有成绩列表
+         */
         showAllScore(index, row) {
             this.allStudentScore = true;
             this.allScore = false;
@@ -1533,7 +1623,15 @@ export default {
                     console.log(reject);
             });
         },
+
         //查看不及格成绩信息
+        /**
+         * 查看不及格成绩信息
+         * @date 2020-06-30
+         * @param {number} index
+         * @param numbery} row
+         * @returns 返回对应的成绩列表
+         */
         searchfailScores(index,row){
             this.allStudentScore = true;
             this.allScore = false;
@@ -1566,6 +1664,13 @@ export default {
         },
 
         //查看及格成绩信息
+        /**
+         * 查看及格成绩信息
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回对应的成绩列表
+         */
         searchScores(index,row){
             this.allStudentScore = true;
             this.allScore = false;
@@ -1598,6 +1703,11 @@ export default {
         },
 
         //搜索题目
+        /**
+         * 依输入的字段对题目进行模糊查询
+         * @date 2020-06-30
+         * @returns 返回查询到的所有题目列表
+         */
         searchQuestionBtn() {
             console.log(this.searchQuestion);
             this.$ajax({
@@ -1629,6 +1739,13 @@ export default {
         },
 
         //删除题目
+        /**
+         * 删除对应的题目
+         * @date 2020-06-30
+         * @param {number} index
+         * @param {number} row
+         * @returns 返回删除后的所有剩余题目
+         */
         deleteQuestion(index, row) {
             // console.log(row.exerciseId);
             this.$ajax({
@@ -1671,6 +1788,11 @@ export default {
         },
 
         //新增题目
+        /**
+         * 新增题目
+         * @date 2020-06-30
+         * @returns 返回新增后的所有题目
+         */
         addQuestion() {
             console.log(this.handQuestionInput);
             if((this.handQuestionInput.questionType)=="3") {
@@ -1684,7 +1806,7 @@ export default {
                         method: "post",
                         url: "http://120.26.186.88:8080/paperDetail/addPaperDetail",
                         data: {
-                            paperIdStr: this.paperIDback,
+                            // paperIdStr: this.paperIDback,
                             exerciseTypeStr: this.handQuestionInput.questionType,
                             contentStr: this.handQuestionInput.questionContext,
                             typeAStr: "",
@@ -1718,7 +1840,7 @@ export default {
                         method: "post",
                         url: "http://120.26.186.88:8080/paperDetail/addPaperDetail",
                         data: {
-                            paperIdStr: this.paperIDback,
+                            // paperIdStr: this.paperIDback,
                             exerciseTypeStr: this.handQuestionInput.questionType,
                             contentStr: this.handQuestionInput.questionContext,
                             typeAStr: "",
@@ -1752,7 +1874,7 @@ export default {
                         method: "post",
                         url: "http://120.26.186.88:8080/paperDetail/addPaperDetail",
                         data: {
-                            paperIdStr: this.paperIDback,
+                            // paperIdStr: this.paperIDback,
                             exerciseTypeStr: this.handQuestionInput.questionType,
                             contentStr: this.handQuestionInput.questionContext,
                             typeAStr: "",
@@ -1788,7 +1910,7 @@ export default {
                     method: "post",
                     url: "http://120.26.186.88:8080/paperDetail/addPaperDetail",
                     data: {
-                        paperIdStr: this.paperIDback,
+                        // paperIdStr: this.paperIDback,
                         exerciseTypeStr: this.handQuestionInput.questionType,
                         contentStr: this.handQuestionInput.questionContext,
                         typeAStr: this.handQuestionInput.choiceA,
@@ -1796,6 +1918,8 @@ export default {
                         typeCStr: this.handQuestionInput.choiceC,
                         typeDStr: this.handQuestionInput.choiceD,
                         answerStr: this.handQuestionInput.questionAnswerKeguan,
+                        answer2: "这个字段为空",
+                        answer3: "这个字段为空",
                         scoreStr: this.handQuestionInput.questionCount,
                     },
                     dataType: "json",
