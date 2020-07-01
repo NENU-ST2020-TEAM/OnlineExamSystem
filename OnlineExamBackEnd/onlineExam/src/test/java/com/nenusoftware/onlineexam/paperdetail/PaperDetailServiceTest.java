@@ -36,7 +36,7 @@ public class PaperDetailServiceTest {
 
     @Test
     public void testListPaperDetailByPaperId() throws Exception{
-        String paperName = "新增一张试卷2";
+        String paperName = "2018年春季学期14级软件质量保证与测试期末考试题";
         Paper paper = new Paper();
         paper.setPaperName(paperName);
         paperService.addPaper(paper);
@@ -141,6 +141,6 @@ public class PaperDetailServiceTest {
 
     @Test
     public void testQueryQuestion() throws Exception{
-        System.out.println(paperDetailService.queryQuestion(52));
+        System.out.println(paperDetailService.queryQuestion(2));
     }
 }

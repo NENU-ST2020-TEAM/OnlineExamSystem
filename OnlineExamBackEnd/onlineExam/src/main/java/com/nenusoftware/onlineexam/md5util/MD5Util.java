@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 
 /**
  * @Author:kongyy
- * @Description: 成绩的实体
+ * @Description:MD5加密工具类
  * @Date: 20:23 2020/6/20
  */
 public class MD5Util {
@@ -25,10 +25,10 @@ public class MD5Util {
             byteArray[i] = (byte) charArray[i];
         }
         byte[] md5Bytes = md5.digest(byteArray);
-        StringBuffer hexValue = new StringBuffer();
-        for (int i = 0; i < md5Bytes.length; i++) {
-            int val = ((int) md5Bytes[i]) & 0xff;
-            if (val < 16){
+        StringBuilder hexValue = new StringBuilder();
+        for (byte md5Byte : md5Bytes) {
+            int val = ((int) md5Byte) & 0xff;
+            if (val < 16) {
                 hexValue.append("0");
             }
             hexValue.append(Integer.toHexString(val));
@@ -45,12 +45,14 @@ public class MD5Util {
         for (int i = 0; i < a.length; i++) {
             a[i] = (char) (a[i] ^ 't');
         }
-        String s = new String(a);
-        return s;
+        return new String(a);
     }
 
-    // 测试主函数
-    public static void main(String args[]) {
+    /**
+     * 加载工具类
+     * @param args 参数
+     */
+    public static void main(String[] args) {
         String s = "123";
         String ss = string2MD5(s);
         System.out.println("原始：" + s);
