@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-06-30 20:45:17
+ * @LastEditTime: 2020-07-01 11:09:16
  * @LastEditors: Please set LastEditors
  * @Description: 学生端页面
  * @FilePath: \onlineexamLLL\src\pages\Profile\Profile.vue
@@ -848,35 +848,76 @@
         this.str=this.addZero(this.h)+":"+this.addZero(this.m)+":"+this.addZero(this.s);
         // console.log(this.str);
 
-        var dur = this.duration / 60;
+        
         // var dur = 10;
         var hour = "0";
         var min = "0";
-        // console.log(dur / 60);
-
-        if(dur % 60 == 0) {
-          hour = this.addZero((dur/60));
-        }
-        else {
-          if((dur / 60) >= 1 && (dur / 60) < 2) {
-            hour = this.addZero(1);
-            var mid = dur - 60;
-            console.log(mid);
-            min = this.addZero(mid);
-          }
-          else if(dur / 60 >= 2) {
-            hour = this.addZero(2);
-            var mid = dur - 120;
-            min = this.addZero(mid);
+        var sec = "0";
+        //是整数
+        if(this.duration % 60 == 0) {
+          var dur = this.duration / 60;
+          if(dur % 60 == 0) {
+            hour = this.addZero((dur/60));
+            min = this.addZero(0);
+            sec = this.addZero(0);
           }
           else {
-            hour = this.addZero(0);
-            min = this.addZero(dur);
+            if((dur / 60) >= 1 && (dur / 60) < 2) {
+              hour = this.addZero(parseInt(dur / 60));
+              var mid = dur - parseInt(dur / 60)*60;
+              min = this.addZero(mid);
+              sec = this.addZero(0);
+            }
+            else if(dur / 60 >= 2) {
+              hour = this.addZero(2);
+              var mid = dur - 120;
+              min = this.addZero(mid);
+              sec = this.addZero(0);
+            }
+            else {
+              hour = this.addZero(0);
+              min = this.addZero(dur);
+              sec = this.addZero(0);
+            }
           }
         }
-        console.log(hour+":"+min+":"+"00");
+        //不是整数
+        else {
+          //保留1位小数
+          var dur = this.duration / 60;
+          var durNoInt, durInt,  durFlo;
+          durNoInt = parseFloat(dur).toFixed(1);
+          //整数部分
+          durInt = parseInt(durNoInt);
+          //小数部分
+          durFlo = parseFloat(durNoInt - durInt).toFixed(1);
+          console.log(durNoInt);
+          console.log(durInt+"   :   "+durFlo);
+          if((durInt / 60) >= 1 && (durInt / 60) < 2) {
+              hour = this.addZero(1);
+              var mid = durInt - 60;
+              min = this.addZero(mid);
+              var secMid = durFlo * 60;
+              sec = this.addZero(secMid);
+            }
+            else if(durInt / 60 >= 2) {
+              hour = this.addZero(parseInt(durInt / 60));
+              var mid = durInt - parseInt(durInt / 60)*60;
+              min = this.addZero(mid);
+              var secMid = durFlo * 60;
+              sec = this.addZero(secMid);
+            }
+            else {
+              hour = this.addZero(0);
+              min = this.addZero(durInt);
+              var secMid = durFlo * 60;
+              sec = this.addZero(secMid);
+            }
+        }
+        
+        console.log(hour+":"+min+":"+sec);
       
-        if(this.str == hour+":"+min+":"+"00"){
+        if(this.str == hour+":"+min+":"+sec){
           this.$confirm('请停止答题，前往“我的成绩”中查询你的成绩', '考试时间到！', {
             confirmButtonText: '确定',
             // cancelButtonText: '取消',
