@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @Author:Liangll
- * @Description: PaperService的底层实现方法
+ * @Description: ScoreService的底层实现方法
  * @Date: 10:53 2020/6/16
  */
 @Service

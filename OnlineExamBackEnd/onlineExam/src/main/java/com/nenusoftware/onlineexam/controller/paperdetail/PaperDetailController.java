@@ -191,12 +191,11 @@ public class PaperDetailController {
     /**
      * 前端传回做题信息，进行判分，并将错误的题目存入错题集中
      * @param jsonString 答题数据
-     * @param request Http请求
      * @return 结果
      */
     @ResponseBody
     @RequestMapping("/judgeQuestion")
-    public int judgeQuestion(String jsonString, HttpServletRequest request){
+    public int judgeQuestion(String jsonString,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = String.valueOf(session.getAttribute("usernameSession"));
         int result = 0;

@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 21:40
+ * @Author:kongyy
+ * @Description: SuperUserService的底层实现方法
+ * @Date: 21:40 2020/6/16
  */
 @Service
 public class SuperUserServiceImpl implements SuperUserService {

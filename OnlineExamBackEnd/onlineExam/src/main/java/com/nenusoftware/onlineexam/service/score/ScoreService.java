@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @Author:Liangll
  * @Description: ScoreService的接口层
- * @Date: 10:52 2019/6/16
+ * @Date: 10:52 2020/6/16
  */
 public interface ScoreService {
 

@@ -5,7 +5,7 @@ import com.nenusoftware.onlineexam.entity.connect.Connect;
 import java.util.List;
 
 /**
- * @Author: Liangll
+ * @Author:Liangll
  * @Description: ConnectService的接口层
  * @Date: 23:16 2020/6/17
  */

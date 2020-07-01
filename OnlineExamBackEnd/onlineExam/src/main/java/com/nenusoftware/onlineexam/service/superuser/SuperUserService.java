@@ -1,8 +1,9 @@
 package com.nenusoftware.onlineexam.service.superuser;
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 21:39
+ * @Author:kongyy
+ * @Description: SuperUserService的接口层
+ * @Date: 21:39 2020/6/16
  */
 public interface SuperUserService {
 

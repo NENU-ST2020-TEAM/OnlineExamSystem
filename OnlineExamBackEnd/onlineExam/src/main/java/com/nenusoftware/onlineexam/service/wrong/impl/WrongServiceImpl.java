@@ -10,8 +10,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 23:49
+ * @Author:kongyy
+ * @Description: WrongService的底层实现方法
+ * @Date: 23:49 2020/6/16
  */
 @Service
 public class WrongServiceImpl implements WrongService {

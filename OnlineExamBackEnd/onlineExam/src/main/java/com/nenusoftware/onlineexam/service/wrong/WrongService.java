@@ -5,8 +5,9 @@ import com.nenusoftware.onlineexam.entity.wrong.Wrong;
 import java.util.List;
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 23:49
+ * @Author:kongyy
+ * @Description: WrongService的接口层
+ * @Date: 23:49 2020/6/16
  */
 public interface WrongService {
 
