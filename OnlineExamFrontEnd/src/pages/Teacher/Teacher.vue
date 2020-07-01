@@ -267,6 +267,9 @@
 
             <!-- 公告管理 -->
             <el-card v-show="noticeShow">
+                <div slot="header" class="clearfix" style="text-align: right">
+                    <el-button type="success" plain @click="addNoticeShow=true">新增公告</el-button>
+                </div>
                 <el-table :data="tableData3.slice((currentPage3-1)*pagesize,currentPage3*pagesize)" style="width: 100%" id="peoTable">
                     <el-table-column align="center" type="index" label="序号" width="50"></el-table-column>
                     <!-- <el-table-column width="80px" align="center" prop="noticeId" label="公告编号"></el-table-column> -->
@@ -670,6 +673,31 @@
                 <el-button type="primary" @click="outputPaper=true; selectShow=false; handInputShow=false">发布试卷</el-button>
             </span>
         </el-dialog>
+        <!-- 新增公告 -->
+        <el-dialog id="addNotice" :visible="addNoticeShow" @close="addNoticeShow=false;reset('addNoticeInfor')">
+            <el-form :model="addNoticeInfor" ref="addNoticeInfor" label-width="150px">
+                <el-form-item label="标题：" prop="title">
+                    <el-col :span="8">
+                        <el-input v-model="addNoticeInfor.title" placeholder="请输入标题" autocomplete="off"></el-input>
+                    </el-col>
+                </el-form-item>
+                <el-form-item label="内容：" prop="content">
+                    <el-col :span="20">
+                        <el-input 
+                            v-model="addNoticeInfor.content" 
+                            type="textarea" 
+                            placeholder="请编辑公告内容"
+                            size="medium">
+                        </el-input>
+                    </el-col>
+                </el-form-item>
+                <el-form-item id="slotBtn">
+                    <el-button type="success" icon="el-icon-check" @click="addNoticeShow=false; submiaddNotice()">确认发布</el-button>
+                    <el-button type="primary" icon="el-icon-refresh-right" @click="reset('addNoticeInfor')">重置</el-button>
+                    <el-button type="danger" icon="el-icon-close" @click="addNoticeShow=false; reset('addNoticeInfor')">取消</el-button>
+                </el-form-item>
+            </el-form>
+        </el-dialog>
     </div>
 </template>
 
@@ -767,6 +795,12 @@ export default {
             //公告管理
             tableData3: [],
             noticeShow: false,
+            //新增
+            addNoticeShow: false,
+            addNoticeInfor: [{
+                title: '',
+                content: '',
+            }],
             //分页
             currentPage3: 1,
             total3: 0,
@@ -1585,6 +1619,50 @@ export default {
             });
         },
        
+        //提交新增公告
+        /**
+         * 教师添加公告
+         * @date 2020-06-30
+         * @returns 返回新增后的所以公告列表[list]
+         */
+        submiaddNotice() {
+            this.$ajax({
+                method: "post",
+                url: "http://120.26.186.88:8080/notice/addNotice",
+                dataType: "json",
+                data: {
+                    title: this.addNoticeInfor.title,
+                    content: this.addNoticeInfor.content,
+                },
+                crossDomain: true,
+                cache: false,
+                transformRequest(obj){
+                    var str = [];
+                    for(var p in obj){
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                    }
+                    return str.join("&");
+                },
+            }).then(resolve => {
+                this.$ajax({
+                    method: "post",
+                    url: "http://120.26.186.88:8080/notice/listAllNotice",
+                    dataType: "json",
+                    crossDomain: true,
+                    cache: false,
+                }).then(resolve => {
+                    this.tableData3 = resolve.data;
+                    //获取数组长度赋值给total
+                    this.total3 = resolve.data.length;
+                    console.log(this.tota3);
+                    // console.log(resolve.data);
+                }, reject => {
+                    console.log(reject);
+                });
+            }, reject => {
+                console.log("failed request!");
+            });
+        },
         //查看试卷对应的所有考生成绩
         /**
          * 查看试卷对应的所有考生成绩
