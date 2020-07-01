@@ -2,7 +2,7 @@ package com.nenusoftware.onlineexam.entity.connect;
 
 /**
  * @Author:Liangll
- * @Description:
+ * @Description: 列出题目实体类
  * @Date: 22:59 2020/6/17
  */
 public class Connect {

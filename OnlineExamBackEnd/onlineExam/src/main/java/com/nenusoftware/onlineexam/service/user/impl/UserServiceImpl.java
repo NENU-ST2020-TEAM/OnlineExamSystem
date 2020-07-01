@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @Author:Liangll
  * @Description: UserService的底层实现方法
- * @Date: 11:53 2019/5/5
+ * @Date: 11:53 2020/6/13
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,19 +26,18 @@ public class UserServiceImpl implements UserService {
      * @param username 用户名
      * @param password 用户密码
      * @return 回根据用户名与用户密码查询后的信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public List<User> checkPassword(String username, String password) throws Exception{
         boolean flag = true;
-        List<User> list = userMapper.checkPassword(username,password);
-        return list;
+        return userMapper.checkPassword(username,password);
     }
 
     /**
      * 列出所有用户信息
      * @return 返回List形式的用户信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public ArrayList<User> listAllUser() throws Exception{
@@ -51,11 +50,10 @@ public class UserServiceImpl implements UserService {
      * 增加用户（注册方法）
      * @param user 用户实体
      * @return 注册成功返回true，注册失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public boolean addUser(User user) throws Exception {
-
         return userMapper.addUser(user);
 
     }
@@ -75,7 +73,7 @@ public class UserServiceImpl implements UserService {
      * 修改用户
      * @param user 用户实体
      * @return 修改成功返回true，修改失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public boolean updateUser(User user) throws Exception{
@@ -97,7 +95,7 @@ public class UserServiceImpl implements UserService {
      * 根据用户名查询数据信息
      * @param username 用户名
      * @return 返回根据用户名查询后的信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public User queryByName(String username) throws Exception {
@@ -108,19 +106,18 @@ public class UserServiceImpl implements UserService {
      * 根据用户名得到用户唯一编号
      * @param username 用户名
      * @return 返回User实体
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public User queryIdByUsername(String username) throws Exception {
-        User userId = userMapper.queryIdByUsername(username);
-        return userId;
+        return userMapper.queryIdByUsername(username);
     }
 
     /**
      * 根据用户编号列出用户所有信息
      * @param userId 用户编号
      * @return 返回List形式的用户信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public ArrayList<User> listUserById(int userId) throws Exception{

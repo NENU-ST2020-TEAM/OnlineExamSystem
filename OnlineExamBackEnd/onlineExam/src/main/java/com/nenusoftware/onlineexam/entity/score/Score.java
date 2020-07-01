@@ -1,9 +1,9 @@
 package com.nenusoftware.onlineexam.entity.score;
 
 /**
- * @Author:Liangll
+ * @Author:kongyy
  * @Description: 成绩的实体
- * @Date: 20:23 2019/4/30
+ * @Date: 20:23 2020/6/18
  */
 public class Score {
 

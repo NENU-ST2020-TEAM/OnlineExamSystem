@@ -33,7 +33,7 @@ public class ConnectServiceImpl implements ConnectService {
      * @param paperId 试卷编号
      * @param exerciseType 试题类型
      * @return 返回 List形式的试卷详细信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public List<Connect> listAllConnect(int paperId, String exerciseType) throws Exception{
@@ -45,14 +45,19 @@ public class ConnectServiceImpl implements ConnectService {
     /**
      * 增加试卷详细信息
      * @param connect 试卷详细信息实体
-     * @return 增加成功返回true，增加失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
-    public boolean addConnect(Connect connect) throws Exception {
-        return connectMapper.addConnect(connect);
+    public void addConnect(Connect connect) throws Exception {
+        connectMapper.addConnect(connect);
     }
 
+    /**
+     * 判断当前时间是否在答题时间内
+     * @param paperId 试卷id
+     * @return 如果在时间段内，则返回true；如果不在时间段内则返回false
+     * @throws Exception 抛出错误类型
+     */
     @Override
     public boolean isInTheTime(int paperId) throws Exception{
         Paper paper = paperService.queryPaperNameById(paperId);
@@ -61,9 +66,9 @@ public class ConnectServiceImpl implements ConnectService {
         Date date3 = new Date();
         String str1 = paper.getBeginTime();
         String str2 = paper.getEndTime();
-        String begin[] = paperService.extractTime(str1);
-        String end[] = paperService.extractTime(str2);
-        String now[] = new String[6];
+        String[] begin = paperService.extractTime(str1);
+        String[] end = paperService.extractTime(str2);
+        String[] now = new String[6];
         Calendar calendar=Calendar.getInstance();
         now[0] = String.valueOf(calendar.get(Calendar.YEAR));
         now[1] = String.valueOf(calendar.get(Calendar.MONTH)+1);
@@ -81,14 +86,20 @@ public class ConnectServiceImpl implements ConnectService {
         return date3.after(date1) && date3.before(date2);
     }
 
+    /**
+     * 如果在考试时间内，则返回剩余考试时间
+     * @param paperId 试卷的id
+     * @return 返回剩余考试时间
+     * @throws Exception 抛出错误类型
+     */
     @Override
     public long leftoverTime(int paperId) throws Exception{
         Paper paper = paperService.queryPaperNameById(paperId);
         String durationStr = paper.getDuration();
         int duration = Integer.parseInt(durationStr)*60;
         String str = paper.getEndTime();
-        String end[] = paperService.extractTime(str);
-        String now[] = new String[6];
+        String[] end = paperService.extractTime(str);
+        String[] now = new String[6];
         Calendar calendar=Calendar.getInstance();
         now[0] = String.valueOf(calendar.get(Calendar.YEAR));
         now[1] = String.valueOf(calendar.get(Calendar.MONTH)+1);

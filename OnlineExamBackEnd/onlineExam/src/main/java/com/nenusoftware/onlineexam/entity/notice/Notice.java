@@ -3,7 +3,7 @@ package com.nenusoftware.onlineexam.entity.notice;
 /**
  * @Author:Liangll
  * @Description: 公告的实体层
- * @Date: 19:54 2019/4/29
+ * @Date: 19:54 2020/6/15
  */
 public class Notice {
 

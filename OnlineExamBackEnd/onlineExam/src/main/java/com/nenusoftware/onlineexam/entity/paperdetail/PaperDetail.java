@@ -1,9 +1,9 @@
 package com.nenusoftware.onlineexam.entity.paperdetail;
 
 /**
- * @Author:Liangll
+ * @Author:kongyy
  * @Description: 试卷详细信息的实体
- * @Date: 21:43 2019/4/28
+ * @Date: 21:43 2020/6/15
  */
 public class PaperDetail {
 

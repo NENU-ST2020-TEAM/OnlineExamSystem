@@ -39,7 +39,7 @@ public class ConnectController {
     @RequestMapping("/listAllConnect")
     @ResponseBody
     public List<Connect> listAllConnect(String paperIdStr, String exerciseTypeStr, HttpServletRequest request){
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         int paperId = Integer.parseInt(paperIdStr);
         String exerciseType = null;
         if("0".equals(exerciseTypeStr)){

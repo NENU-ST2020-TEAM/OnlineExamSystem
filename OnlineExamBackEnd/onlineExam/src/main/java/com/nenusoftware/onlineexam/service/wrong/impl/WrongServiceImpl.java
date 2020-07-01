@@ -6,7 +6,6 @@ import com.nenusoftware.onlineexam.service.wrong.WrongService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,20 +21,19 @@ public class WrongServiceImpl implements WrongService {
 
     /**
      * 添加错题
-     * @param wrong
-     * @return
-     * @throws Exception
+     * @param wrong 要添加的wrong对象
+     * @throws Exception 抛出错误类型
      */
     @Override
-    public boolean addWrong(Wrong wrong) throws Exception{
-        return wrongMapper.addWrong(wrong);
+    public void addWrong(Wrong wrong) throws Exception{
+        wrongMapper.addWrong(wrong);
     }
 
     /**
      * 列出用户错题
-     * @param userId
-     * @return
-     * @throws Exception
+     * @param userId 用户id
+     * @return 列出这个用户的错题
+     * @throws Exception 抛出错误类型
      */
     @Override
     public List<Wrong> listWrongByUserId(int userId) throws Exception{
@@ -46,9 +44,9 @@ public class WrongServiceImpl implements WrongService {
 
     /**
      * 删除错题
-     * @param wrongId
-     * @return
-     * @throws Exception
+     * @param wrongId 错题id
+     * @return 如果删除成功，则返回true，否则返回false
+     * @throws Exception 抛出错误类型
      */
     @Override
     public boolean deleteWrong(int wrongId) throws Exception{

@@ -3,7 +3,7 @@ package com.nenusoftware.onlineexam.entity.user;
 /**
  * @Author:Liangll
  * @Description: 用户的实体类
- * @Date: 21:58 2019/4/28
+ * @Date: 21:58 2020/6/14
  */
 public class User {
 

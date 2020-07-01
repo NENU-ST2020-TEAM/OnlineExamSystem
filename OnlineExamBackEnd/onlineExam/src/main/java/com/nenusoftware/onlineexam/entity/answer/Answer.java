@@ -1,24 +1,45 @@
 package com.nenusoftware.onlineexam.entity.answer;
 
 /**
- * @Author:Liangll
+ * @Author : Kongyy
  * @Description: 答题的实体层
- * @Date: 19:44 2019/4/10
+ * @Date: 19:44 2020/6/15
  */
 public class Answer {
 
+    /**
+     * 答案编号
+     */
     private Integer answerId;
 
+    /**
+     * 用户id
+     */
     private Integer userId;
 
+    /**
+     * 题目id
+     */
     private Integer paperDetailId;
 
+    /**
+     * 试卷id
+     */
     private Integer paperId;
 
+    /**
+     * 这道题所得分数
+     */
     private Integer score;
 
+    /**
+     * 用户的答案
+     */
     private String solution;
 
+    /**
+     * 这道题正确答案
+     */
     private String right;
 
     public Integer getAnswerId() {

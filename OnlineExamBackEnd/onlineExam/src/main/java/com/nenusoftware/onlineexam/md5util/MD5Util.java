@@ -3,8 +3,9 @@ package com.nenusoftware.onlineexam.md5util;
 import java.security.MessageDigest;
 
 /**
- * @author : kongyy
- * @time : 2020/6/29 23:19
+ * @Author:kongyy
+ * @Description: 成绩的实体
+ * @Date: 20:23 2020/6/20
  */
 public class MD5Util {
 
@@ -33,7 +34,6 @@ public class MD5Util {
             hexValue.append(Integer.toHexString(val));
         }
         return hexValue.toString();
-
     }
 
     /**

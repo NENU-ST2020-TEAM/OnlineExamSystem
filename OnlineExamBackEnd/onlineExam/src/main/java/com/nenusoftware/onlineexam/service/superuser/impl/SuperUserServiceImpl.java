@@ -17,25 +17,21 @@ public class SuperUserServiceImpl implements SuperUserService {
     @Resource
     SuperUserMapper superUserMapper;
 
-    @Resource
-    UserMapper userMapper;
-
     /**
      * 修改用户权限
-     * @param userId
-     * @return
-     * @throws Exception
+     * @param userId 用户id
+     * @throws Exception 抛出错误类型
      */
     @Override
-    public boolean updateUserPower(int userId) throws Exception{
-        return superUserMapper.updateUserPower(userId);
+    public void updateUserPower(int userId) throws Exception{
+        superUserMapper.updateUserPower(userId);
     }
 
     /**
      * 删除用户
-     * @param userId
-     * @return
-     * @throws Exception
+     * @param userId 用户id
+     * @return 如果删除成功，则返回true，否则返回false
+     * @throws Exception 抛出错误类型
      */
     @Override
     public boolean deleteUser(int userId) throws Exception{

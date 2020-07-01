@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @Author:Liangll
  * @Description: NoticeService的底层实现方法
- * @Date: 10:53 2019/5/10
+ * @Date: 20:30 2020/6/15
  */
 @Service
 public class NoticeServiceImpl implements NoticeService {
@@ -23,7 +23,7 @@ public class NoticeServiceImpl implements NoticeService {
     /**
      * 列出所有公告信息
      * @return 返回List形式的公告信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public List<Notice> listAllNotice() throws Exception{
@@ -35,23 +35,18 @@ public class NoticeServiceImpl implements NoticeService {
     /**
      * 增加公告
      * @param notice 公告实体
-     * @return 增加成功返回true，增加失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
-    public boolean addNotice(Notice notice) throws Exception {
-        if(noticeMapper.addNotice(notice)){
-            return true;
-        }else {
-            return false;
-        }
+    public void addNotice(Notice notice) throws Exception {
+        noticeMapper.addNotice(notice);
     }
 
     /**
      * 删除公告
      * @param noticeId 公告编号
      * @return 删除成功返回true，删除失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public boolean deleteNotice(int noticeId) throws Exception{
@@ -61,19 +56,18 @@ public class NoticeServiceImpl implements NoticeService {
     /**
      * 修改公告
      * @param notice 公告实体
-     * @return 修改成功返回true，修改失败返回false
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
-    public boolean updateNotice(Notice notice) throws Exception{
-        return noticeMapper.updateNotice(notice);
+    public void updateNotice(Notice notice) throws Exception{
+        noticeMapper.updateNotice(notice);
     }
 
     /**
      * 公告的模糊查询（可查询公告标题和公告内容）
      * @param keyWord 输入查询的关键字
      * @return 返回List形式的公告信息
-     * @throws Exception
+     * @throws Exception 抛出错误类型
      */
     @Override
     public List<Notice> queryNotice(String keyWord) throws Exception{

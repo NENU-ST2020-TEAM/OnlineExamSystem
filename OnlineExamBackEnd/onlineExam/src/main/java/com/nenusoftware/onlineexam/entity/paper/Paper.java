@@ -3,7 +3,7 @@ package com.nenusoftware.onlineexam.entity.paper;
 /**
  * @Author:Liangll
  * @Description: 试卷实体
- * @Date: 16:17 2019/4/27
+ * @Date: 16:17 2020/6/16
  */
 public class Paper {
 

@@ -36,7 +36,7 @@ public class SuperUserController {
     @ResponseBody
     @RequestMapping("/deleteUser")
     public String  deleteUser(String userIdStr, HttpServletRequest request){
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         if(result == 2){
             int userId = Integer.parseInt(userIdStr);
             try {
@@ -59,7 +59,7 @@ public class SuperUserController {
     @ResponseBody
     @RequestMapping("/updateUserPower")
     public String updateUserPower(String userIdStr, HttpServletRequest request){
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         int userId = Integer.parseInt(userIdStr);
         if(result == 2){
             try {

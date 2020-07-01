@@ -2,25 +2,50 @@ package com.nenusoftware.onlineexam.entity.wrong;
 
 
 /**
- * @author : kongyy
- * @time : 2020/6/16 23:42
+ * @Author:kongyy
+ * @Description: 错题集的实体
+ * @Date: 20:23 2020/6/16
  */
 public class Wrong {
 
+    /**
+     *错题id
+     */
     private Integer wrongId;
 
+    /**
+     *题目id
+     */
     private Integer paperDetailId;
 
+    /**
+     *用户id
+     */
     private Integer userId;
 
+    /**
+     *用户的答案
+     */
     private String answer;
 
+    /**
+     *这道题正确答案
+     */
     private String right;
 
+    /**
+     *试卷id
+     */
     private Integer paperId;
 
+    /**
+     *这道题的分值
+     */
     private Integer score;
 
+    /**
+     *用户在这道题上得了多少分
+     */
     private Integer nowScore;
 
     public Integer getWrongId() {

@@ -43,7 +43,7 @@ public class PaperController {
     @ResponseBody
     public ArrayList<Paper> listAllPaper(HttpServletRequest request){
         ArrayList<Paper> paperList = new ArrayList<>();
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         if(result == 1 || result == 2){
             try {
                 paperList = paperService.listAllPaper();
@@ -67,7 +67,7 @@ public class PaperController {
     @RequestMapping("/listPublishPaper")
     @ResponseBody
     public List<Paper> listPublishPaper(HttpServletRequest request){
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         ArrayList<Paper> paperList = new ArrayList<>();
         if(result != -1){
             try {
@@ -93,7 +93,7 @@ public class PaperController {
     @ResponseBody
     @RequestMapping("/addPaper")
     public int addPaper(String paperName, HttpServletRequest request){
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         int paperId = -1;
         if(result == 1){
             try {
@@ -129,7 +129,7 @@ public class PaperController {
     @ResponseBody
     @RequestMapping("/deletePaper")
     public String deletePaper(String paperIdStr, HttpServletRequest request) {
-        int result = userController.JudgePower(request);
+        int result = userController.judgePower(request);
         int paperId = Integer.parseInt(paperIdStr);
         if(result == 1){
             try {
