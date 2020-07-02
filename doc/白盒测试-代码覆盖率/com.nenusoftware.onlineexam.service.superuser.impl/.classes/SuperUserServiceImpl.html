@@ -82,43 +82,44 @@
 <i>8</i>&nbsp;import javax.annotation.Resource;
 <i>9</i>&nbsp;
 <i>10</i>&nbsp;/**
-<i>11</i>&nbsp; * @author : kongyy
-<i>12</i>&nbsp; * @time : 2020/6/16 21:40
-<i>13</i>&nbsp; */
-<i>14</i>&nbsp;@Service
-<b class="fc"><i>15</i>&nbsp;public class SuperUserServiceImpl implements SuperUserService {</b>
-<i>16</i>&nbsp;
-<i>17</i>&nbsp;    @Resource
-<i>18</i>&nbsp;    SuperUserMapper superUserMapper;
-<i>19</i>&nbsp;
-<i>20</i>&nbsp;    /**
-<i>21</i>&nbsp;     * 修改用户权限
-<i>22</i>&nbsp;     * @param userId 用户id
-<i>23</i>&nbsp;     * @throws Exception 抛出错误类型
-<i>24</i>&nbsp;     */
-<i>25</i>&nbsp;    @Override
-<i>26</i>&nbsp;    public void updateUserPower(int userId) throws Exception{
-<b class="fc"><i>27</i>&nbsp;        superUserMapper.updateUserPower(userId);</b>
-<i>28</i>&nbsp;    }
-<i>29</i>&nbsp;
-<i>30</i>&nbsp;    /**
-<i>31</i>&nbsp;     * 删除用户
-<i>32</i>&nbsp;     * @param userId 用户id
-<i>33</i>&nbsp;     * @return 如果删除成功，则返回true，否则返回false
-<i>34</i>&nbsp;     * @throws Exception 抛出错误类型
-<i>35</i>&nbsp;     */
-<i>36</i>&nbsp;    @Override
-<i>37</i>&nbsp;    public boolean deleteUser(int userId) throws Exception{
-<b class="fc"><i>38</i>&nbsp;        return superUserMapper.deleteUser(userId);</b>
-<i>39</i>&nbsp;    }
-<i>40</i>&nbsp;
-<i>41</i>&nbsp;}
+<i>11</i>&nbsp; * @Author:kongyy
+<i>12</i>&nbsp; * @Description: SuperUserService的底层实现方法
+<i>13</i>&nbsp; * @Date: 21:40 2020/6/16
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;@Service
+<b class="fc"><i>16</i>&nbsp;public class SuperUserServiceImpl implements SuperUserService {</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    @Resource
+<i>19</i>&nbsp;    SuperUserMapper superUserMapper;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;     * 修改用户权限
+<i>23</i>&nbsp;     * @param userId 用户id
+<i>24</i>&nbsp;     * @throws Exception 抛出错误类型
+<i>25</i>&nbsp;     */
+<i>26</i>&nbsp;    @Override
+<i>27</i>&nbsp;    public void updateUserPower(int userId) throws Exception{
+<b class="fc"><i>28</i>&nbsp;        superUserMapper.updateUserPower(userId);</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * 删除用户
+<i>33</i>&nbsp;     * @param userId 用户id
+<i>34</i>&nbsp;     * @return 如果删除成功，则返回true，否则返回false
+<i>35</i>&nbsp;     * @throws Exception 抛出错误类型
+<i>36</i>&nbsp;     */
+<i>37</i>&nbsp;    @Override
+<i>38</i>&nbsp;    public boolean deleteUser(int userId) throws Exception{
+<b class="fc"><i>39</i>&nbsp;        return superUserMapper.deleteUser(userId);</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-07-01 22:21</div>
+    <div style="float:right;">generated on 2020-07-02 09:58</div>
 </div>
 </body>
 </html>

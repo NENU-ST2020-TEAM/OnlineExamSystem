@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    44.2%
+    84.1%
   </span>
   <span class="absValue">
-    (50/ 113)
+    (95/ 113)
   </span>
 </td>
 </tr>
@@ -125,13 +125,13 @@
 <b class="fc"><i>51</i>&nbsp;        for (PaperDetail detail : paperDetailList) {</b>
 <b class="fc"><i>52</i>&nbsp;            PaperDetail paperDetail = new PaperDetail();</b>
 <b class="fc"><i>53</i>&nbsp;            paperDetail = detail;</b>
-<b class="pc"><i>54</i>&nbsp;            if(&quot;简答题&quot;.equals(paperDetail.getExerciseType())){</b>
+<b class="fc"><i>54</i>&nbsp;            if(&quot;简答题&quot;.equals(paperDetail.getExerciseType())){</b>
 <i>55</i>&nbsp;                String str, str1, str2, str3;
-<b class="nc"><i>56</i>&nbsp;                str1 = paperDetail.getAnswer();</b>
-<b class="nc"><i>57</i>&nbsp;                str2 = paperDetail.getAnswer2();</b>
-<b class="nc"><i>58</i>&nbsp;                str3 = paperDetail.getAnswer3();</b>
-<b class="nc"><i>59</i>&nbsp;                str = &quot;得分点为：&quot; + str1 + &quot; &quot; + str2 + &quot; &quot; + str3;</b>
-<b class="nc"><i>60</i>&nbsp;                paperDetail.setAnswer(str);</b>
+<b class="fc"><i>56</i>&nbsp;                str1 = paperDetail.getAnswer();</b>
+<b class="fc"><i>57</i>&nbsp;                str2 = paperDetail.getAnswer2();</b>
+<b class="fc"><i>58</i>&nbsp;                str3 = paperDetail.getAnswer3();</b>
+<b class="fc"><i>59</i>&nbsp;                str = &quot;得分点为：&quot; + str1 + &quot; &quot; + str2 + &quot; &quot; + str3;</b>
+<b class="fc"><i>60</i>&nbsp;                paperDetail.setAnswer(str);</b>
 <i>61</i>&nbsp;            }
 <b class="fc"><i>62</i>&nbsp;        }</b>
 <b class="fc"><i>63</i>&nbsp;        return paperDetailList;</b>
@@ -218,13 +218,13 @@
 <b class="fc"><i>144</i>&nbsp;        for (PaperDetail detail : paperDetailList) {</b>
 <b class="fc"><i>145</i>&nbsp;            PaperDetail paperDetail = new PaperDetail();</b>
 <b class="fc"><i>146</i>&nbsp;            paperDetail = detail;</b>
-<b class="pc"><i>147</i>&nbsp;            if(&quot;简答题&quot;.equals(paperDetail.getExerciseType())){</b>
+<b class="fc"><i>147</i>&nbsp;            if(&quot;简答题&quot;.equals(paperDetail.getExerciseType())){</b>
 <i>148</i>&nbsp;                String str, str1, str2, str3;
-<b class="nc"><i>149</i>&nbsp;                str1 = paperDetail.getAnswer();</b>
-<b class="nc"><i>150</i>&nbsp;                str2 = paperDetail.getAnswer2();</b>
-<b class="nc"><i>151</i>&nbsp;                str3 = paperDetail.getAnswer3();</b>
-<b class="nc"><i>152</i>&nbsp;                str = &quot;得分点为：&quot; + str1 + &quot; &quot; + str2 + &quot; &quot; + str3;</b>
-<b class="nc"><i>153</i>&nbsp;                paperDetail.setAnswer(str);</b>
+<b class="fc"><i>149</i>&nbsp;                str1 = paperDetail.getAnswer();</b>
+<b class="fc"><i>150</i>&nbsp;                str2 = paperDetail.getAnswer2();</b>
+<b class="fc"><i>151</i>&nbsp;                str3 = paperDetail.getAnswer3();</b>
+<b class="fc"><i>152</i>&nbsp;                str = &quot;得分点为：&quot; + str1 + &quot; &quot; + str2 + &quot; &quot; + str3;</b>
+<b class="fc"><i>153</i>&nbsp;                paperDetail.setAnswer(str);</b>
 <i>154</i>&nbsp;            }
 <b class="fc"><i>155</i>&nbsp;        }</b>
 <b class="fc"><i>156</i>&nbsp;        return paperDetailList;</b>
@@ -282,53 +282,53 @@
 <b class="fc"><i>208</i>&nbsp;        String paperIdStr = jsonArray.getJSONObject(0).getString(&quot;paperId&quot;);</b>
 <b class="fc"><i>209</i>&nbsp;        int paperId = Integer.parseInt(paperIdStr);</b>
 <i>210</i>&nbsp;        try{
-<b class="pc"><i>211</i>&nbsp;            for(int i=0;i&lt;jsonArray.size();i++){</b>
+<b class="fc"><i>211</i>&nbsp;            for(int i=0;i&lt;jsonArray.size();i++){</b>
 <b class="fc"><i>212</i>&nbsp;                Answer answer = new Answer();</b>
 <b class="fc"><i>213</i>&nbsp;                PaperDetail paperDetail = new PaperDetail();</b>
 <b class="fc"><i>214</i>&nbsp;                String paperDetailIdStr = jsonArray.getJSONObject(i).getString(&quot;paperDetailId&quot;);</b>
 <b class="fc"><i>215</i>&nbsp;                String solution = jsonArray.getJSONObject(i).getString(&quot;solution&quot;);</b>
 <b class="fc"><i>216</i>&nbsp;                int paperDetailId = Integer.parseInt(paperDetailIdStr);</b>
 <b class="fc"><i>217</i>&nbsp;                paperDetail = queryQuestion(paperDetailId);</b>
-<b class="nc"><i>218</i>&nbsp;                String type = paperDetail.getExerciseType();</b>
-<b class="nc"><i>219</i>&nbsp;                answer.setUserId(userId);answer.setSolution(solution);answer.setRight(paperDetail.getAnswer());answer.setScore(paperDetail.getScore());</b>
-<b class="nc"><i>220</i>&nbsp;                int score = paperDetail.getScore();</b>
-<b class="nc"><i>221</i>&nbsp;                if(&quot;简答题&quot;.equals(type)){</b>
-<b class="nc"><i>222</i>&nbsp;                    int index1 = solution.indexOf(paperDetail.getAnswer());</b>
-<b class="nc"><i>223</i>&nbsp;                    int index2 = solution.indexOf(paperDetail.getAnswer2());</b>
-<b class="nc"><i>224</i>&nbsp;                    int index3 = solution.indexOf(paperDetail.getAnswer3());</b>
-<b class="nc"><i>225</i>&nbsp;                    int cont = 0;</b>
-<b class="nc"><i>226</i>&nbsp;                    int keycont = 1;</b>
-<b class="nc"><i>227</i>&nbsp;                    if(!&quot;&quot;.equals(paperDetail.getAnswer2())){</b>
-<b class="nc"><i>228</i>&nbsp;                        keycont++;</b>
+<b class="fc"><i>218</i>&nbsp;                String type = paperDetail.getExerciseType();</b>
+<b class="fc"><i>219</i>&nbsp;                answer.setUserId(userId);answer.setSolution(solution);answer.setRight(paperDetail.getAnswer());answer.setScore(paperDetail.getScore());</b>
+<b class="fc"><i>220</i>&nbsp;                int score = paperDetail.getScore();</b>
+<b class="fc"><i>221</i>&nbsp;                if(&quot;简答题&quot;.equals(type)){</b>
+<b class="fc"><i>222</i>&nbsp;                    int index1 = solution.indexOf(paperDetail.getAnswer());</b>
+<b class="fc"><i>223</i>&nbsp;                    int index2 = solution.indexOf(paperDetail.getAnswer2());</b>
+<b class="fc"><i>224</i>&nbsp;                    int index3 = solution.indexOf(paperDetail.getAnswer3());</b>
+<b class="fc"><i>225</i>&nbsp;                    int cont = 0;</b>
+<b class="fc"><i>226</i>&nbsp;                    int keycont = 1;</b>
+<b class="pc"><i>227</i>&nbsp;                    if(!&quot;&quot;.equals(paperDetail.getAnswer2())){</b>
+<b class="fc"><i>228</i>&nbsp;                        keycont++;</b>
 <i>229</i>&nbsp;                    }
-<b class="nc"><i>230</i>&nbsp;                    if(!&quot;&quot;.equals(paperDetail.getAnswer3())){</b>
-<b class="nc"><i>231</i>&nbsp;                        keycont++;</b>
+<b class="pc"><i>230</i>&nbsp;                    if(!&quot;&quot;.equals(paperDetail.getAnswer3())){</b>
+<b class="fc"><i>231</i>&nbsp;                        keycont++;</b>
 <i>232</i>&nbsp;                    }
-<b class="nc"><i>233</i>&nbsp;                    if(index1 != -1){</b>
+<b class="pc"><i>233</i>&nbsp;                    if(index1 != -1){</b>
 <b class="nc"><i>234</i>&nbsp;                        cont++;</b>
 <i>235</i>&nbsp;                    }
-<b class="nc"><i>236</i>&nbsp;                    if(index2 != -1 &amp;&amp; !&quot;&quot;.equals(paperDetail.getAnswer2())){</b>
+<b class="pc"><i>236</i>&nbsp;                    if(index2 != -1 &amp;&amp; !&quot;&quot;.equals(paperDetail.getAnswer2())){</b>
 <b class="nc"><i>237</i>&nbsp;                        cont++;</b>
 <i>238</i>&nbsp;                    }
-<b class="nc"><i>239</i>&nbsp;                    if(index3 != -1 &amp;&amp; !&quot;&quot;.equals(paperDetail.getAnswer3())){</b>
+<b class="pc"><i>239</i>&nbsp;                    if(index3 != -1 &amp;&amp; !&quot;&quot;.equals(paperDetail.getAnswer3())){</b>
 <b class="nc"><i>240</i>&nbsp;                        cont++;</b>
 <i>241</i>&nbsp;                    }
-<b class="nc"><i>242</i>&nbsp;                    int nowScore = (cont * score / keycont);</b>
-<b class="nc"><i>243</i>&nbsp;                    result += nowScore;</b>
-<b class="nc"><i>244</i>&nbsp;                    if(nowScore &lt; score){</b>
-<b class="nc"><i>245</i>&nbsp;                        Wrong wrong = new Wrong();</b>
-<b class="nc"><i>246</i>&nbsp;                        wrong.setUserId(userId);</b>
-<b class="nc"><i>247</i>&nbsp;                        wrong.setPaperId(paperId);</b>
-<b class="nc"><i>248</i>&nbsp;                        wrong.setPaperDetailId(paperDetailId);</b>
-<b class="nc"><i>249</i>&nbsp;                        wrong.setAnswer(solution);</b>
-<b class="nc"><i>250</i>&nbsp;                        wrong.setScore(score);</b>
-<b class="nc"><i>251</i>&nbsp;                        wrong.setNowScore(nowScore);</b>
-<b class="nc"><i>252</i>&nbsp;                        wrong.setRight(&quot;关键字为：&quot;+paperDetail.getAnswer()+&quot; &quot;+paperDetail.getAnswer2()+&quot; &quot;+paperDetail.getAnswer3());</b>
-<b class="nc"><i>253</i>&nbsp;                        wrongService.addWrong(wrong);</b>
+<b class="fc"><i>242</i>&nbsp;                    int nowScore = (cont * score / keycont);</b>
+<b class="fc"><i>243</i>&nbsp;                    result += nowScore;</b>
+<b class="pc"><i>244</i>&nbsp;                    if(nowScore &lt; score){</b>
+<b class="fc"><i>245</i>&nbsp;                        Wrong wrong = new Wrong();</b>
+<b class="fc"><i>246</i>&nbsp;                        wrong.setUserId(userId);</b>
+<b class="fc"><i>247</i>&nbsp;                        wrong.setPaperId(paperId);</b>
+<b class="fc"><i>248</i>&nbsp;                        wrong.setPaperDetailId(paperDetailId);</b>
+<b class="fc"><i>249</i>&nbsp;                        wrong.setAnswer(solution);</b>
+<b class="fc"><i>250</i>&nbsp;                        wrong.setScore(score);</b>
+<b class="fc"><i>251</i>&nbsp;                        wrong.setNowScore(nowScore);</b>
+<b class="fc"><i>252</i>&nbsp;                        wrong.setRight(&quot;关键字为：&quot;+paperDetail.getAnswer()+&quot; &quot;+paperDetail.getAnswer2()+&quot; &quot;+paperDetail.getAnswer3());</b>
+<b class="fc"><i>253</i>&nbsp;                        wrongService.addWrong(wrong);</b>
 <i>254</i>&nbsp;                    }
-<b class="nc"><i>255</i>&nbsp;                }</b>
+<b class="fc"><i>255</i>&nbsp;                }</b>
 <i>256</i>&nbsp;                else{
-<b class="nc"><i>257</i>&nbsp;                    if(&quot;判断题&quot;.equals(type)){</b>
+<b class="pc"><i>257</i>&nbsp;                    if(&quot;判断题&quot;.equals(type)){</b>
 <b class="nc"><i>258</i>&nbsp;                        if(&quot;A&quot;.equals(answer.getSolution())){</b>
 <b class="nc"><i>259</i>&nbsp;                            answer.setSolution(&quot;对&quot;);</b>
 <i>260</i>&nbsp;                        }
@@ -337,8 +337,8 @@
 <i>263</i>&nbsp;                        }
 <i>264</i>&nbsp;
 <i>265</i>&nbsp;                    }
-<b class="nc"><i>266</i>&nbsp;                    if(answer.getSolution().equals(answer.getRight())){</b>
-<b class="nc"><i>267</i>&nbsp;                        result += score;</b>
+<b class="pc"><i>266</i>&nbsp;                    if(answer.getSolution().equals(answer.getRight())){</b>
+<b class="fc"><i>267</i>&nbsp;                        result += score;</b>
 <i>268</i>&nbsp;                    }
 <i>269</i>&nbsp;                    else{
 <b class="nc"><i>270</i>&nbsp;                        Wrong wrong = new Wrong();wrong.setUserId(userId);wrong.setPaperId(paperId);wrong.setPaperDetailId(paperDetailId);wrong.setAnswer(solution);wrong.setRight(paperDetail.getAnswer());wrong.setScore(score);wrong.setNowScore(0);</b>
@@ -346,13 +346,13 @@
 <i>272</i>&nbsp;                    }
 <i>273</i>&nbsp;                }
 <i>274</i>&nbsp;            }
-<b class="nc"><i>275</i>&nbsp;            Paper paper = paperService.queryPaperNameById(paperId);</b>
-<b class="nc"><i>276</i>&nbsp;            String paperName = paper.getPaperName();</b>
-<b class="nc"><i>277</i>&nbsp;            Score score = new Score();score.setUserId(userId);score.setMark(result);score.setPaperId(paperId);score.setPaperName(paperName);</b>
-<b class="nc"><i>278</i>&nbsp;            scoreService.addScore(score);</b>
-<b class="fc"><i>279</i>&nbsp;        }catch (Exception ex){</b>
-<b class="fc"><i>280</i>&nbsp;            ex.printStackTrace();</b>
-<b class="nc"><i>281</i>&nbsp;        }</b>
+<b class="fc"><i>275</i>&nbsp;            Paper paper = paperService.queryPaperNameById(paperId);</b>
+<b class="fc"><i>276</i>&nbsp;            String paperName = paper.getPaperName();</b>
+<b class="fc"><i>277</i>&nbsp;            Score score = new Score();score.setUserId(userId);score.setMark(result);score.setPaperId(paperId);score.setPaperName(paperName);</b>
+<b class="fc"><i>278</i>&nbsp;            scoreService.addScore(score);</b>
+<b class="nc"><i>279</i>&nbsp;        }catch (Exception ex){</b>
+<b class="nc"><i>280</i>&nbsp;            ex.printStackTrace();</b>
+<b class="fc"><i>281</i>&nbsp;        }</b>
 <b class="fc"><i>282</i>&nbsp;        return result;</b>
 <i>283</i>&nbsp;    }
 <i>284</i>&nbsp;}
@@ -361,7 +361,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-07-01 22:21</div>
+    <div style="float:right;">generated on 2020-07-02 09:58</div>
 </div>
 </body>
 </html>

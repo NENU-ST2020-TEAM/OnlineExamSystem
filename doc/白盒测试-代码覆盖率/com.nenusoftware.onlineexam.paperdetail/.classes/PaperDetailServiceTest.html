@@ -110,7 +110,7 @@
 <i>36</i>&nbsp;
 <i>37</i>&nbsp;    @Test
 <i>38</i>&nbsp;    public void testListPaperDetailByPaperId() throws Exception{
-<b class="fc"><i>39</i>&nbsp;        String paperName = &quot;2018年春季学期14级软件质量保证与测试期末考试题&quot;;</b>
+<b class="fc"><i>39</i>&nbsp;        String paperName = &quot;新增一张软件质量保证期末考试试卷&quot;;</b>
 <b class="fc"><i>40</i>&nbsp;        Paper paper = new Paper();</b>
 <b class="fc"><i>41</i>&nbsp;        paper.setPaperName(paperName);</b>
 <b class="fc"><i>42</i>&nbsp;        paperService.addPaper(paper);</b>
@@ -201,7 +201,7 @@
 <i>127</i>&nbsp;
 <i>128</i>&nbsp;    @Test
 <i>129</i>&nbsp;    public void testJudgeQuestion() throws Exception{
-<b class="fc"><i>130</i>&nbsp;        String jsonString = &quot;[{\&quot;solution\&quot;:\&quot;后置双摄\&quot;,\&quot;paperDetailId\&quot;:\&quot;52\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;}, {\&quot;solution\&quot;:\&quot;A\&quot;,\&quot;paperDetailId\&quot;:\&quot;11\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;},{\&quot;solution\&quot;:\&quot;A\&quot;,\&quot;paperDetailId\&quot;:\&quot;4\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;}]&quot;;</b>
+<b class="fc"><i>130</i>&nbsp;        String jsonString = &quot;[{\&quot;solution\&quot;:\&quot;后置双摄\&quot;,\&quot;paperDetailId\&quot;:\&quot;31\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;}, {\&quot;solution\&quot;:\&quot;A\&quot;,\&quot;paperDetailId\&quot;:\&quot;11\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;},{\&quot;solution\&quot;:\&quot;A\&quot;,\&quot;paperDetailId\&quot;:\&quot;4\&quot;,\&quot;paperId\&quot;:\&quot;2\&quot;}]&quot;;</b>
 <b class="fc"><i>131</i>&nbsp;        JSONArray jsonArray = JSONArray.parseArray(jsonString);</b>
 <b class="fc"><i>132</i>&nbsp;        int result = paperDetailService.judgeQuestion(jsonArray, 1);</b>
 <b class="fc"><i>133</i>&nbsp;        System.out.println(result);</b>
@@ -209,7 +209,7 @@
 <i>135</i>&nbsp;
 <i>136</i>&nbsp;    @Test
 <i>137</i>&nbsp;    public void testQueryIdByContent() throws Exception{
-<b class="fc"><i>138</i>&nbsp;        String content = &quot;模块的内聚性最高的是？&quot;;</b>
+<b class="fc"><i>138</i>&nbsp;        String content = &quot;请解释什么是性能测试。&quot;;</b>
 <b class="fc"><i>139</i>&nbsp;        System.out.println(paperDetailService.queryIdByContent(content).getPaperDetailId());</b>
 <i>140</i>&nbsp;    }
 <i>141</i>&nbsp;
@@ -223,7 +223,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-07-01 22:21</div>
+    <div style="float:right;">generated on 2020-07-02 09:58</div>
 </div>
 </body>
 </html>

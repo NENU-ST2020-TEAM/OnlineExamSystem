@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    87%
+    100%
   </span>
   <span class="absValue">
-    (20/ 23)
+    (19/ 19)
   </span>
 </td>
 </tr>
@@ -109,7 +109,7 @@
 <b class="fc"><i>35</i>&nbsp;        judgeList = connectService.listAllConnect(paperId, judgeType);</b>
 <b class="fc"><i>36</i>&nbsp;        choiceList.addAll(judgeList);</b>
 <b class="fc"><i>37</i>&nbsp;        System.out.println(choiceList);</b>
-<b class="fc"><i>38</i>&nbsp;    }</b>
+<i>38</i>&nbsp;    }
 <i>39</i>&nbsp;
 <i>40</i>&nbsp;    @Test
 <i>41</i>&nbsp;    public void testAddConnect() throws Exception {
@@ -118,26 +118,26 @@
 <b class="fc"><i>44</i>&nbsp;        connect.setPaperId(paperId);</b>
 <b class="fc"><i>45</i>&nbsp;        connect.setPaperDetailId(paperDetailId);</b>
 <b class="fc"><i>46</i>&nbsp;        connectService.addConnect(connect);</b>
-<b class="nc"><i>47</i>&nbsp;    }</b>
+<i>47</i>&nbsp;    }
 <i>48</i>&nbsp;
 <i>49</i>&nbsp;    @Test
 <i>50</i>&nbsp;    public void testInTime() throws Exception{
 <i>51</i>&nbsp;//        String str1 = &quot;开始:1999年10月21日7时32分20秒&quot;;
 <i>52</i>&nbsp;//        String str2 = &quot;开始:2020年10月21日7时32分20秒&quot;;
 <b class="fc"><i>53</i>&nbsp;        System.out.println(connectService.isInTheTime(2));</b>
-<b class="nc"><i>54</i>&nbsp;    }</b>
+<i>54</i>&nbsp;    }
 <i>55</i>&nbsp;
 <i>56</i>&nbsp;    @Test
 <i>57</i>&nbsp;    public void testLeftover() throws Exception{
 <b class="fc"><i>58</i>&nbsp;        System.out.println(connectService.leftoverTime(2));</b>
-<b class="nc"><i>59</i>&nbsp;    }</b>
+<i>59</i>&nbsp;    }
 <i>60</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-07-01 22:21</div>
+    <div style="float:right;">generated on 2020-07-02 09:58</div>
 </div>
 </body>
 </html>

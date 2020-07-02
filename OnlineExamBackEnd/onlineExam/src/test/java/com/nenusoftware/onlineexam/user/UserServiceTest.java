@@ -78,7 +78,7 @@ public class UserServiceTest {
 
     @Test
     public void testQueryIdByUsername() throws Exception{
-        String username = "admin";
+        String username = "teacher";
         System.out.println(userService.queryIdByUsername(username).getUserId());
     }
 

@@ -28,11 +28,11 @@ public class SuperUserServiceTest {
 
     @Test
     public void testDeleteUser() throws Exception{
-        System.out.println(superUserService.deleteUser(5));
+        System.out.println(superUserService.deleteUser(1));
     }
 
     @Test
-    public void testMd5() throws Exception{
+    public void testMd5(){
         String password = "123456";
         String md5Password = DigestUtils.md5DigestAsHex(password.getBytes());
         System.out.println(md5Password);

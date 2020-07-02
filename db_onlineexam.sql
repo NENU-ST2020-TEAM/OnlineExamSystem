@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 23/06/2020 21:36:57
+ Date: 02/07/2020 09:41:11
 */
 
 SET NAMES utf8mb4;
@@ -49,56 +49,56 @@ CREATE TABLE `t_connect`  (
   `paperId` int(0) DEFAULT NULL COMMENT '试卷编号',
   `paperDetailId` int(11) UNSIGNED ZEROFILL DEFAULT 00000000000 COMMENT '试题编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 148 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 231 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_connect
 -- ----------------------------
-INSERT INTO `t_connect` VALUES (1, 3, 00000000023);
-INSERT INTO `t_connect` VALUES (2, 3, 00000000035);
-INSERT INTO `t_connect` VALUES (3, 3, 00000000006);
-INSERT INTO `t_connect` VALUES (4, 2, 00000000000);
-INSERT INTO `t_connect` VALUES (5, 2, 00000000009);
-INSERT INTO `t_connect` VALUES (6, 2, 00000000010);
-INSERT INTO `t_connect` VALUES (7, 2, 00000000024);
-INSERT INTO `t_connect` VALUES (8, 2, 00000000025);
-INSERT INTO `t_connect` VALUES (11, 12, 00000000000);
-INSERT INTO `t_connect` VALUES (12, 12, 00000000035);
-INSERT INTO `t_connect` VALUES (13, 18, 00000000035);
-INSERT INTO `t_connect` VALUES (14, 18, 00000000035);
-INSERT INTO `t_connect` VALUES (15, 18, 00000000035);
-INSERT INTO `t_connect` VALUES (17, 18, 00000000035);
-INSERT INTO `t_connect` VALUES (18, 36, 00000000010);
-INSERT INTO `t_connect` VALUES (19, 36, 00000000010);
-INSERT INTO `t_connect` VALUES (20, 36, 00000000010);
-INSERT INTO `t_connect` VALUES (21, 36, 00000000010);
-INSERT INTO `t_connect` VALUES (22, 36, 00000000010);
-INSERT INTO `t_connect` VALUES (23, 35, 00000000000);
-INSERT INTO `t_connect` VALUES (24, 36, 00000000000);
-INSERT INTO `t_connect` VALUES (25, 37, 00000000000);
-INSERT INTO `t_connect` VALUES (26, 38, 00000000000);
-INSERT INTO `t_connect` VALUES (27, 39, 00000000000);
-INSERT INTO `t_connect` VALUES (28, 40, 00000000000);
-INSERT INTO `t_connect` VALUES (29, 41, 00000000000);
-INSERT INTO `t_connect` VALUES (30, 42, 00000000000);
-INSERT INTO `t_connect` VALUES (31, 43, 00000000000);
-INSERT INTO `t_connect` VALUES (32, 44, 00000000000);
-INSERT INTO `t_connect` VALUES (33, 45, 00000000000);
-INSERT INTO `t_connect` VALUES (34, 46, 00000000000);
-INSERT INTO `t_connect` VALUES (35, 47, 00000000000);
-INSERT INTO `t_connect` VALUES (36, 48, 00000000000);
-INSERT INTO `t_connect` VALUES (37, 49, 00000000000);
-INSERT INTO `t_connect` VALUES (38, 50, 00000000000);
-INSERT INTO `t_connect` VALUES (39, 51, 00000000000);
-INSERT INTO `t_connect` VALUES (40, 52, 00000000000);
-INSERT INTO `t_connect` VALUES (41, 53, 00000000000);
-INSERT INTO `t_connect` VALUES (42, 54, 00000000000);
-INSERT INTO `t_connect` VALUES (43, 55, 00000000000);
-INSERT INTO `t_connect` VALUES (44, 56, 00000000000);
-INSERT INTO `t_connect` VALUES (45, 57, 00000000000);
-INSERT INTO `t_connect` VALUES (46, 58, 00000000000);
-INSERT INTO `t_connect` VALUES (47, 59, 00000000000);
-INSERT INTO `t_connect` VALUES (48, 60, 00000000000);
+INSERT INTO `t_connect` VALUES (1, 4, 00000000001);
+INSERT INTO `t_connect` VALUES (2, 4, 00000000002);
+INSERT INTO `t_connect` VALUES (3, 4, 00000000003);
+INSERT INTO `t_connect` VALUES (4, 4, 00000000004);
+INSERT INTO `t_connect` VALUES (5, 4, 00000000005);
+INSERT INTO `t_connect` VALUES (6, 4, 00000000006);
+INSERT INTO `t_connect` VALUES (7, 4, 00000000007);
+INSERT INTO `t_connect` VALUES (8, 4, 00000000008);
+INSERT INTO `t_connect` VALUES (9, 1, 00000000009);
+INSERT INTO `t_connect` VALUES (10, 1, 00000000010);
+INSERT INTO `t_connect` VALUES (11, 1, 00000000011);
+INSERT INTO `t_connect` VALUES (12, 1, 00000000012);
+INSERT INTO `t_connect` VALUES (13, 1, 00000000013);
+INSERT INTO `t_connect` VALUES (14, 2, 00000000014);
+INSERT INTO `t_connect` VALUES (15, 2, 00000000015);
+INSERT INTO `t_connect` VALUES (16, 2, 00000000016);
+INSERT INTO `t_connect` VALUES (17, 2, 00000000017);
+INSERT INTO `t_connect` VALUES (18, 2, 00000000018);
+INSERT INTO `t_connect` VALUES (19, 3, 00000000019);
+INSERT INTO `t_connect` VALUES (20, 3, 00000000020);
+INSERT INTO `t_connect` VALUES (21, 3, 00000000021);
+INSERT INTO `t_connect` VALUES (22, 3, 00000000022);
+INSERT INTO `t_connect` VALUES (23, 3, 00000000023);
+INSERT INTO `t_connect` VALUES (24, 6, 00000000024);
+INSERT INTO `t_connect` VALUES (25, 6, 00000000025);
+INSERT INTO `t_connect` VALUES (26, 6, 00000000026);
+INSERT INTO `t_connect` VALUES (27, 6, 00000000027);
+INSERT INTO `t_connect` VALUES (28, 6, 00000000028);
+INSERT INTO `t_connect` VALUES (29, 6, 00000000029);
+INSERT INTO `t_connect` VALUES (30, 6, 00000000030);
+INSERT INTO `t_connect` VALUES (31, 6, 00000000031);
+INSERT INTO `t_connect` VALUES (32, 47, 00000000000);
+INSERT INTO `t_connect` VALUES (33, 48, 00000000000);
+INSERT INTO `t_connect` VALUES (34, 49, 00000000000);
+INSERT INTO `t_connect` VALUES (35, 50, 00000000000);
+INSERT INTO `t_connect` VALUES (36, 51, 00000000000);
+INSERT INTO `t_connect` VALUES (37, 52, 00000000000);
+INSERT INTO `t_connect` VALUES (38, 53, 00000000000);
+INSERT INTO `t_connect` VALUES (39, 54, 00000000000);
+INSERT INTO `t_connect` VALUES (40, 55, 00000000000);
+INSERT INTO `t_connect` VALUES (41, 56, 00000000000);
+INSERT INTO `t_connect` VALUES (42, 57, 00000000000);
+INSERT INTO `t_connect` VALUES (43, 58, 00000000000);
+INSERT INTO `t_connect` VALUES (44, 59, 00000000000);
+INSERT INTO `t_connect` VALUES (45, 60, 00000000000);
 INSERT INTO `t_connect` VALUES (49, 61, 00000000000);
 INSERT INTO `t_connect` VALUES (50, 62, 00000000000);
 INSERT INTO `t_connect` VALUES (51, 63, 00000000000);
@@ -198,6 +198,92 @@ INSERT INTO `t_connect` VALUES (144, 99, 00000000000);
 INSERT INTO `t_connect` VALUES (145, 99, 00000000004);
 INSERT INTO `t_connect` VALUES (146, 99, 00000000091);
 INSERT INTO `t_connect` VALUES (147, 99, 00000000098);
+INSERT INTO `t_connect` VALUES (148, 100, 00000000000);
+INSERT INTO `t_connect` VALUES (149, 100, 00000000103);
+INSERT INTO `t_connect` VALUES (150, 100, 00000000104);
+INSERT INTO `t_connect` VALUES (151, 101, 00000000000);
+INSERT INTO `t_connect` VALUES (152, 101, 00000000105);
+INSERT INTO `t_connect` VALUES (153, 101, 00000000106);
+INSERT INTO `t_connect` VALUES (154, 102, 00000000000);
+INSERT INTO `t_connect` VALUES (155, 102, 00000000107);
+INSERT INTO `t_connect` VALUES (156, 103, 00000000000);
+INSERT INTO `t_connect` VALUES (157, 103, 00000000108);
+INSERT INTO `t_connect` VALUES (158, 104, 00000000000);
+INSERT INTO `t_connect` VALUES (159, 104, 00000000109);
+INSERT INTO `t_connect` VALUES (160, 105, 00000000000);
+INSERT INTO `t_connect` VALUES (161, 105, 00000000110);
+INSERT INTO `t_connect` VALUES (162, 105, 00000000111);
+INSERT INTO `t_connect` VALUES (163, 106, 00000000000);
+INSERT INTO `t_connect` VALUES (164, 106, 00000000112);
+INSERT INTO `t_connect` VALUES (165, 106, 00000000113);
+INSERT INTO `t_connect` VALUES (166, 107, 00000000000);
+INSERT INTO `t_connect` VALUES (167, 107, 00000000114);
+INSERT INTO `t_connect` VALUES (168, 108, 00000000000);
+INSERT INTO `t_connect` VALUES (169, 108, 00000000004);
+INSERT INTO `t_connect` VALUES (170, 108, 00000000007);
+INSERT INTO `t_connect` VALUES (171, 108, 00000000114);
+INSERT INTO `t_connect` VALUES (172, 108, 00000000097);
+INSERT INTO `t_connect` VALUES (173, 108, 00000000094);
+INSERT INTO `t_connect` VALUES (174, 109, 00000000000);
+INSERT INTO `t_connect` VALUES (175, 109, 00000000115);
+INSERT INTO `t_connect` VALUES (176, 110, 00000000000);
+INSERT INTO `t_connect` VALUES (177, 110, 00000000116);
+INSERT INTO `t_connect` VALUES (178, 111, 00000000000);
+INSERT INTO `t_connect` VALUES (179, 111, 00000000117);
+INSERT INTO `t_connect` VALUES (180, 112, 00000000000);
+INSERT INTO `t_connect` VALUES (181, 112, 00000000118);
+INSERT INTO `t_connect` VALUES (182, -1, 00000000119);
+INSERT INTO `t_connect` VALUES (183, 113, 00000000000);
+INSERT INTO `t_connect` VALUES (184, 113, 00000000120);
+INSERT INTO `t_connect` VALUES (185, 114, 00000000000);
+INSERT INTO `t_connect` VALUES (186, 114, 00000000121);
+INSERT INTO `t_connect` VALUES (187, 115, 00000000000);
+INSERT INTO `t_connect` VALUES (188, 115, 00000000122);
+INSERT INTO `t_connect` VALUES (189, 116, 00000000000);
+INSERT INTO `t_connect` VALUES (190, 116, 00000000123);
+INSERT INTO `t_connect` VALUES (191, 117, 00000000000);
+INSERT INTO `t_connect` VALUES (192, 117, 00000000126);
+INSERT INTO `t_connect` VALUES (193, 117, 00000000127);
+INSERT INTO `t_connect` VALUES (194, 118, 00000000000);
+INSERT INTO `t_connect` VALUES (195, 118, 00000000128);
+INSERT INTO `t_connect` VALUES (196, 118, 00000000129);
+INSERT INTO `t_connect` VALUES (197, 118, 00000000130);
+INSERT INTO `t_connect` VALUES (198, 118, 00000000131);
+INSERT INTO `t_connect` VALUES (199, 119, 00000000000);
+INSERT INTO `t_connect` VALUES (200, 119, 00000000004);
+INSERT INTO `t_connect` VALUES (201, 119, 00000000006);
+INSERT INTO `t_connect` VALUES (202, 119, 00000000094);
+INSERT INTO `t_connect` VALUES (203, 119, 00000000131);
+INSERT INTO `t_connect` VALUES (204, 119, 00000000129);
+INSERT INTO `t_connect` VALUES (205, 120, 00000000000);
+INSERT INTO `t_connect` VALUES (206, 121, 00000000000);
+INSERT INTO `t_connect` VALUES (207, 122, 00000000000);
+INSERT INTO `t_connect` VALUES (208, 122, 00000000006);
+INSERT INTO `t_connect` VALUES (209, 122, 00000000094);
+INSERT INTO `t_connect` VALUES (210, 122, 00000000145);
+INSERT INTO `t_connect` VALUES (211, 123, 00000000000);
+INSERT INTO `t_connect` VALUES (212, 123, 00000000149);
+INSERT INTO `t_connect` VALUES (213, 123, 00000000150);
+INSERT INTO `t_connect` VALUES (214, 123, 00000000151);
+INSERT INTO `t_connect` VALUES (215, 123, 00000000152);
+INSERT INTO `t_connect` VALUES (216, 124, 00000000000);
+INSERT INTO `t_connect` VALUES (217, 124, 00000000155);
+INSERT INTO `t_connect` VALUES (218, 124, 00000000156);
+INSERT INTO `t_connect` VALUES (219, 124, 00000000157);
+INSERT INTO `t_connect` VALUES (220, 124, 00000000158);
+INSERT INTO `t_connect` VALUES (221, 125, 00000000000);
+INSERT INTO `t_connect` VALUES (222, 125, 00000000160);
+INSERT INTO `t_connect` VALUES (223, 127, 00000000000);
+INSERT INTO `t_connect` VALUES (224, 129, 00000000000);
+INSERT INTO `t_connect` VALUES (225, 130, 00000000000);
+INSERT INTO `t_connect` VALUES (226, 131, 00000000000);
+INSERT INTO `t_connect` VALUES (227, 131, 00000000004);
+INSERT INTO `t_connect` VALUES (228, 131, 00000000006);
+INSERT INTO `t_connect` VALUES (229, 131, 00000000091);
+INSERT INTO `t_connect` VALUES (232, NULL, 00000000000);
+INSERT INTO `t_connect` VALUES (233, NULL, 00000000000);
+INSERT INTO `t_connect` VALUES (234, 135, 00000000000);
+INSERT INTO `t_connect` VALUES (235, 135, 00000000181);
 
 -- ----------------------------
 -- Table structure for t_notice
@@ -210,29 +296,14 @@ CREATE TABLE `t_notice`  (
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '内容',
   `createTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发布时间',
   PRIMARY KEY (`noticeId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_notice
 -- ----------------------------
-INSERT INTO `t_notice` VALUES (1, 2, '测试修改通告标题', '测试修改通告内容', 'Fri Jun 19 15:25:46 CST 2020');
-INSERT INTO `t_notice` VALUES (3, 2, '测试增加通告标题', '测试增加通告内容', 'Mon Jun 03 01:15:18 CST 2019');
-INSERT INTO `t_notice` VALUES (4, 4, '测试增加通告标题', '测试增加通告内容', 'Mon Jun 03 01:16:08 CST 2019');
-INSERT INTO `t_notice` VALUES (5, 2, '测试增加通告标题', '测试增加通告内容', 'Mon Jun 03 14:08:49 CST 2019');
-INSERT INTO `t_notice` VALUES (9, 2, '测试增加通告标题', '测试增加通告内容', 'Mon Jun 10 21:12:22 CST 2019');
-INSERT INTO `t_notice` VALUES (10, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 12:07:04 CST 2020');
-INSERT INTO `t_notice` VALUES (11, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 12:09:08 CST 2020');
-INSERT INTO `t_notice` VALUES (12, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 14:52:14 CST 2020');
-INSERT INTO `t_notice` VALUES (13, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 14:53:27 CST 2020');
-INSERT INTO `t_notice` VALUES (14, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:02:39 CST 2020');
-INSERT INTO `t_notice` VALUES (15, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:07:02 CST 2020');
-INSERT INTO `t_notice` VALUES (16, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:07:03 CST 2020');
-INSERT INTO `t_notice` VALUES (17, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:18:20 CST 2020');
-INSERT INTO `t_notice` VALUES (18, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:23:59 CST 2020');
-INSERT INTO `t_notice` VALUES (19, 2, '测试增加通告标题', '测试增加通告内容', 'Fri Jun 19 15:25:46 CST 2020');
-INSERT INTO `t_notice` VALUES (20, 1, 'test', 'test', 'Sun Jun 21 15:44:42 CST 2020');
-INSERT INTO `t_notice` VALUES (21, 1, '133', '123', 'Mon Jun 22 15:59:17 CST 2020');
-INSERT INTO `t_notice` VALUES (22, 1, '111', '111', 'Tue Jun 23 13:15:02 CST 2020');
+INSERT INTO `t_notice` VALUES (32, 1, '期末考试通知', '期末考试在即，请同学们认真复习！', 'Thu Jul 02 06:43:37 CST 2020');
+INSERT INTO `t_notice` VALUES (33, 1, '公告测试test1', '公告测试test1', 'Thu Jul 02 09:19:31 CST 2020');
+INSERT INTO `t_notice` VALUES (34, 3, '公告测试test2', '公告测试test2', 'Thu Jul 02 09:28:31 CST 2020');
 
 -- ----------------------------
 -- Table structure for t_paper
@@ -246,22 +317,18 @@ CREATE TABLE `t_paper`  (
   `endTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '结束时间',
   `duration` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '做题时长',
   PRIMARY KEY (`paperId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 132 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paper
 -- ----------------------------
-INSERT INTO `t_paper` VALUES (3, '2017年秋季学期17级高等数学期末考试题', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年6月30日23时59分59秒', '90');
-INSERT INTO `t_paper` VALUES (10, 'test2', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (12, '2020年春季学期软件质量保证与测试考试', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (38, '12345678考试了！', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (40, '考考考考', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (65, '手动录入题目', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (66, '考考111', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (67, 'lurutimu', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (74, 'shoiasdfokj', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (96, 'eee', 0, NULL, NULL, NULL);
-INSERT INTO `t_paper` VALUES (99, 'rrr', 0, NULL, NULL, NULL);
+INSERT INTO `t_paper` VALUES (1, '软件质量保证与测试小练习1', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日14时42分1秒', '10');
+INSERT INTO `t_paper` VALUES (2, '软件质量保证与测试小练习2', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日23时59分59秒', '10');
+INSERT INTO `t_paper` VALUES (3, '软件质量保证与测试小练习3', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日23时59分59秒', '10');
+INSERT INTO `t_paper` VALUES (4, '2020年春季学期软件质量保证与测试期末考试', 1, '开始:2020年07月03日00时00分00秒', '结束:2020年07月05日23时59分59秒', '120');
+INSERT INTO `t_paper` VALUES (5, '2020年春季学期计算机网络试期末考试', 1, '开始:2020年07月04日00时00分00秒', '结束:2020年07月08日23时59分59秒', '120');
+INSERT INTO `t_paper` VALUES (6, '2020年春季学期编译原理期末考试', 1, '开始:2020年07月05日00时00分00秒', '结束:2020年07月08日23时59分59秒', '120');
+INSERT INTO `t_paper` VALUES (135, '手动录入测试1', 1, '开始:2020年07月02日09时26分48秒', '结束:2020年07月03日09时26分53秒', '2');
 
 -- ----------------------------
 -- Table structure for t_paperdetail
@@ -276,36 +343,50 @@ CREATE TABLE `t_paperdetail`  (
   `typeB` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '选项B',
   `typeC` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '选项C',
   `typeD` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '选项D',
-  `answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '正确答案或关键字1',
+  `answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '正确答案或关键字1',
   `answer2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '关键字2',
   `answer3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '关键字3',
   `exerciseType` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '题目类型',
   `score` int(0) DEFAULT NULL COMMENT '分值',
   PRIMARY KEY (`paperDetailId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 102 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 163 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paperdetail
 -- ----------------------------
-INSERT INTO `t_paperdetail` VALUES (4, 2, 3, 'Servlet程序运行在服务器Web容器中？', '对', '错', '', '', '对', NULL, NULL, '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (5, 2, 4, 'Applet运行在客户端浏览器中？', '对', '错', '', '', '对', NULL, NULL, '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (6, 2, 5, 'Tomcat是一款免费、开源且全面支持Java EE规范的应用服务器？', '对', '错', '', '', '错', NULL, NULL, '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (7, 2, 6, '数据库连接池是由应用程序创建和管理的？', '对', '错', NULL, NULL, '对', NULL, NULL, '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (8, 2, 7, '编译好的Servlet应该与JSP文件放在同一个文件夹下？', '对', '错', NULL, NULL, '错', NULL, NULL, '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (9, 2, 8, '使用response的sendRedirect()方法页面跳转会导致地址栏改变？', '对', '错', NULL, NULL, '对', '', '', '判断题', 2);
-INSERT INTO `t_paperdetail` VALUES (10, 1, 1, '模块的内聚性最高的是？', '逻辑内聚', '时间内聚', '偶然内聚', '功能内聚', 'D', '', '', '选择题', 4);
-INSERT INTO `t_paperdetail` VALUES (11, 1, 2, '结构化程序设计的一种基本方法是？', '筛选法', '迭代法', '逐步求精法', '递归法', 'C', NULL, NULL, '选择题', 4);
-INSERT INTO `t_paperdetail` VALUES (90, 0, 0, 'sdoajshdoiahhiquwhivasdasdasd', 'dui', 'cuo', NULL, NULL, 'A', NULL, NULL, '判断题', 3);
-INSERT INTO `t_paperdetail` VALUES (91, 0, 0, 'meinuxiaojie', 'A', 'B', 'C', 'D', 'D', NULL, NULL, '选择题', 10);
-INSERT INTO `t_paperdetail` VALUES (92, 0, 0, 'JISOIJDOAIHFEUKS', 'null', NULL, NULL, NULL, 'SAD', NULL, NULL, '简答题', 100);
-INSERT INTO `t_paperdetail` VALUES (93, 0, 0, 'SDASDHFGFGRXZVAAFS', 'undefined', NULL, NULL, NULL, 'GFG', NULL, NULL, '填空题', 6);
-INSERT INTO `t_paperdetail` VALUES (94, 0, 0, 'FHDFDFGDFG', 'undefined', NULL, NULL, NULL, 'FGFG', NULL, NULL, '填空题', 6);
-INSERT INTO `t_paperdetail` VALUES (95, 0, 0, '的花费话费', 'A', 'B', NULL, NULL, 'A', NULL, NULL, '判断题', 19);
-INSERT INTO `t_paperdetail` VALUES (96, 0, 0, '的花费话费', 'A', 'B', NULL, NULL, 'A', NULL, NULL, '判断题', 19);
-INSERT INTO `t_paperdetail` VALUES (97, 0, 0, 'SDFSDGAWE', 'null', NULL, NULL, NULL, 'S', NULL, NULL, '简答题', 24);
-INSERT INTO `t_paperdetail` VALUES (98, 0, 0, 'asdasfasasdasd', 'null', NULL, NULL, NULL, 'SDFS', NULL, NULL, '简答题', 16);
-INSERT INTO `t_paperdetail` VALUES (99, 0, 0, 'ggggggg', 'null', NULL, NULL, NULL, 'g', NULL, NULL, '简答题', 19);
-INSERT INTO `t_paperdetail` VALUES (100, 0, 0, 'wedwefw', 'A', 'B', 'C', 'D', 'A', NULL, NULL, '选择题', 30);
+INSERT INTO `t_paperdetail` VALUES (1, 4, 1, '软件测试的目的是( )。', '试验性运行软件', '发现软件错误', '证明软件正确', '找出软件中全部错误', 'B', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (2, 4, 2, '黑盒法是根据程序的( )来设计测试用例的。', '应用范围', '内部逻辑', '功能', '输入数据', 'C', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (3, 4, 3, '与设计测试用例无关的文档是( )。', '项目开发计划', '需求规格说明书', '设计说明书', '源程序', 'A', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (4, 4, 4, '用黑盒技术设计测试用例的方法之一为( )。', '因果图', '逻辑覆盖', '循环覆盖', '基本路径测试', 'A', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (5, 4, 5, '按照软件测试用例的设计方法而论，软件测试可以分为白盒测试法和______。', '', '', '', '', '黑盒测试法', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (6, 4, 6, '集成测试指在_______测试基础上，将所有模块按照设计要求组装成一个完整的系统进行的测试。', '', '', '', '', '单元', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (7, 4, 7, '要覆盖含循环结构的所有路径是不可能的，一般通过限制_______来测试。', '', '', '', '', '循环次数', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (8, 4, 8, '请解释什么是性能测试。', '', '', '', '', '需求规格说明书', '性能相关', '性能需求', '简答题', 20);
+INSERT INTO `t_paperdetail` VALUES (9, 1, 9, '单元测试时，调用被测模块的是( )。', '桩模块', '通信模块', '驱动模块', '代理模块', 'C', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (10, 1, 10, '根据软件需求规格说明，在开发环境下对已集成的软件系统进行的测试是( )。', '系统测试', '单元测试', '集成测试', '验收测试', 'A', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (11, 1, 11, '下列接口测试中，要延续到系统测试阶段来完成的是( )。', '系统外部接口', '系统内部接口', '函数或方法接口', '类接口', 'A', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (12, 1, 12, '大多数实际情况下，性能测试的实现方法是( )。', '黑盒测试', '白盒测试', '静态分析', '可靠性测试', 'A', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (13, 1, 13, '对程序的测试最好由( )来做，对程序的调试最好由谁来做( )。', '程序员，第三方测试机构', '第三方测试机构，程序员', '程序开发组，程序员', '程序开发组，程序开发组', 'B', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (14, 2, 14, '软件设计阶段的测试主要采取的方式是( )。', '评审', '白盒测试', '黑盒测试', '动态测试', 'A', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (15, 2, 15, '集成测试对系统内部的交互以及集成后系统功能检验了何种质量特性( )。', '正确性', '可靠性', '可使用性', '可维护性', 'A', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (16, 2, 16, '软件生存周期过程中，修改错误代价最大的阶段是( )。', '需求阶段', '设计阶段', '编程阶段', '发布运行阶段', 'D', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (17, 2, 17, '在边界值分析中，下列数据通常不用来做数据测试的是( )。', '正好等于边界的值', '等价类中的等价值', '刚刚大于边界的值', '刚刚小于边界的值', 'B', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (18, 2, 18, '单元测试中设计测试用例的依据是( )。', '概要设计规格说明书', '用户需求规格说明书', '项目计划说明书', '详细设计规格说明书', 'D', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (19, 3, 19, '通常可分为白盒测试和黑盒测试。白盒测试是根据程序的( )来设计测试用例。', '功能', '性能', '内部逻辑', '内部数据', 'C', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (20, 3, 20, '如果一个判定中的复合条件表达式为（A > 1）or（B <= 3），则为了达到100%的条件覆盖率，至少需要设计多少个测试用例( )。', '1', '2', '3', '4', 'B', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (21, 3, 21, '经验表明，在程序测试中，某模块与其他模块相比，若该模块已发现并改正的错误较多，则该模块中残存的错误数目与其他模块相比，通常应该( )。', '较少', '较多', '相似', '不确定', 'B', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (22, 3, 22, '不属于白盒测试的技术是( )。', '路径覆盖', '判定覆盖', '循环覆盖', '边界值分析', 'D', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (23, 3, 23, '测试的关键问题是( )。', '如何组织软件评审', '如何选择测试用例', '如何验证程序的正确性', '如何采用综合策略', 'B', '', '', '选择题', 20);
+INSERT INTO `t_paperdetail` VALUES (24, 6, 24, '构造编译程序应掌握( )。', '源程序', '编译方法', '目标语言', '以上三项', 'D', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (25, 6, 25, '编译程序绝大多数时间花在( )上。', '出错处理', '目标代码生成', '词法分析', '表格管理', 'D', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (26, 6, 26, '编译程序是对( )。', '汇编程序的翻译', '高级语言程序的解释执行', '机器语言的执行', '高级语言程序的翻译', 'D', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (27, 6, 27, '词法分析所依据的是( )。', '语义规则', '构词规则', '语法规则', '等价变换规则', 'B', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (28, 6, 28, '字符集为 {0，1 }，写出一个正则表达式，该正则表达式正好定义下面的字符串集合：第二个字符是1的所有字符串。', '', '', '', '', '(0|1)1(0|1)*', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (29, 6, 29, '词法分析器的输入是_______。', '', '', '', '', '源程序', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (30, 6, 30, '词法分析器的输出是_______。', '', '', '', '', 'token或token链', '', '', '填空题', 20);
+INSERT INTO `t_paperdetail` VALUES (31, 6, 31, '计算机执行用高级语言编写的程序有哪些途径？他们之间主要区别是什么？', '', '', '', '', '编译程序', '解释程序', '这个字段为空', '简答题', 20);
+INSERT INTO `t_paperdetail` VALUES (181, 0, 0, '测试', 'A', 'B', 'C', 'D', 'A', '', '', '选择题', 10);
+INSERT INTO `t_paperdetail` VALUES (182, 0, 0, '测试2', 'A', 'B', 'C', 'D', 'A', '', '', '选择题', 10);
 
 -- ----------------------------
 -- Table structure for t_score
@@ -318,31 +399,17 @@ CREATE TABLE `t_score`  (
   `mark` int(0) DEFAULT NULL COMMENT '成绩',
   `paperName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '试卷名称',
   PRIMARY KEY (`scoreId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_score
 -- ----------------------------
-INSERT INTO `t_score` VALUES (1, 1, 2, 15, '2018年秋季学期17级JavaEE期末考试题');
-INSERT INTO `t_score` VALUES (3, 2, 2, 20, '2018年秋季学期17级JavaEE期末考试题');
-INSERT INTO `t_score` VALUES (4, 4, 1, 14, '2015年春季学期14级软件工程导论期末考试题');
-INSERT INTO `t_score` VALUES (5, 2, 1, 8, '2015年春季学期14级软件工程导论期末考试题');
-INSERT INTO `t_score` VALUES (6, 3, 1, 16, '2015年春季学期14级软件工程导论期末考试题');
-INSERT INTO `t_score` VALUES (7, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (8, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (9, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (10, 1, 2, 65, '2018年秋季学期17级JavaEE期末考试题');
-INSERT INTO `t_score` VALUES (11, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (12, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (13, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (14, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (15, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (16, 2, 3, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (17, 2, 3, 15, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (18, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (19, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (20, 2, 1, 99, '测试增加试卷名称');
-INSERT INTO `t_score` VALUES (21, 2, 1, 99, '测试增加试卷名称');
+INSERT INTO `t_score` VALUES (37, 2, 1, 80, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (38, 2, 2, 80, '软件质量保证与测试小练习2');
+INSERT INTO `t_score` VALUES (39, 2, 3, 80, '软件质量保证与测试小练习3');
+INSERT INTO `t_score` VALUES (41, 2, 3, 100, '软件质量保证与测试小练习3');
+INSERT INTO `t_score` VALUES (43, 2, 1, 100, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (45, 2, 135, 10, '手动录入测试1');
 
 -- ----------------------------
 -- Table structure for t_user
@@ -362,14 +429,9 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, 'admin', '123', '19990316', '男', 2, 'http://47.103.10.220:8010/img/1.jpg');
-INSERT INTO `t_user` VALUES (2, 'hello', '123', '19990316', '女', 0, 'aaaaaaa');
-INSERT INTO `t_user` VALUES (3, '梁莉莉', '123', '19990316', '女', 1, 'http://47.103.10.220:8010/img/3.jpg');
-INSERT INTO `t_user` VALUES (4, '测试用户', '123', '19990316', '女', 1, 'http://47.103.10.220:8010/img/bg.jpg');
-INSERT INTO `t_user` VALUES (5, 'aaa', '123', '19990316', '女', 1, 'aaaaaaa');
-INSERT INTO `t_user` VALUES (17, '测试注册', '123', '19990316', '女', 1, 'aaaaaaa');
-INSERT INTO `t_user` VALUES (18, '测试注册', '123', '19990316', '女', 1, 'aaaaaaa');
-INSERT INTO `t_user` VALUES (21, '测试注册', '123', '19990316', '女', 1, 'aaaaaaa');
+INSERT INTO `t_user` VALUES (1, 'admin', '202cb962ac59075b964b07152d234b70', '19990316', '男', 2, 'http://47.103.10.220:8010/img/1.jpg');
+INSERT INTO `t_user` VALUES (2, 'student', '202cb962ac59075b964b07152d234b70', '19990316', '女', 0, 'aaaaaaa');
+INSERT INTO `t_user` VALUES (3, 'teacher', '202cb962ac59075b964b07152d234b70', '19990316', '女', 1, 'aaaaaaa');
 
 -- ----------------------------
 -- Table structure for t_wrong
@@ -385,13 +447,14 @@ CREATE TABLE `t_wrong`  (
   `score` int(0) DEFAULT NULL COMMENT '这道题的分值',
   `nowScore` int(0) DEFAULT NULL COMMENT '用户得分',
   PRIMARY KEY (`wrongId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 104 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_wrong
 -- ----------------------------
-INSERT INTO `t_wrong` VALUES (1, 1, 2, 24, '后置双摄', '关键字为：HUAWEI 后置 ', 12, 6);
-INSERT INTO `t_wrong` VALUES (2, 1, 2, 11, 'A', 'C', 4, 0);
-INSERT INTO `t_wrong` VALUES (3, 2, 2, 24, '后置双摄', '关键字为：HUAWEI 后置 ', 12, 6);
+INSERT INTO `t_wrong` VALUES (104, 2, 1, 9, 'A', 'C', 20, 0);
+INSERT INTO `t_wrong` VALUES (105, 2, 2, 18, 'B', 'D', 20, 0);
+INSERT INTO `t_wrong` VALUES (106, 2, 3, 20, 'C', 'B', 20, 0);
+INSERT INTO `t_wrong` VALUES (107, 2, 3, 20, 'C', 'B', 20, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

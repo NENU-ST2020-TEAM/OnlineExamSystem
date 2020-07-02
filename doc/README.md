@@ -19,7 +19,8 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 
 - 主目录路径：`OnlineExamSystem\doc\白盒测试-代码覆盖率\index.html`
 - Coverage Report截图：
-    
-    ![Coverage_Report_index](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/Coverage_Report_index.jpg)
 
+    ![Coverage_Report_index](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/代码覆盖率报告主页面.jpg)
+
+    ![Coverage_Report](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/报告部分页面.jpg)
 

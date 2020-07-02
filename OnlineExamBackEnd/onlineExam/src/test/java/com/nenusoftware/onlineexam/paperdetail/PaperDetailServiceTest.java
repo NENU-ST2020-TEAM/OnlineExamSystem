@@ -36,7 +36,7 @@ public class PaperDetailServiceTest {
 
     @Test
     public void testListPaperDetailByPaperId() throws Exception{
-        String paperName = "新增一张试卷2";
+        String paperName = "新增一张软件质量保证期末考试试卷";
         Paper paper = new Paper();
         paper.setPaperName(paperName);
         paperService.addPaper(paper);
@@ -127,7 +127,7 @@ public class PaperDetailServiceTest {
 
     @Test
     public void testJudgeQuestion() throws Exception{
-        String jsonString = "[{\"solution\":\"后置双摄\",\"paperDetailId\":\"52\",\"paperId\":\"2\"}, {\"solution\":\"A\",\"paperDetailId\":\"11\",\"paperId\":\"2\"},{\"solution\":\"A\",\"paperDetailId\":\"4\",\"paperId\":\"2\"}]";
+        String jsonString = "[{\"solution\":\"后置双摄\",\"paperDetailId\":\"31\",\"paperId\":\"2\"}, {\"solution\":\"A\",\"paperDetailId\":\"11\",\"paperId\":\"2\"},{\"solution\":\"A\",\"paperDetailId\":\"4\",\"paperId\":\"2\"}]";
         JSONArray jsonArray = JSONArray.parseArray(jsonString);
         int result = paperDetailService.judgeQuestion(jsonArray, 1);
         System.out.println(result);
@@ -135,12 +135,12 @@ public class PaperDetailServiceTest {
 
     @Test
     public void testQueryIdByContent() throws Exception{
-        String content = "模块的内聚性最高的是？";
+        String content = "请解释什么是性能测试。";
         System.out.println(paperDetailService.queryIdByContent(content).getPaperDetailId());
     }
 
     @Test
     public void testQueryQuestion() throws Exception{
-        System.out.println(paperDetailService.queryQuestion(52));
+        System.out.println(paperDetailService.queryQuestion(2));
     }
 }
