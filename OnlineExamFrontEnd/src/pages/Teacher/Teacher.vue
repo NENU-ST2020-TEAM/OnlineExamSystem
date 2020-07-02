@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-07-02 20:22:26
+ * @LastEditTime: 2020-07-02 21:37:42
  * @LastEditors: Please set LastEditors
  * @Description: 教师端页面
  * @FilePath: \onlineexamLLL\src\pages\Teacher\Teacher.vue
@@ -1912,6 +1912,25 @@ export default {
                         },
                     }).then(resolve => {
                         this.questionDetail = resolve.data;
+                        console.log(resolve.data);
+                        this.$ajax({
+                            method: "post",
+                            url: "http://120.26.186.88:8080/paperDetail/listAllPaperDetail",
+                            dataType: "json",
+                            crossDomain: true,
+                            cache: false,
+                        }).then(resolve => {
+                            this.tableData2 = resolve.data;
+                            //获取数组长度赋值给total
+                            this.total2 = resolve.data.length;
+                            // this.peoLoading = false;
+                            console.log(this.total2);
+                            // console.log(resolve.data);
+                            //提交之后 表单清空
+                            this.handQuestionInput = {brand_right: 0};
+                        }, reject => {
+                            console.log(reject);
+                        });
                     }, reject => {
                         console.log("题目创建失败了！");
                     });
@@ -1946,6 +1965,25 @@ export default {
                         },
                     }).then(resolve => {
                         this.questionDetail = resolve.data;
+                        console.log(resolve.data);
+                        this.$ajax({
+                            method: "post",
+                            url: "http://120.26.186.88:8080/paperDetail/listAllPaperDetail",
+                            dataType: "json",
+                            crossDomain: true,
+                            cache: false,
+                        }).then(resolve => {
+                            this.tableData2 = resolve.data;
+                            //获取数组长度赋值给total
+                            this.total2 = resolve.data.length;
+                            // this.peoLoading = false;
+                            console.log(this.total2);
+                            // console.log(resolve.data);
+                            //提交之后 表单清空
+                            this.handQuestionInput = {brand_right: 0};
+                        }, reject => {
+                            console.log(reject);
+                        });
                     }, reject => {
                         console.log("题目创建失败了！");
                     });
@@ -1980,6 +2018,25 @@ export default {
                         },
                     }).then(resolve => {
                         this.questionDetail = resolve.data;
+                        console.log(resolve.data);
+                        this.$ajax({
+                            method: "post",
+                            url: "http://120.26.186.88:8080/paperDetail/listAllPaperDetail",
+                            dataType: "json",
+                            crossDomain: true,
+                            cache: false,
+                        }).then(resolve => {
+                            this.tableData2 = resolve.data;
+                            //获取数组长度赋值给total
+                            this.total2 = resolve.data.length;
+                            // this.peoLoading = false;
+                            console.log(this.total2);
+                            // console.log(resolve.data);
+                            //提交之后 表单清空
+                            this.handQuestionInput = {brand_right: 0};
+                        }, reject => {
+                            console.log(reject);
+                        });
                     }, reject => {
                         console.log("题目创建失败了！");
                     });
@@ -2015,7 +2072,7 @@ export default {
                         return str.join("&");
                     },
                 }).then(resolve => {
-                    // this.questionDetail = resolve.data;
+                    this.questionDetail = resolve.data;
                     console.log(resolve.data);
                     this.$ajax({
                         method: "post",
