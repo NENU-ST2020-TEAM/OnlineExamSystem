@@ -1,7 +1,7 @@
 package com.nenusoftware.onlineexam.entity.answer;
 
 /**
- * @Author : Kongyy
+ * @Author:Kongyy
  * @Description: 答题的实体层
  * @Date: 19:44 2020/6/15
  */

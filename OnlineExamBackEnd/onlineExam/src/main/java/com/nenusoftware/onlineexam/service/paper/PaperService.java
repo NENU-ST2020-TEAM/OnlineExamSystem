@@ -15,7 +15,7 @@ public interface PaperService {
     /**
      * 列出所有试卷
      * @return 返回 List形式的试卷信息
-     * @throws Exception 抛出错误类型
+     * @throws Exception
      */
     public ArrayList<Paper> listAllPaper() throws Exception;
 

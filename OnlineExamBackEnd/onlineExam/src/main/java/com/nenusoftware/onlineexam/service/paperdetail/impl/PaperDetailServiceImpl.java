@@ -254,15 +254,6 @@ public class PaperDetailServiceImpl implements PaperDetailService {
                     }
                 }
                 else{
-                    if("判断题".equals(type)){
-                        if("A".equals(answer.getSolution())){
-                            answer.setSolution("对");
-                        }
-                        else{
-                            answer.setSolution("错");
-                        }
-
-                    }
                     if(answer.getSolution().equals(answer.getRight())){
                         result += score;
                     }
