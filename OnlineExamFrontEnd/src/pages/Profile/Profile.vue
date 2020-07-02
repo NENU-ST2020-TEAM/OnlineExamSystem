@@ -769,7 +769,7 @@
                 }).then(resolve => {
                   console.log("成绩为:");
                   console.log(resolve);
-
+	  this.solutionList = [];
                   //请求成绩数据
                   this.$ajax({
                     method: "post",

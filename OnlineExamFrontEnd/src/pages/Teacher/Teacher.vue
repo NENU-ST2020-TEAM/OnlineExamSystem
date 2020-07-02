@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-06-30 18:09:02
+ * @LastEditTime: 2020-07-02 20:22:26
  * @LastEditors: Please set LastEditors
  * @Description: 教师端页面
  * @FilePath: \onlineexamLLL\src\pages\Teacher\Teacher.vue
@@ -628,7 +628,7 @@
             <!-- 单选 -->
             <div v-for="item in questionDanxuan" :key="item.id" class="showPaper">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                    <span>{{item.id}}. </span>
+                    <!-- <span>{{item.id}}. </span> -->
                     <span>{{item.content}}</span>
                 </p>
                 <el-radio-group 
@@ -643,7 +643,7 @@
             <!-- 判断 -->
             <div v-for="item in questionPanduan" :key="item.id" class="showPaper">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                    <span>{{item.id}}. </span>
+                    <!-- <span>{{item.id}}. </span> -->
                     <span>{{item.content}}</span>
                 </p>
                 <el-radio-group 
@@ -656,7 +656,7 @@
             <!-- 填空 -->
             <div v-for="item in questionTiankong" v-bind:key="item.id">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                    <span>{{item.id}}. </span>
+                    <!-- <span>{{item.id}}. </span> -->
                     <span>{{item.content}}</span>
                 </p>
                 <el-input type="text" placeholder="请输入答案" v-model="answerTiankong"></el-input>
@@ -664,7 +664,7 @@
             <!-- 问答 -->
             <div v-for="item in questionWenda" v-bind:key="item.id" class="showPaper">
                 <p style="margin-top: 10px; margin-down: 5px;">
-                    <span>{{item.id}}. </span>
+                    <!-- <span>{{item.id}}. </span> -->
                     <span>{{item.content}}</span>
                 </p>
                 <el-input type="textarea" placeholder="请输入答案" v-model="answerWenda"></el-input>
@@ -1480,6 +1480,10 @@ export default {
                 // 发布试卷后 填写试卷名称清空
                 this.selectPaperName = {brand_right: 0};
                 this.handPaperName = {brand_right: 0};
+                this.questionDanxuan = [];
+                this.questionTiankong = [];
+                this.questionPanduan = [];
+                this.questionWenda = [];
                 //题库更新
                 this.$ajax({
                     method: "post",
