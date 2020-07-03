@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 02/07/2020 09:41:11
+ Date: 02/07/2020 23:39:06
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,7 @@ CREATE TABLE `t_connect`  (
   `paperId` int(0) DEFAULT NULL COMMENT '试卷编号',
   `paperDetailId` int(11) UNSIGNED ZEROFILL DEFAULT 00000000000 COMMENT '试题编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 231 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 249 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_connect
@@ -85,21 +85,21 @@ INSERT INTO `t_connect` VALUES (28, 6, 00000000028);
 INSERT INTO `t_connect` VALUES (29, 6, 00000000029);
 INSERT INTO `t_connect` VALUES (30, 6, 00000000030);
 INSERT INTO `t_connect` VALUES (31, 6, 00000000031);
-INSERT INTO `t_connect` VALUES (32, 47, 00000000000);
-INSERT INTO `t_connect` VALUES (33, 48, 00000000000);
-INSERT INTO `t_connect` VALUES (34, 49, 00000000000);
-INSERT INTO `t_connect` VALUES (35, 50, 00000000000);
-INSERT INTO `t_connect` VALUES (36, 51, 00000000000);
-INSERT INTO `t_connect` VALUES (37, 52, 00000000000);
-INSERT INTO `t_connect` VALUES (38, 53, 00000000000);
-INSERT INTO `t_connect` VALUES (39, 54, 00000000000);
-INSERT INTO `t_connect` VALUES (40, 55, 00000000000);
-INSERT INTO `t_connect` VALUES (41, 56, 00000000000);
-INSERT INTO `t_connect` VALUES (42, 57, 00000000000);
-INSERT INTO `t_connect` VALUES (43, 58, 00000000000);
-INSERT INTO `t_connect` VALUES (44, 59, 00000000000);
-INSERT INTO `t_connect` VALUES (45, 60, 00000000000);
-INSERT INTO `t_connect` VALUES (49, 61, 00000000000);
+INSERT INTO `t_connect` VALUES (32, 5, 00000000032);
+INSERT INTO `t_connect` VALUES (33, 5, 00000000033);
+INSERT INTO `t_connect` VALUES (34, 5, 00000000034);
+INSERT INTO `t_connect` VALUES (35, 5, 00000000035);
+INSERT INTO `t_connect` VALUES (36, 5, 00000000036);
+INSERT INTO `t_connect` VALUES (37, 5, 00000000037);
+INSERT INTO `t_connect` VALUES (38, 5, 00000000038);
+INSERT INTO `t_connect` VALUES (39, 5, 00000000039);
+INSERT INTO `t_connect` VALUES (40, 5, 00000000040);
+INSERT INTO `t_connect` VALUES (41, 5, 00000000041);
+INSERT INTO `t_connect` VALUES (42, 5, 00000000042);
+INSERT INTO `t_connect` VALUES (43, 5, 00000000043);
+INSERT INTO `t_connect` VALUES (44, 5, 00000000044);
+INSERT INTO `t_connect` VALUES (45, 5, 00000000045);
+INSERT INTO `t_connect` VALUES (49, 5, 00000000046);
 INSERT INTO `t_connect` VALUES (50, 62, 00000000000);
 INSERT INTO `t_connect` VALUES (51, 63, 00000000000);
 INSERT INTO `t_connect` VALUES (52, 64, 00000000000);
@@ -284,6 +284,34 @@ INSERT INTO `t_connect` VALUES (232, NULL, 00000000000);
 INSERT INTO `t_connect` VALUES (233, NULL, 00000000000);
 INSERT INTO `t_connect` VALUES (234, 135, 00000000000);
 INSERT INTO `t_connect` VALUES (235, 135, 00000000181);
+INSERT INTO `t_connect` VALUES (236, 136, 00000000000);
+INSERT INTO `t_connect` VALUES (237, 136, 00000000183);
+INSERT INTO `t_connect` VALUES (238, 137, 00000000000);
+INSERT INTO `t_connect` VALUES (239, 138, 00000000000);
+INSERT INTO `t_connect` VALUES (240, 138, 00000000001);
+INSERT INTO `t_connect` VALUES (241, 138, 00000000003);
+INSERT INTO `t_connect` VALUES (242, 138, 00000000006);
+INSERT INTO `t_connect` VALUES (243, 138, 00000000008);
+INSERT INTO `t_connect` VALUES (244, 139, 00000000000);
+INSERT INTO `t_connect` VALUES (245, 139, 00000000006);
+INSERT INTO `t_connect` VALUES (246, 139, 00000000001);
+INSERT INTO `t_connect` VALUES (247, 139, 00000000002);
+INSERT INTO `t_connect` VALUES (248, 139, 00000000008);
+INSERT INTO `t_connect` VALUES (249, 140, 00000000000);
+INSERT INTO `t_connect` VALUES (250, 140, 00000000198);
+INSERT INTO `t_connect` VALUES (251, 140, 00000000199);
+INSERT INTO `t_connect` VALUES (252, 140, 00000000200);
+INSERT INTO `t_connect` VALUES (253, 140, 00000000201);
+INSERT INTO `t_connect` VALUES (254, 141, 00000000000);
+INSERT INTO `t_connect` VALUES (255, 141, 00000000010);
+INSERT INTO `t_connect` VALUES (256, 141, 00000000008);
+INSERT INTO `t_connect` VALUES (257, 141, 00000000003);
+INSERT INTO `t_connect` VALUES (258, 141, 00000000005);
+INSERT INTO `t_connect` VALUES (259, 142, 00000000000);
+INSERT INTO `t_connect` VALUES (260, 142, 00000000204);
+INSERT INTO `t_connect` VALUES (261, 142, 00000000205);
+INSERT INTO `t_connect` VALUES (262, 142, 00000000206);
+INSERT INTO `t_connect` VALUES (263, 142, 00000000207);
 
 -- ----------------------------
 -- Table structure for t_notice
@@ -296,14 +324,16 @@ CREATE TABLE `t_notice`  (
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '内容',
   `createTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发布时间',
   PRIMARY KEY (`noticeId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_notice
 -- ----------------------------
 INSERT INTO `t_notice` VALUES (32, 1, '期末考试通知', '期末考试在即，请同学们认真复习！', 'Thu Jul 02 06:43:37 CST 2020');
-INSERT INTO `t_notice` VALUES (33, 1, '公告测试test1', '公告测试test1', 'Thu Jul 02 09:19:31 CST 2020');
-INSERT INTO `t_notice` VALUES (34, 3, '公告测试test2', '公告测试test2', 'Thu Jul 02 09:28:31 CST 2020');
+INSERT INTO `t_notice` VALUES (54, 2, '小测试', '软件测试与实践小测试已发放，请同学们在规定的时间之内做完！', 'Thu Jul 02 15:43:46 CST 2020');
+INSERT INTO `t_notice` VALUES (55, 1, '考试诚信', '请同学们认真考试！诚信考试！', 'Thu Jul 02 15:46:11 CST 2020');
+INSERT INTO `t_notice` VALUES (56, 2, '功能测试教师发公告', '你好', 'Thu Jul 02 21:45:17 CST 2020');
+INSERT INTO `t_notice` VALUES (57, 1, '新增管理员端公告测试', '你不好', 'Thu Jul 02 21:57:03 CST 2020');
 
 -- ----------------------------
 -- Table structure for t_paper
@@ -317,7 +347,7 @@ CREATE TABLE `t_paper`  (
   `endTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '结束时间',
   `duration` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '做题时长',
   PRIMARY KEY (`paperId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 132 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 140 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paper
@@ -325,10 +355,9 @@ CREATE TABLE `t_paper`  (
 INSERT INTO `t_paper` VALUES (1, '软件质量保证与测试小练习1', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日14时42分1秒', '10');
 INSERT INTO `t_paper` VALUES (2, '软件质量保证与测试小练习2', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日23时59分59秒', '10');
 INSERT INTO `t_paper` VALUES (3, '软件质量保证与测试小练习3', 1, '开始:2020年06月08日15时00分00秒', '结束:2020年07月05日23时59分59秒', '10');
-INSERT INTO `t_paper` VALUES (4, '2020年春季学期软件质量保证与测试期末考试', 1, '开始:2020年07月03日00时00分00秒', '结束:2020年07月05日23时59分59秒', '120');
-INSERT INTO `t_paper` VALUES (5, '2020年春季学期计算机网络试期末考试', 1, '开始:2020年07月04日00时00分00秒', '结束:2020年07月08日23时59分59秒', '120');
+INSERT INTO `t_paper` VALUES (4, '2020年春季学期软件质量保证与测试期末考试卷A', 1, '开始:2020年07月03日00时00分00秒', '结束:2020年07月05日23时59分59秒', '120');
+INSERT INTO `t_paper` VALUES (5, '2020年春季学期软件质量保证与测试期末考试卷B', 1, '开始:2020年07月02日00时00分00秒', '结束:2020年07月08日23时59分59秒', '120');
 INSERT INTO `t_paper` VALUES (6, '2020年春季学期编译原理期末考试', 1, '开始:2020年07月05日00时00分00秒', '结束:2020年07月08日23时59分59秒', '120');
-INSERT INTO `t_paper` VALUES (135, '手动录入测试1', 1, '开始:2020年07月02日09时26分48秒', '结束:2020年07月03日09时26分53秒', '2');
 
 -- ----------------------------
 -- Table structure for t_paperdetail
@@ -349,7 +378,7 @@ CREATE TABLE `t_paperdetail`  (
   `exerciseType` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '题目类型',
   `score` int(0) DEFAULT NULL COMMENT '分值',
   PRIMARY KEY (`paperDetailId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 163 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 198 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paperdetail
@@ -385,8 +414,21 @@ INSERT INTO `t_paperdetail` VALUES (28, 6, 28, '字符集为 {0，1 }，写出�
 INSERT INTO `t_paperdetail` VALUES (29, 6, 29, '词法分析器的输入是_______。', '', '', '', '', '源程序', '', '', '填空题', 20);
 INSERT INTO `t_paperdetail` VALUES (30, 6, 30, '词法分析器的输出是_______。', '', '', '', '', 'token或token链', '', '', '填空题', 20);
 INSERT INTO `t_paperdetail` VALUES (31, 6, 31, '计算机执行用高级语言编写的程序有哪些途径？他们之间主要区别是什么？', '', '', '', '', '编译程序', '解释程序', '这个字段为空', '简答题', 20);
-INSERT INTO `t_paperdetail` VALUES (181, 0, 0, '测试', 'A', 'B', 'C', 'D', 'A', '', '', '选择题', 10);
-INSERT INTO `t_paperdetail` VALUES (182, 0, 0, '测试2', 'A', 'B', 'C', 'D', 'A', '', '', '选择题', 10);
+INSERT INTO `t_paperdetail` VALUES (32, 5, 32, '软件测试的目的是( )。', '试验性运行软件', '发现软件错误', '证明软件正确', '找出软件中全部错误', 'B', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (33, 5, 33, '黑盒法是根据程序的( )来设计测试用例的。', '应用范围', '内部逻辑', '功能', '输入数据', 'C', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (34, 5, 34, '与设计测试用例无关的文档是( )。', '项目开发计划', '需求规格说明书', '设计说明书', '源程序', 'A', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (35, 5, 35, '用黑盒技术设计测试用例的方法之一为( )。', '因果图', '逻辑覆盖', '循环覆盖', '基本路径测试', 'A', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (36, 5, 36, '单元测试时，调用被测模块的是( )。', '桩模块', '通信模块', '驱动模块', '代理模块', 'C', '', '', '选择题', 5);
+INSERT INTO `t_paperdetail` VALUES (37, 5, 37, '测试的关键问题是如何选择测试用例。', '对', '错', '', '', 'A', '', '', '判断题', 5);
+INSERT INTO `t_paperdetail` VALUES (38, 5, 38, '软件测试用例主要由输入数据和测试计划两部分组成。', '对', '错', '', '', 'B', '', '', '判断题', 5);
+INSERT INTO `t_paperdetail` VALUES (39, 5, 39, '路径覆盖查错能力最强。', '对', '错', '', '', 'A', '', '', '判断题', 5);
+INSERT INTO `t_paperdetail` VALUES (40, 5, 40, '边界值分析属于白盒测试的技术。', '对', '错', '', '', 'B', '', '', '判断题', 5);
+INSERT INTO `t_paperdetail` VALUES (41, 5, 41, '黑盒测试是根据软件的规格说明来设计测试用例。', '对', '错', '', '', 'A', '', '', '判断题', 5);
+INSERT INTO `t_paperdetail` VALUES (42, 5, 42, '按照软件测试用例的设计方法而论，软件测试可以分为白盒测试法和______。', '', '', '', '', '黑盒测试法', '', '', '填空题', 8);
+INSERT INTO `t_paperdetail` VALUES (43, 5, 43, '集成测试指在_______测试基础上，将所有模块按照设计要求组装成一个完整的系统进行的测试。', '', '', '', '', '单元', '', '', '填空题', 8);
+INSERT INTO `t_paperdetail` VALUES (44, 5, 44, '要覆盖含循环结构的所有路径是不可能的，一般通过限制_______来测试。', '', '', '', '', '循环次数', '', '', '填空题', 8);
+INSERT INTO `t_paperdetail` VALUES (45, 5, 45, '什么是压力测试？请简要回答。', '', '', '', '', '模拟巨大的工作负荷，以查看系统在峰值使用情况下是否可以正常运行', '通过逐步增加系统负载来测试系统性能的变化', '最终确定在什么负载条件下系统性能处于失效状态', '简答题', 13);
+INSERT INTO `t_paperdetail` VALUES (46, 5, 46, '什么是性能测试？请简要回答。', '', '', '', '', '主要检验软件是否达到需求规格说明书中规定的各类性能指标', '满足一些性能相关的约束和限制条件', '性能测试', '简答题', 13);
 
 -- ----------------------------
 -- Table structure for t_score
@@ -399,7 +441,7 @@ CREATE TABLE `t_score`  (
   `mark` int(0) DEFAULT NULL COMMENT '成绩',
   `paperName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '试卷名称',
   PRIMARY KEY (`scoreId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_score
@@ -410,6 +452,11 @@ INSERT INTO `t_score` VALUES (39, 2, 3, 80, '软件质量保证与测试小练�
 INSERT INTO `t_score` VALUES (41, 2, 3, 100, '软件质量保证与测试小练习3');
 INSERT INTO `t_score` VALUES (43, 2, 1, 100, '软件质量保证与测试小练习1');
 INSERT INTO `t_score` VALUES (45, 2, 135, 10, '手动录入测试1');
+INSERT INTO `t_score` VALUES (46, 2, 1, 20, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (47, 2, 5, 75, '2020年春季学期软件质量保证与测试期末考试卷B');
+INSERT INTO `t_score` VALUES (48, 2, 1, 20, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (49, 2, 1, 100, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (50, 2, 142, 75, '功能测试卷1');
 
 -- ----------------------------
 -- Table structure for t_user
@@ -424,14 +471,16 @@ CREATE TABLE `t_user`  (
   `power` int(0) DEFAULT NULL COMMENT '权限（0为用户，1为管理员）',
   `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '头像',
   PRIMARY KEY (`userId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, 'admin', '202cb962ac59075b964b07152d234b70', '19990316', '男', 2, 'http://47.103.10.220:8010/img/1.jpg');
-INSERT INTO `t_user` VALUES (2, 'student', '202cb962ac59075b964b07152d234b70', '19990316', '女', 0, 'aaaaaaa');
-INSERT INTO `t_user` VALUES (3, 'teacher', '202cb962ac59075b964b07152d234b70', '19990316', '女', 1, 'aaaaaaa');
+INSERT INTO `t_user` VALUES (1, 'admin', '202cb962ac59075b964b07152d234b70', '19990316', '男', 2, 'http://120.26.186.88:8080/img/1.jpg');
+INSERT INTO `t_user` VALUES (2, 'student', '202cb962ac59075b964b07152d234b70', '19990316', '女', 0, 'http://120.26.186.88:8080/img/4.jpg');
+INSERT INTO `t_user` VALUES (3, 'teacher', '202cb962ac59075b964b07152d234b70', '19990316', '女', 1, 'http://120.26.186.88:8080/img/3.jpg');
+INSERT INTO `t_user` VALUES (4, 'student2', '202cb962ac59075b964b07152d234b70', '19990608', '男', 0, 'http://120.26.186.88:8080/img/2.jpg');
+INSERT INTO `t_user` VALUES (5, 'student3', '202cb962ac59075b964b07152d234b70', '19970608', '女', 0, 'http://120.26.186.88:8080/img/5.jpg');
 
 -- ----------------------------
 -- Table structure for t_wrong
@@ -447,7 +496,7 @@ CREATE TABLE `t_wrong`  (
   `score` int(0) DEFAULT NULL COMMENT '这道题的分值',
   `nowScore` int(0) DEFAULT NULL COMMENT '用户得分',
   PRIMARY KEY (`wrongId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 104 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 117 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_wrong
@@ -456,5 +505,9 @@ INSERT INTO `t_wrong` VALUES (104, 2, 1, 9, 'A', 'C', 20, 0);
 INSERT INTO `t_wrong` VALUES (105, 2, 2, 18, 'B', 'D', 20, 0);
 INSERT INTO `t_wrong` VALUES (106, 2, 3, 20, 'C', 'B', 20, 0);
 INSERT INTO `t_wrong` VALUES (107, 2, 3, 20, 'C', 'B', 20, 0);
+INSERT INTO `t_wrong` VALUES (108, 2, 1, 10, 'C', 'A', 20, 0);
+INSERT INTO `t_wrong` VALUES (109, 2, 1, 11, 'B', 'A', 20, 0);
+INSERT INTO `t_wrong` VALUES (110, 2, 1, 12, 'D', 'A', 20, 0);
+INSERT INTO `t_wrong` VALUES (111, 2, 1, 13, 'C', 'B', 20, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
