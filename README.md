@@ -9,7 +9,37 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - 采用模块化、组件化、工程化的模式开发 
 
 ## 项目功能
+### 基本功能
+>学生端
+- 注册登录
+- 在线考试
+- 在个人中心查看分数
+>教师端
 
+- 登录
+- 试题管理功能
+- 试卷管理功能
+- 两种方式生成试卷
+    - 教师在线出题并生成试卷，试卷存入“试卷库”，然后发布并考试
+    - 教师事先在线录入试题，试题分类存入试题库。教师生成试卷时从题库抽取各类试题组卷
+- 在线发布试卷
+>管理员端
+- 登录
+- 查看试题库
+- 查看试卷库
+- 用户管理功能（修改用户权限，删除用户）
+
+### 附加功能
+- **自动批改简答题**：在计算成绩时，系统不仅可自动批改选择题，判断题及填空题，还可以自动批改简答题
+- **公告管理**：在基础需求上，添加公告管理功能，教师和管理员均可在线发布公告，发布的公告显示在学生端
+- **错题集功能**：在系统批改学生试卷时，若该学生在某道题上没有得到满分，系统自动会将该题收录到该学生的错题集中
+- **密码 `MD5` 加密**：为确保安全，将用户密码 `MD5` 明文加密后存入数据库
+- **权限判断**：防止非法进入系统操作数据。
+
+### 部分页面展示
+![首页](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/页面1.png)
+![出题页面](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/页面5.png)
+![设置考试时间](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/页面7.png)
 
 ## 开发环境介绍
 >远程服务器版本：Aliyun云服务器ECS、CentOS 7.3 64位
@@ -65,3 +95,5 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - 日志截图：[后端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
 
 >2020.06.30-2020.07.05：项目组处于代码测试阶段。将前后端仓库合并，进行项目分阶段测试。
+- 项目仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamSystem
+- 日志截图：[测试阶段日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/测试阶段日志操作.jpg)

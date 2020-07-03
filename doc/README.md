@@ -26,3 +26,9 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 
 ### 4 UML静态类图
 - 系统共四个大类，分别是控制类、操作类、工具类和实体类
+
+### 5 性能分析脚本及结果
+>主负责人员：屈英杰
+- analysis: 结果分析
+- scenario：场景运行
+- VuGen：录制脚本
