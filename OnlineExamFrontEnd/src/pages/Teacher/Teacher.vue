@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-07-03 11:25:42
+ * @LastEditTime: 2020-07-05 00:59:07
  * @LastEditors: Please set LastEditors
  * @Description: 教师端页面
  * @FilePath: \onlineexamLLL\src\pages\Teacher\Teacher.vue
@@ -509,9 +509,9 @@
                                     style="width: 100%;"></el-time-picker>
                     </el-col>
                 </el-form-item>
-                <el-form-item label="考试时长" prop="duration">
+                <el-form-item label="考试时长" prop="duration" :rules="[{ required: true, message: '考试时长不能为空'}]">
                     <el-col :span="6">
-                        <el-input v-model="outputTime.duration" placeholder="输入时长"></el-input>
+                        <el-input type="number" v-model="outputTime.duration" placeholder="输入时长" ></el-input>
                     </el-col>
                     <el-col :span="2" style="text-align: center;">
                         <span>分钟</span>
@@ -519,7 +519,7 @@
                 </el-form-item>
                 <el-form-item>
                     <el-col :span="24" style="text-align:right">
-                        <el-button type="success" icon="el-icon-check" @click="outputPaper=false; sureSubmit()">确认发布</el-button>
+                        <el-button type="success" icon="el-icon-check" @click="sureSubmit()">确认发布</el-button>
                         <el-button type="danger" icon="el-icon-close" @click="outputPaper=false">取消</el-button>
                     </el-col>
                 </el-form-item>
@@ -1452,6 +1452,11 @@ export default {
          * @returns no return
          */
         sureSubmit() {
+            if(this.outputTime.duration <= 0) {
+                this.$message.error("考试时长非法!");
+                return;
+            }
+            this.outputPaper=false;
             console.log(this.outputTime);
             let testBegin = "开始:"+this.outputTime.beginDate+this.outputTime.beginTime;
             let testEnd = "结束:"+this.outputTime.endDate+this.outputTime.endTime;

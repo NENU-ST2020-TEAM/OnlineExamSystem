@@ -1,7 +1,7 @@
 <!--
  * @Author: 屈英杰、吴婷婷
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-06-30 18:20:58
+ * @LastEditTime: 2020-07-05 00:44:11
  * @LastEditors: Please set LastEditors
  * @Description: 登录页面
  * @FilePath: \onlineexamLLL\src\pages\Login\Login.vue
@@ -147,7 +147,10 @@
         // 去个人中心界面
         console.log(this.sno);
         console.log(this.stuPsw);
-        
+        if(this.sno == '') {
+          this.$message.error("用户名不能为空！");
+          return;
+        }
         this.$ajax({
             method: "post",
             url: "http://120.26.186.88:8080/user/login",
@@ -167,29 +170,34 @@
                 },
           }).then(
             resolve=>{
-              //获取用户信息
-              this.$ajax({
-                method: "post",
-                url: "http://120.26.186.88:8080/user/listUserById",
-                dataType: "json",
-                crossDomain: true,
-                cache: false,
-              }).then(resolve => {
-                console.log(resolve.data[0]);
-                this.userInfor = resolve.data[0];
-                if(this.userInfor.power=="2")
-                  this.$router.replace('/admin');
-                else if(this.userInfor.power=="0")
-                  this.$router.replace('/Profile');
-                else if(this.userInfor.power=="1")
-                  this.$router.replace('/Teacher');
-              }, reject => {
-            // this.peoLoading = true;
-            console.log(reject);
-            })
+              console.log(resolve.data);
+              if(resolve.data == "用户名不存在，请去注册！" || resolve.data == "您的密码有误！") {
+                this.$message.error(resolve.data);
+              }
+              else {
+                //获取用户信息
+                this.$ajax({
+                  method: "post",
+                  url: "http://120.26.186.88:8080/user/listUserById",
+                  dataType: "json",
+                  crossDomain: true,
+                  cache: false,
+                }).then(resolve => {
+                  console.log(resolve.data[0]);
+                  this.userInfor = resolve.data[0];
+                  if(this.userInfor.power=="2")
+                    this.$router.replace('/admin');
+                  else if(this.userInfor.power=="0")
+                    this.$router.replace('/Profile');
+                  else if(this.userInfor.power=="1")
+                    this.$router.replace('/Teacher');
+                }, reject => {
+                  console.log(reject);
+                })
+              }
             },reject => {
-                    // this.peoLoading = true;
-                    console.log(reject);
+              // this.peoLoading = true;
+              console.log(reject);
             });
       },
       //点击展示登录面板
