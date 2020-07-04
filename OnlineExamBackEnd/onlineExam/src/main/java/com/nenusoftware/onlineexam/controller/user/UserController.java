@@ -56,10 +56,10 @@ public class UserController {
                 session.setAttribute("usernameSession",username);
                 System.out.println("登录成功！");
             }else {
-                System.out.println("您的密码有误！");
+                username = "您的密码有误！";
             }
         }else{
-            System.out.println("用户名不存在，请去注册！");
+            username = "用户名不存在，请去注册！";
         }
         return username;
     }
@@ -89,7 +89,7 @@ public class UserController {
                 System.out.println("注册成功！");
             }
         }else{
-            System.out.println("用户名已存在，请直接登录！");
+            username = "用户名已存在，请直接登录！";
         }
         return username;
     }
