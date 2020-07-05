@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 02/07/2020 23:39:06
+ Date: 05/07/2020 08:51:10
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,7 @@ CREATE TABLE `t_connect`  (
   `paperId` int(0) DEFAULT NULL COMMENT '试卷编号',
   `paperDetailId` int(11) UNSIGNED ZEROFILL DEFAULT 00000000000 COMMENT '试题编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 249 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 264 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_connect
@@ -312,6 +312,12 @@ INSERT INTO `t_connect` VALUES (260, 142, 00000000204);
 INSERT INTO `t_connect` VALUES (261, 142, 00000000205);
 INSERT INTO `t_connect` VALUES (262, 142, 00000000206);
 INSERT INTO `t_connect` VALUES (263, 142, 00000000207);
+INSERT INTO `t_connect` VALUES (264, 143, 00000000000);
+INSERT INTO `t_connect` VALUES (265, 144, 00000000000);
+INSERT INTO `t_connect` VALUES (266, 145, 00000000000);
+INSERT INTO `t_connect` VALUES (267, 146, 00000000000);
+INSERT INTO `t_connect` VALUES (268, 147, 00000000000);
+INSERT INTO `t_connect` VALUES (269, 148, 00000000000);
 
 -- ----------------------------
 -- Table structure for t_notice
@@ -324,7 +330,7 @@ CREATE TABLE `t_notice`  (
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '内容',
   `createTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发布时间',
   PRIMARY KEY (`noticeId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_notice
@@ -347,7 +353,7 @@ CREATE TABLE `t_paper`  (
   `endTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '结束时间',
   `duration` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '做题时长',
   PRIMARY KEY (`paperId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 140 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 143 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paper
@@ -378,7 +384,7 @@ CREATE TABLE `t_paperdetail`  (
   `exerciseType` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '题目类型',
   `score` int(0) DEFAULT NULL COMMENT '分值',
   PRIMARY KEY (`paperDetailId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 198 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 208 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_paperdetail
@@ -441,7 +447,7 @@ CREATE TABLE `t_score`  (
   `mark` int(0) DEFAULT NULL COMMENT '成绩',
   `paperName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '试卷名称',
   PRIMARY KEY (`scoreId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 53 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_score
@@ -457,6 +463,8 @@ INSERT INTO `t_score` VALUES (47, 2, 5, 75, '2020年春季学期软件质量保�
 INSERT INTO `t_score` VALUES (48, 2, 1, 20, '软件质量保证与测试小练习1');
 INSERT INTO `t_score` VALUES (49, 2, 1, 100, '软件质量保证与测试小练习1');
 INSERT INTO `t_score` VALUES (50, 2, 142, 75, '功能测试卷1');
+INSERT INTO `t_score` VALUES (51, 4, 1, 100, '软件质量保证与测试小练习1');
+INSERT INTO `t_score` VALUES (52, 4, 5, 92, '2020年春季学期软件质量保证与测试期末考试卷B');
 
 -- ----------------------------
 -- Table structure for t_user
@@ -468,7 +476,7 @@ CREATE TABLE `t_user`  (
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '用户密码',
   `birthday` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '出生日期',
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '性别',
-  `power` int(0) DEFAULT NULL COMMENT '权限（0为用户，1为管理员）',
+  `power` int(0) DEFAULT NULL COMMENT '权限（0为学生，1为教师，2为管理员）',
   `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '头像',
   PRIMARY KEY (`userId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -496,7 +504,7 @@ CREATE TABLE `t_wrong`  (
   `score` int(0) DEFAULT NULL COMMENT '这道题的分值',
   `nowScore` int(0) DEFAULT NULL COMMENT '用户得分',
   PRIMARY KEY (`wrongId`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 117 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 123 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_wrong
@@ -509,5 +517,6 @@ INSERT INTO `t_wrong` VALUES (108, 2, 1, 10, 'C', 'A', 20, 0);
 INSERT INTO `t_wrong` VALUES (109, 2, 1, 11, 'B', 'A', 20, 0);
 INSERT INTO `t_wrong` VALUES (110, 2, 1, 12, 'D', 'A', 20, 0);
 INSERT INTO `t_wrong` VALUES (111, 2, 1, 13, 'C', 'B', 20, 0);
+INSERT INTO `t_wrong` VALUES (122, 4, 5, 42, '黑盒测试', '黑盒测试法', 8, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

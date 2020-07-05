@@ -7,7 +7,7 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 
 ### 2 HTML帮助文档
 >Javadoc帮助文档：详细记录模块中方法的详细信息及参数说明等信息
-- 主目录路径：`OnlineExamSystem\doc\HTML帮助文档\index.html`
+- 主目录路径：`OnlineExamSystem\doc\html帮助文档\index.html`
 - Javadoc文档部分页面截图：
 
     ![HTML帮助文档](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/html帮助文档.jpg)
@@ -29,6 +29,6 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 
 ### 5 性能分析脚本及结果
 >主负责人员：屈英杰
-- analysis: 结果分析
-- scenario：场景运行
-- VuGen：录制脚本
+- **analysis**：结果分析
+- **scenario**：场景运行
+- **VuGen**：录制脚本

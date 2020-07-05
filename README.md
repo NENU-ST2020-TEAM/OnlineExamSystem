@@ -37,6 +37,11 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - 学生成绩管理功能
 - 用户管理功能（修改用户权限，删除用户）
 
+### 关于错误输入的处理
+- **登录注册**：输入为空，用户名不存在，密码输入有误等非法提示
+- **考试时长**：输入字母，负数等非法提示
+- **权限判断**：防止入侵者非法从 `URL` 进入后台系统
+
 ### 附加功能
 - **自动批改简答题**：在计算成绩时，系统不仅可自动批改选择题，判断题及填空题，还可以自动批改简答题
 - **公告管理**：在基础需求上，添加公告管理功能，教师和管理员均可在线发布考试公告，发布的公告显示在学生端
@@ -102,6 +107,7 @@ OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020,
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamBackEnd
 - 日志截图：[后端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
 
->2020.06.30-2020.07.05：项目组处于代码测试阶段。将前后端仓库合并，进行项目分阶段测试。
-- 项目仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamSystem
+### 项目总仓库
+>2020.06.30-2020.07.05：项目组处于代码测试优化阶段。将前后端仓库合并，进行项目分阶段测试。
+- 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamSystem
 - 日志截图：[测试阶段日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/测试阶段日志操作.jpg)
