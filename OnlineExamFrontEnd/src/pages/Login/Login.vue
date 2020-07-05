@@ -1,7 +1,7 @@
 <!--
  * @Author: 屈英杰、吴婷婷
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-07-05 00:44:11
+ * @LastEditTime: 2020-07-05 18:00
  * @LastEditors: Please set LastEditors
  * @Description: 登录页面
  * @FilePath: \onlineexamLLL\src\pages\Login\Login.vue
@@ -27,14 +27,13 @@
     <!--实现登录功能-->
     <!--<transition name="el-fade-in">-->
     <div class="login-wrap" v-show="showLogin">
-        <mt-field label="学号/工号" placeholder="请输入学号/工号" v-model="sno" :state="snoState"/>
+        <mt-field label="姓名" placeholder="请输入姓名" v-model="sno" :state="snoState"/>
         <mt-field label="密码" placeholder="请输入密码" type="password" v-model="stuPsw" :state="pswState" @keyup.enter.native="checkLogin"/>
         <mt-button type="primary" size="large" @click.native="checkLogin">登录</mt-button>
 
-        <!-- <div class="toggle-login">
+         <div class="toggle-login">
           <span @click="toRegister">没有账号？马上注册</span>
-          <span @click="toFindPsw">忘记密码？</span>
-        </div> -->
+        </div>
       </div>
     <!--</transition>-->
 
@@ -42,42 +41,20 @@
     <!--<transition name="el-fade-in">-->
     <div class="register-wrap" v-show="showRegister">
       <!--<p v-show="showTishi">{{tips}}</p>-->
-      <mt-field label="学号" placeholder="请输入12位数字学号" v-model="newSno" :state="newSnoState"
-                @blur.native.capture="checkNewSno"/>
+      <mt-field label="姓名" placeholder="请输入姓名" v-model="newName" :state="newNameState"
+                @blur.native.capture="checkNewName"/>
       <mt-field label="密码" placeholder="请输入至少6位数字密码" type="password" v-model="newPsw" :state="newPswState"
                 @blur.native.capture="checkNewPsw"/>
       <mt-field label="确认密码" placeholder="请再次输入密码" type="password" v-model="newPswConfirm"
                 :state="newPswConfirmState" @blur.native.capture="checkNewPswConfirm"/>
-      <mt-field label="姓名" placeholder="请输入姓名" v-model="newName" :state="newNameState"
-                @blur.native.capture="checkNewName"/>
-
-      <mt-field label="邮箱" placeholder="请输入邮箱" v-model="newEmail" :state="newEmailState"
-                @blur.native.capture="checkNewEmail"/>
       <mt-button type="primary" size="large" @click.native="stuRegister">注册</mt-button>
 
       <div class="toggle-register">
         <span @click="toLogin">已有账号？马上登录</span>
-        <span @click="toFindPsw">忘记密码？</span>
       </div>
     </div>
     <!--</transition>-->
 
-    <!--实现找回密码功能-->
-    <div class="find-psw-wrap" v-show="showFindPsw">
-      <mt-field label="学号" placeholder="请输入12位数字学号" v-model="findSno"
-                :state="findSnoState" @blur.native.capture="checkfindSno"/>
-      <mt-field label="新密码" placeholder="请输入新密码" type="password" v-model="findNewPsw"
-                :state="findNewPswState" @blur.native.capture="checkfindNewPsw"/>
-      <mt-field label="确认新密码" placeholder="请再次输入新密码" type="password" v-model="findNewPswConfirm"
-                :state="findNewPswConfirmState" @blur.native.capture="checkfindNewPswConfirm"
-                @keyup.enter.native="stuFindPsw"/>
-      <mt-button type="primary" size="large" @click="stuFindPsw">确认修改</mt-button>
-
-      <div class="toggle-find-psw">
-        <span @click="toLogin">已有账号？马上登录</span>
-        <span @click="toRegister">没有账号？马上注册</span>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -94,37 +71,16 @@
         power:this.$store.state.userInfo.power,
         showLogin: true,
         showRegister: false,
-        showFindPsw:false,
         sno: '',
         snoState:'',
         stuPsw: '',
         pswState:'',
-        newSno: '',
-        newSnoState:'',
+        newName:'',
+        newNameState:'',
         newPsw: '',
         newPswState:'',
         newPswConfirm:'',
         newPswConfirmState:'',
-        newName:'',
-        newNameState:'',
-        newEmail:'',
-        newEmailState:'',
-        newPhone:'',
-        newPhoneState:'',
-        newSecurityCode:'',
-        newSecurityCodeState:'',
-        newSecurityCodeConfirm:'',
-        newSecurityCodeConfirmState:'',
-        findSno:'',
-        findSnoState:'',
-        findPhone:'',
-        findPhoneState:'',
-        findSecurityCode:'',
-        findSecurityCodeState:'',
-        findNewPsw:'',
-        findNewPswState:'',
-        findNewPswConfirm:'',
-        findNewPswConfirmState:'',
         //用户信息
         userInfor: []
       }
@@ -212,54 +168,16 @@
       },
       //点击展示注册面板
       toRegister(){
-        this.newSno = '';
-        this.newSnoState = '';
+        this.newName = '';
+        this.newNameState = '';
         this.newPsw = '';
         this.newPswState = '';
         this.newPswConfirm = '';
         this.newPswConfirmState = '';
-        this.newName = '';
-        this.newNameState = '';
-        this.newEmail = '';
-        this.newEmailState = '';
-        this.newPhone = '';
-        this.newPhoneState = '';
-        this.newSecurityCode = '';
-        this.newSecurityCodeState = '';
-        this.newSecurityCodeConfirm = '';
-        this.newSecurityCodeConfirmState = '';
         this.showLogin = false;
         this.showRegister = true;
-        this.showFindPsw = false;
       },
-      //点击展示找回密码面板
-      toFindPsw(){
-        this.findSno = '';
-        this.findSnoState = '';
-        this.findPhone = '';
-        this.findPhoneState = '';
-        this.findSecurityCode = '';
-        this.findSecurityCodeState = '';
-        this.findNewPsw = '';
-        this.findNewPswState = '';
-        this.findNewPswConfirm = '';
-        this.findNewPswConfirmState = '';
-        this.showLogin = false;
-        this.showRegister = false;
-        this.showFindPsw = true;
-      },
-      // 注册校验学号
-      checkNewSno(){
-        if (this.newSno === '') {
-          this.newSnoState = '';
-        }
-        else if (!/^\d{12}$/.test(this.newSno)){
-          this.newSnoState = 'error';
-        }
-        else {
-          this.newSnoState = 'success';
-        }
-      },
+      
       // 注册校验密码
       checkNewPsw(){
         if (this.newPsw === '') {
@@ -293,142 +211,103 @@
           this.newNameState = 'success';
         }
       },
-      //注册校验邮箱
-      checkNewEmail(){
-        if (this.newEmail === '') {
-          this.newEmailState = '';
-        }
-        else if (!/^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/.test(this.newEmail)){
-          this.newEmailState = 'error';
-        }
-        else {
-          this.newEmailState = 'success';
-        }
-      },
-      //异步学生注册
+      
+       //异步学生注册
       async stuRegister(){
-        const {newSno, newPsw, newPswConfirm, newName, newEmail, newPhone, newSecurityCode, newSecurityCodeConfirm} = this;
-        let result = await reqRegister({newSno, newPsw, newPswConfirm, newName, newEmail, newPhone, newSecurityCode, newSecurityCodeConfirm});
-        if (result.statu == 0) {
-          MessageBox.confirm('注册成功，是否自动登录?').then(action => {
+        if(this.newNameState ==='success'&&this.newPswState ==='success'&&this.newPswConfirmState === 'success')
+        {
+            this.$ajax({
+                method: "post",
+                url: "http://120.26.186.88:8080/user/register",
+                dataType: "json",
+                data: {
+                    username: this.newName,
+                    password: this.newPsw,
+                },
+                crossDomain: true,
+                cache: false,
+                transformRequest(obj){
+                    var str = [];
+                    for(var p in obj){
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                    }
+                    return str.join("&");
+                },
+            }).then(resolve => {
+                  this.showRegister = false;
+                  this.showLogin = true;
+            },reject => {
+                    // this.peoLoading = true;
+                    console.log(reject);
+            });
+        }
+        else if(this.newName === '')
+        {
+            MessageBox.confirm('姓名不能为空！').then(action => {
             //点击确定按钮操作
-            this.sno = this.newSno
-            this.stuPsw = this.newPsw
-            this.checkLogin();
+            this.toRegister();
           },() => {
-            //点击取消按钮操作
-            this.newSno = '';
-            this.newSnoState = '';
-            this.newPsw = '';
-            this.newPswState = '';
-            this.newPswConfirm = '';
-            this.newPswConfirmState = '';
-            this.newName = '';
-            this.newNameState = '';
-            this.newEmail = '';
-            this.newEmailState = '';
-            this.newPhone = '';
-            this.newPhoneState = '';
-            this.newSecurityCode = '';
-            this.newSecurityCodeState = '';
-            this.newSecurityCodeConfirm = '';
-            this.newSecurityCodeConfirmState = '';
+              this.newName = '';
+              this.newNameState = '';
+              this.newPsw = '';
+              this.newPswState = '';
+              this.newPswConfirm = '';
+              this.newPswConfirmState = '';
+              this.showLogin = false;
+              this.showRegister = true;
+              this.showFindPsw = false;
           })
         }
-        else {
-          Toast({
-            message: result.msg,
-            duration: 1500
-          });
-        }
-      },
-      //找回密码校验学号
-      checkfindSno(){
-        if (this.findSno === '') {
-          this.findSnoState = '';
-        }
-        else if (!/^\d{12}$/.test(this.findSno)){
-          this.findSnoState = 'error';
-        }
-        else {
-          this.findSnoState = 'success';
-        }
-      },
-      //找回密码校验学号
-      checkfindPhone(){
-        if (this.findPhone === '') {
-          this.findPhoneState = '';
-        }
-        else if (!/^1[34578]\d{9}$/.test(this.findPhone)){
-          this.findPhoneState = 'error';
-        }
-        else {
-          this.findPhoneState = 'success';
-        }
-      },
-      //找回密码校验学号
-      checkfindSecurityCode(){
-        if (this.findSecurityCode === '') {
-          this.findSecurityCodeState = '';
-        }
-        else if (this.findSecurityCode.length >= 6){
-          this.findSecurityCodeState = 'success';
-        }
-        else {
-          this.findSecurityCodeState = 'error';
-        }
-      },
-      //找回密码校验学号
-      checkfindNewPsw(){
-        if (this.findNewPsw === '') {
-          this.findNewPswState = '';
-        }
-        else if (this.findNewPsw.length >= 6){
-          this.findNewPswState = 'success';
-        }
-        else {
-          this.findNewPswState = 'error';
-        }
-      },
-      //找回密码校验学号
-      checkfindNewPswConfirm(){
-        if (this.findNewPswConfirm === '') {
-          this.findNewPswConfirmState = '';
-        }
-        else if (this.findNewPswConfirm.length >= 6 && this.findNewPswConfirm === this.findNewPsw){
-          this.findNewPswConfirmState = 'success';
-        }
-        else {
-          this.findNewPswConfirmState = 'error';
-        }
-      },
-      //异步学生找回密码
-      async stuFindPsw(){
-        const {findSno, findPhone, findSecurityCode, findNewPsw, findNewPswConfirm} = this;
-        let result = await reqFindPsw({findSno, findPhone, findSecurityCode, findNewPsw, findNewPswConfirm});
-        if (result.statu == 0) {
-          MessageBox.confirm('设置新密码成功，是否跳转到登录页面?').then(action => {
+        else if(this.newPswState === ''||this.newPswState === 'error')
+        {
+            MessageBox.confirm('密码不符合条件！').then(action => {
             //点击确定按钮操作
-            this.toLogin();
+            this.toRegister();
           },() => {
-            //点击取消按钮操作
-            this.findSno = '';
-            this.findSnoState = '';
-            this.findPhone = '';
-            this.findPhoneState = '';
-            this.findSecurityCode = '';
-            this.findSecurityCodeState = '';
-            this.findNewPsw = '';
-            this.findNewPswState = '';
-            this.findNewPswConfirm = '';
-            this.findNewPswConfirmState = '';
+              this.newName = '';
+              this.newNameState = '';
+              this.newPsw = '';
+              this.newPswState = '';
+              this.newPswConfirm = '';
+              this.newPswConfirmState = '';
+              this.showLogin = false;
+              this.showRegister = true;
+              this.showFindPsw = false;
           })
         }
-        else {
-          Toast({
-            message: result.msg,
-            duration: 1500
-          });
+        else if(this.newPswConfirmState === ''||this.newPswConfirmState === 'error')
+        {
+            MessageBox.confirm('密码不符合条件！').then(action => {
+            //点击确定按钮操作
+            this.toRegister();
+          },() => {
+              this.newName = '';
+              this.newNameState = '';
+              this.newPsw = '';
+              this.newPswState = '';
+              this.newPswConfirm = '';
+              this.newPswConfirmState = '';
+              this.showLogin = false;
+              this.showRegister = true;
+              this.showFindPsw = false;
+          })
+        }
+        else
+        {
+            MessageBox.confirm('输入不正确！').then(action => {
+            //点击确定按钮操作
+            this.toRegister();
+          },() => {
+              this.newName = '';
+              this.newNameState = '';
+              this.newPsw = '';
+              this.newPswState = '';
+              this.newPswConfirm = '';
+              this.newPswConfirmState = '';
+              this.showLogin = false;
+              this.showRegister = true;
+              this.showFindPsw = false;
+          })
         }
       }
     },
@@ -483,8 +362,10 @@
         background-color #4ab8a1
         margin-top 15px
         margin-bottom 15px
-      .toggle-login
+     .toggle-login
         display flex
+        padding-left 120px
+        padding-top 120px
         justify-content space-between
         color #4ab8a1
     .register-wrap
@@ -499,6 +380,8 @@
         margin-bottom 15px
       .toggle-register
         display flex
+        padding-left 160px
+        padding-top 100px
         justify-content space-between
         color #4ab8a1
     .find-psw-wrap
