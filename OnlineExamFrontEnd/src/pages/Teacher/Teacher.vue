@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-07-05 00:59:07
+ * @LastEditTime: 2020-07-05 15:37:24
  * @LastEditors: Please set LastEditors
  * @Description: 教师端页面
  * @FilePath: \onlineexamLLL\src\pages\Teacher\Teacher.vue
@@ -1489,6 +1489,11 @@ export default {
                 this.questionTiankong = [];
                 this.questionPanduan = [];
                 this.questionWenda = [];
+                this.outputTime.beginDate = '';
+                this.outputTime.endDate = '';
+                this.outputTime.beginTime = '';
+                this.outputTime.endTime = '';
+                this.outputTime.duration = '';
                 //题库更新
                 this.$ajax({
                     method: "post",

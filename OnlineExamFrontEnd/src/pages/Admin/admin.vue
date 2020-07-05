@@ -1,7 +1,7 @@
 <!--
  * @Author: 吴婷婷、屈英杰
  * @Date: 2020-06-01 13:02:54
- * @LastEditTime: 2020-07-01 19:21:18
+ * @LastEditTime: 2020-07-05 15:39:30
  * @LastEditors: Please set LastEditors
  * @Description: 管理员端页面
  * @FilePath: \onlineexamLLL\src\pages\Admin\admin.vue
@@ -237,7 +237,7 @@
                     <el-table-column align="center" prop="username" label="用户名"></el-table-column>
                     <el-table-column align="center" prop="birthday" label="生日"></el-table-column>
                     <el-table-column align="center" prop="sex" label="性别"></el-table-column>
-                    <el-table-column align="center" prop="power" label="权限"></el-table-column>
+                    <el-table-column align="center" prop="powerS" label="权限"></el-table-column>
                     <el-table-column align="center" prop="operation" label="操作">
                         <template slot-scope="scope">
                             <el-col :span="13">
