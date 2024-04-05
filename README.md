@@ -1,5 +1,5 @@
 # OnlineExamSystem
-OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020, NENU 
+OnlineExamSystem, Software Testing and Quality Assurance course, 2020 Spring, NENU
 
 ## 项目描述
 - 此项目为一个基于 `Vue + SpringBoot` 的 **前后端分离** 的在线考试系统
