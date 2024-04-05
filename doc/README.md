@@ -1,5 +1,5 @@
 # OnlineExamSystem
-OnlineExamSystem for Software Quality Assurance and Testing course, Spring 2020, NENU 
+OnlineExamSystem, Software Testing and Quality Assurance course, 2020 Spring, NENU 
 
 ## doc文档介绍
 ### 1 在线考试系统前后端接口文档
