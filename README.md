@@ -50,9 +50,9 @@ OnlineExamSystem, Software Testing and Quality Assurance course, 2020 Spring, NE
 - **权限判断**：防止非法进入系统操作数据
 
 ### 部分页面展示
-![首页](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/在线考试系统.png)
-![出题页面](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/页面5.png)
-![设置考试时间](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/页面7.png)
+![online-exam-01](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-01.png)
+![online-exam-02](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-02.png)
+![online-exam-07](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-07.png)
 
 ## 开发环境介绍
 >远程服务器版本：Aliyun云服务器ECS、CentOS 7.3 64位
@@ -101,13 +101,13 @@ OnlineExamSystem, Software Testing and Quality Assurance course, 2020 Spring, NE
 
 ### 前端仓库
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamFrontEnd
-- 日志截图：[前端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/1.jpg)
+- 日志截图：[前端操作日志截图](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-08.jpg)
 
 ### 后端仓库
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamBackEnd
-- 日志截图：[后端仓库日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/2.jpg)
+- 日志截图：[后端操作日志截图](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-09.jpg)
 
 ### 项目总仓库
 >2020.06.30-2020.07.05：项目组处于代码测试优化阶段。将前后端仓库合并，进行项目分阶段测试。
 - 仓库地址：https://github.com/NENU-ST2020-TEAM/OnlineExamSystem
-- 日志截图：[测试阶段日志操作](https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/测试阶段日志操作.jpg)
+- 日志截图：[测试阶段日志截图](https://cdn.jsdelivr.net/gh/leungll/MyImgHosting/img/online-exam-10.jpg)
